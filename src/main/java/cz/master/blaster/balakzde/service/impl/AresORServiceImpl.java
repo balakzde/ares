@@ -19,7 +19,6 @@ public class AresORServiceImpl implements AresORService {
 
     @Value("${ares.or.url}")
     private String aresORUrl;
-
     @Value("${ares.params.ico.name}")
     private String icoParameterName;
     @Value("${ares.params.xml.name}")
