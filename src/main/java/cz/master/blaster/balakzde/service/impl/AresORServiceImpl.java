@@ -8,7 +8,6 @@ import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_datatypes.v_1_0.OdpovedOR;
 import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_datatypes.v_1_0.VypisOR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestOperations;
 
@@ -17,17 +16,17 @@ import java.util.List;
 public class AresORServiceImpl implements AresORService {
 
 
-    @Value("${ares.or.url}")
+//    @Value("${ares.or.url}")
     private String aresORUrl;
-    @Value("${ares.params.ico.name}")
+//    @Value("${ares.params.ico.name}")
     private String icoParameterName;
-    @Value("${ares.params.xml.name}")
+//    @Value("${ares.params.xml.name}")
     private String xmlParameterName;
-    @Value("${ares.params.version.name}")
+//    @Value("${ares.params.version.name}")
     private String versionParameterName;
-    @Value("${ares.params.xml.value}")
+//    @Value("${ares.params.xml.value}")
     private String xmlParameterValue;
-    @Value("${ares.params.version.value}")
+//    @Value("${ares.params.version.value}")
     private String versionParameterValue;
 
     @Autowired
@@ -48,4 +47,29 @@ public class AresORServiceImpl implements AresORService {
         }
         return informationList.get(0);
     }
+
+    public void setAresORUrl(String aresORUrl) {
+        this.aresORUrl = aresORUrl;
+    }
+
+    public void setIcoParameterName(String icoParameterName) {
+        this.icoParameterName = icoParameterName;
+    }
+
+    public void setXmlParameterName(String xmlParameterName) {
+        this.xmlParameterName = xmlParameterName;
+    }
+
+    public void setVersionParameterName(String versionParameterName) {
+        this.versionParameterName = versionParameterName;
+    }
+
+    public void setXmlParameterValue(String xmlParameterValue) {
+        this.xmlParameterValue = xmlParameterValue;
+    }
+
+    public void setVersionParameterValue(String versionParameterValue) {
+        this.versionParameterValue = versionParameterValue;
+    }
+
 }
