@@ -6,32 +6,54 @@ import cz.master.blaster.balakzde.util.UriBuilder;
 import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_answer_or.v_1_0.AresOdpovedi;
 import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_datatypes.v_1_0.OdpovedOR;
 import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_datatypes.v_1_0.VypisOR;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestOperations;
+import org.springframework.web.client.RestTemplate;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.Properties;
 
 public class AresORServiceImpl implements AresORService {
 
 
-//    @Value("${ares.or.url}")
     private String aresORUrl;
-//    @Value("${ares.params.ico.name}")
     private String icoParameterName;
-//    @Value("${ares.params.xml.name}")
     private String xmlParameterName;
-//    @Value("${ares.params.version.name}")
     private String versionParameterName;
-//    @Value("${ares.params.xml.value}")
     private String xmlParameterValue;
-//    @Value("${ares.params.version.value}")
     private String versionParameterValue;
 
-    @Autowired
-    @Qualifier("aresTemplate")
-    private RestOperations aresTemplate;
+    private RestOperations aresTemplate = new RestTemplate();
+
+    public AresORServiceImpl() {
+        final Properties prop = new Properties();
+        InputStream input = null;
+        try {
+            input = new FileInputStream("ares.properties");
+            // load a properties file
+            prop.load(input);
+            // get the property value and print it out
+            aresORUrl = prop.getProperty("ares.or.url");
+            icoParameterName = prop.getProperty("ares.params.ico.name");
+            versionParameterName = prop.getProperty("ares.params.version.name");
+            versionParameterValue = prop.getProperty("ares.params.version.value");
+            xmlParameterName = prop.getProperty("ares.params.xml.name");
+            xmlParameterValue = prop.getProperty("ares.params.xml.value");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     public VypisOR getVypisOR(String ico) throws NonexistentEntity {
         final ResponseEntity<AresOdpovedi> responseEntity = aresTemplate.getForEntity(UriBuilder.fromBase(aresORUrl).queryParam(icoParameterName, ico).queryParam(xmlParameterName, xmlParameterValue).queryParam(versionParameterName, versionParameterValue).buildEncoded(), AresOdpovedi.class);
@@ -47,29 +69,4 @@ public class AresORServiceImpl implements AresORService {
         }
         return informationList.get(0);
     }
-
-    public void setAresORUrl(String aresORUrl) {
-        this.aresORUrl = aresORUrl;
-    }
-
-    public void setIcoParameterName(String icoParameterName) {
-        this.icoParameterName = icoParameterName;
-    }
-
-    public void setXmlParameterName(String xmlParameterName) {
-        this.xmlParameterName = xmlParameterName;
-    }
-
-    public void setVersionParameterName(String versionParameterName) {
-        this.versionParameterName = versionParameterName;
-    }
-
-    public void setXmlParameterValue(String xmlParameterValue) {
-        this.xmlParameterValue = xmlParameterValue;
-    }
-
-    public void setVersionParameterValue(String versionParameterValue) {
-        this.versionParameterValue = versionParameterValue;
-    }
-
 }
