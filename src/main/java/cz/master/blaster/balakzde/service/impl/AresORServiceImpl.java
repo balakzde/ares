@@ -1,5 +1,6 @@
 package cz.master.blaster.balakzde.service.impl;
 
+import cz.master.blaster.balakzde.Constants;
 import cz.master.blaster.balakzde.exception.NonexistentEntity;
 import cz.master.blaster.balakzde.service.AresORService;
 import cz.master.blaster.balakzde.util.UriBuilder;
@@ -10,53 +11,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
-import java.util.Properties;
 
 public class AresORServiceImpl implements AresORService {
 
 
-    private String aresORUrl;
-    private String icoParameterName;
-    private String xmlParameterName;
-    private String versionParameterName;
-    private String xmlParameterValue;
-    private String versionParameterValue;
+    private final String icoParameterName = "ico";
+    private final String xmlParameterName = "xml";
+    private final String versionParameterName = "ver";
+    private final String xmlParameterValue = "0";
+    private final String versionParameterValue = "1.0.2";
 
     private RestOperations aresTemplate = new RestTemplate();
 
-    public AresORServiceImpl() {
-        final Properties prop = new Properties();
-        InputStream input = null;
-        try {
-            input = new FileInputStream("ares.properties");
-            // load a properties file
-            prop.load(input);
-            // get the property value and print it out
-            aresORUrl = prop.getProperty("ares.or.url");
-            icoParameterName = prop.getProperty("ares.params.ico.name");
-            versionParameterName = prop.getProperty("ares.params.version.name");
-            versionParameterValue = prop.getProperty("ares.params.version.value");
-            xmlParameterName = prop.getProperty("ares.params.xml.name");
-            xmlParameterValue = prop.getProperty("ares.params.xml.value");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
     public VypisOR getVypisOR(String ico) throws NonexistentEntity {
-        final ResponseEntity<AresOdpovedi> responseEntity = aresTemplate.getForEntity(UriBuilder.fromBase(aresORUrl).queryParam(icoParameterName, ico).queryParam(xmlParameterName, xmlParameterValue).queryParam(versionParameterName, versionParameterValue).buildEncoded(), AresOdpovedi.class);
+        final ResponseEntity<AresOdpovedi> responseEntity = aresTemplate.getForEntity(UriBuilder.fromBase(Constants.ARES_OR_URL).queryParam(icoParameterName, ico).queryParam(xmlParameterName, xmlParameterValue).queryParam(versionParameterName, versionParameterValue).buildEncoded(), AresOdpovedi.class);
         final AresOdpovedi aresOdpovedi = responseEntity.getBody();
         final List<OdpovedOR> results = aresOdpovedi.getOdpoved();
         if (results.isEmpty()) {
