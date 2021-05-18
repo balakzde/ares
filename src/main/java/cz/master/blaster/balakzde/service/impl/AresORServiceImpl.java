@@ -8,9 +8,13 @@ import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_answer_or.v_1_0.AresOdpove
 import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_datatypes.v_1_0.OdpovedOR;
 import cz.mfcr.wwwinfo.ares.xml_doc.schemas.ares.ares_datatypes.v_1_0.VypisOR;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AresORServiceImpl implements AresORService {
@@ -22,11 +26,12 @@ public class AresORServiceImpl implements AresORService {
     private final String xmlParameterValue = "0";
     private final String versionParameterValue = "1.0.2";
 
-    private RestOperations aresTemplate = new RestTemplate();
-
+    private RestOperations aresTemplate = new RestTemplate(new ArrayList<HttpMessageConverter<?>>(Collections.singletonList(new Jaxb2RootElementHttpMessageConverter())));
 
     public VypisOR getVypisOR(String ico) throws NonexistentEntity {
-        final ResponseEntity<AresOdpovedi> responseEntity = aresTemplate.getForEntity(UriBuilder.fromBase(Constants.ARES_OR_URL).queryParam(icoParameterName, ico).queryParam(xmlParameterName, xmlParameterValue).queryParam(versionParameterName, versionParameterValue).buildEncoded(), AresOdpovedi.class);
+        final ResponseEntity<AresOdpovedi> responseEntity = aresTemplate.getForEntity(UriBuilder.fromBase(Constants.ARES_OR_URL)
+                .queryParam(icoParameterName, ico).queryParam(xmlParameterName, xmlParameterValue)
+                .queryParam(versionParameterName, versionParameterValue).buildEncoded(), AresOdpovedi.class);
         final AresOdpovedi aresOdpovedi = responseEntity.getBody();
         final List<OdpovedOR> results = aresOdpovedi.getOdpoved();
         if (results.isEmpty()) {
