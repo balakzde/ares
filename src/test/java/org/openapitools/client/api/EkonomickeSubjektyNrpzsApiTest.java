@@ -13,49 +13,51 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyNrpzsSeznam;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickySubjektNrpzs;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyNrpzsApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektyNrpzsApiTest {
 
     private final EkonomickeSubjektyNrpzsApi api = new EkonomickeSubjektyNrpzsApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání konkrétního ekonomického subjektu ze zdroje NRPZS
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratEkonomickySubjektNrpzsTest() throws ApiException {
+    public void vratEkonomickySubjektNrpzsTest() {
         String ico = null;
         EkonomickySubjektNrpzs response = api.vratEkonomickySubjektNrpzs(ico);
+
         // TODO: test validations
     }
-
+    
     /**
+     * 
+     *
      * Vyhledání seznamu ekonomických subjektu ze zdroje NRPZS
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejSeznamEkonomickychSubjektuNrpzsTest() throws ApiException {
+    public void vyhledejSeznamEkonomickychSubjektuNrpzsTest() {
         EkonomickeSubjektyRegistraceFiltr ekonomickeSubjektyRegistraceFiltr = null;
         EkonomickeSubjektyNrpzsSeznam response = api.vyhledejSeznamEkonomickychSubjektuNrpzs(ekonomickeSubjektyRegistraceFiltr);
+
         // TODO: test validations
     }
-
+    
 }

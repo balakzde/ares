@@ -14,55 +14,33 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Kontakty
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  Kontakty.JSON_PROPERTY_EMAIL,
+  Kontakty.JSON_PROPERTY_FAX,
+  Kontakty.JSON_PROPERTY_TELEFON,
+  Kontakty.JSON_PROPERTY_WWW
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class Kontakty {
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
+  public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
 
-  public static final String SERIALIZED_NAME_FAX = "fax";
-  @SerializedName(SERIALIZED_NAME_FAX)
+  public static final String JSON_PROPERTY_FAX = "fax";
   private String fax;
 
-  public static final String SERIALIZED_NAME_TELEFON = "telefon";
-  @SerializedName(SERIALIZED_NAME_TELEFON)
+  public static final String JSON_PROPERTY_TELEFON = "telefon";
   private String telefon;
 
-  public static final String SERIALIZED_NAME_WWW = "www";
-  @SerializedName(SERIALIZED_NAME_WWW)
+  public static final String JSON_PROPERTY_WWW = "www";
   private String www;
 
   public Kontakty() {
@@ -80,12 +58,16 @@ public class Kontakty {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Email zdravotnického zařízení ")
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEmail() {
     return email;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmail(String email) {
     this.email = email;
   }
@@ -103,12 +85,16 @@ public class Kontakty {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FAX)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFax() {
     return fax;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FAX)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFax(String fax) {
     this.fax = fax;
   }
@@ -126,12 +112,16 @@ public class Kontakty {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Telefoní kontakt")
+  @JsonProperty(JSON_PROPERTY_TELEFON)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTelefon() {
     return telefon;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TELEFON)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTelefon(String telefon) {
     this.telefon = telefon;
   }
@@ -149,16 +139,19 @@ public class Kontakty {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "WWW zdravotnického zařízení")
+  @JsonProperty(JSON_PROPERTY_WWW)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getWww() {
     return www;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_WWW)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWww(String www) {
     this.www = www;
   }
-
 
 
   @Override
@@ -204,105 +197,5 @@ public class Kontakty {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("email");
-    openapiFields.add("fax");
-    openapiFields.add("telefon");
-    openapiFields.add("www");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Kontakty
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Kontakty.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Kontakty is not found in the empty JSON string", Kontakty.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Kontakty.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Kontakty` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
-      }
-      if ((jsonObj.get("fax") != null && !jsonObj.get("fax").isJsonNull()) && !jsonObj.get("fax").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fax` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fax").toString()));
-      }
-      if ((jsonObj.get("telefon") != null && !jsonObj.get("telefon").isJsonNull()) && !jsonObj.get("telefon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `telefon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("telefon").toString()));
-      }
-      if ((jsonObj.get("www") != null && !jsonObj.get("www").isJsonNull()) && !jsonObj.get("www").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `www` to be a primitive type in the JSON string but got `%s`", jsonObj.get("www").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Kontakty.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Kontakty' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Kontakty> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Kontakty.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Kontakty>() {
-           @Override
-           public void write(JsonWriter out, Kontakty value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Kontakty read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Kontakty given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Kontakty
-  * @throws IOException if the JSON string is invalid with respect to Kontakty
-  */
-  public static Kontakty fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Kontakty.class);
-  }
-
- /**
-  * Convert an instance of Kontakty to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

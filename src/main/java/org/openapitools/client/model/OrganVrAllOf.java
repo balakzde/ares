@@ -14,67 +14,46 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AngazmaOsobaVr;
-import org.openapitools.client.model.PocetClenuVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * OrganVrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  OrganVrAllOf.JSON_PROPERTY_NAZEV_ORGANU,
+  OrganVrAllOf.JSON_PROPERTY_POCET_CLENU,
+  OrganVrAllOf.JSON_PROPERTY_CLENOVE_ORGANU,
+  OrganVrAllOf.JSON_PROPERTY_TYP_ORGANU,
+  OrganVrAllOf.JSON_PROPERTY_NAZEV_ANGAZMA,
+  OrganVrAllOf.JSON_PROPERTY_TYP_ANGAZMA
+})
+@JsonTypeName("OrganVr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class OrganVrAllOf {
-  public static final String SERIALIZED_NAME_NAZEV_ORGANU = "nazevOrganu";
-  @SerializedName(SERIALIZED_NAME_NAZEV_ORGANU)
+  public static final String JSON_PROPERTY_NAZEV_ORGANU = "nazevOrganu";
   private String nazevOrganu;
 
-  public static final String SERIALIZED_NAME_POCET_CLENU = "pocetClenu";
-  @SerializedName(SERIALIZED_NAME_POCET_CLENU)
+  public static final String JSON_PROPERTY_POCET_CLENU = "pocetClenu";
   private List<PocetClenuVr> pocetClenu = null;
 
-  public static final String SERIALIZED_NAME_CLENOVE_ORGANU = "clenoveOrganu";
-  @SerializedName(SERIALIZED_NAME_CLENOVE_ORGANU)
+  public static final String JSON_PROPERTY_CLENOVE_ORGANU = "clenoveOrganu";
   private List<AngazmaOsobaVr> clenoveOrganu = null;
 
-  public static final String SERIALIZED_NAME_TYP_ORGANU = "typOrganu";
-  @SerializedName(SERIALIZED_NAME_TYP_ORGANU)
+  public static final String JSON_PROPERTY_TYP_ORGANU = "typOrganu";
   private String typOrganu;
 
-  public static final String SERIALIZED_NAME_NAZEV_ANGAZMA = "nazevAngazma";
-  @SerializedName(SERIALIZED_NAME_NAZEV_ANGAZMA)
+  public static final String JSON_PROPERTY_NAZEV_ANGAZMA = "nazevAngazma";
   private String nazevAngazma;
 
-  public static final String SERIALIZED_NAME_TYP_ANGAZMA = "typAngazma";
-  @SerializedName(SERIALIZED_NAME_TYP_ANGAZMA)
+  public static final String JSON_PROPERTY_TYP_ANGAZMA = "typAngazma";
   private String typAngazma;
 
   public OrganVrAllOf() {
@@ -92,12 +71,16 @@ public class OrganVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název orgánu - nestandardní")
+  @JsonProperty(JSON_PROPERTY_NAZEV_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevOrganu() {
     return nazevOrganu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevOrganu(String nazevOrganu) {
     this.nazevOrganu = nazevOrganu;
   }
@@ -123,12 +106,16 @@ public class OrganVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POCET_CLENU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<PocetClenuVr> getPocetClenu() {
     return pocetClenu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_CLENU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetClenu(List<PocetClenuVr> pocetClenu) {
     this.pocetClenu = pocetClenu;
   }
@@ -154,12 +141,16 @@ public class OrganVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CLENOVE_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazmaOsobaVr> getClenoveOrganu() {
     return clenoveOrganu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CLENOVE_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setClenoveOrganu(List<AngazmaOsobaVr> clenoveOrganu) {
     this.clenoveOrganu = clenoveOrganu;
   }
@@ -177,12 +168,16 @@ public class OrganVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ orgánu - kód (ciselnikKod: TypOrganu, zdroj: vr) ")
+  @JsonProperty(JSON_PROPERTY_TYP_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypOrganu() {
     return typOrganu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypOrganu(String typOrganu) {
     this.typOrganu = typOrganu;
   }
@@ -200,12 +195,16 @@ public class OrganVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název orgánu - nestandardní")
+  @JsonProperty(JSON_PROPERTY_NAZEV_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevAngazma() {
     return nazevAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevAngazma(String nazevAngazma) {
     this.nazevAngazma = nazevAngazma;
   }
@@ -223,16 +222,19 @@ public class OrganVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ orgánu - kód (ciselnikKod: TypOrganu, zdroj: vr) ")
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypAngazma() {
     return typAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypAngazma(String typAngazma) {
     this.typAngazma = typAngazma;
   }
-
 
 
   @Override
@@ -282,135 +284,5 @@ public class OrganVrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("nazevOrganu");
-    openapiFields.add("pocetClenu");
-    openapiFields.add("clenoveOrganu");
-    openapiFields.add("typOrganu");
-    openapiFields.add("nazevAngazma");
-    openapiFields.add("typAngazma");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OrganVrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (OrganVrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrganVrAllOf is not found in the empty JSON string", OrganVrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!OrganVrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OrganVrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("nazevOrganu") != null && !jsonObj.get("nazevOrganu").isJsonNull()) && !jsonObj.get("nazevOrganu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevOrganu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevOrganu").toString()));
-      }
-      if (jsonObj.get("pocetClenu") != null && !jsonObj.get("pocetClenu").isJsonNull()) {
-        JsonArray jsonArraypocetClenu = jsonObj.getAsJsonArray("pocetClenu");
-        if (jsonArraypocetClenu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pocetClenu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pocetClenu` to be an array in the JSON string but got `%s`", jsonObj.get("pocetClenu").toString()));
-          }
-
-          // validate the optional field `pocetClenu` (array)
-          for (int i = 0; i < jsonArraypocetClenu.size(); i++) {
-            PocetClenuVr.validateJsonObject(jsonArraypocetClenu.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("clenoveOrganu") != null && !jsonObj.get("clenoveOrganu").isJsonNull()) {
-        JsonArray jsonArrayclenoveOrganu = jsonObj.getAsJsonArray("clenoveOrganu");
-        if (jsonArrayclenoveOrganu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("clenoveOrganu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `clenoveOrganu` to be an array in the JSON string but got `%s`", jsonObj.get("clenoveOrganu").toString()));
-          }
-
-          // validate the optional field `clenoveOrganu` (array)
-          for (int i = 0; i < jsonArrayclenoveOrganu.size(); i++) {
-            AngazmaOsobaVr.validateJsonObject(jsonArrayclenoveOrganu.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("typOrganu") != null && !jsonObj.get("typOrganu").isJsonNull()) && !jsonObj.get("typOrganu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typOrganu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typOrganu").toString()));
-      }
-      if ((jsonObj.get("nazevAngazma") != null && !jsonObj.get("nazevAngazma").isJsonNull()) && !jsonObj.get("nazevAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevAngazma").toString()));
-      }
-      if ((jsonObj.get("typAngazma") != null && !jsonObj.get("typAngazma").isJsonNull()) && !jsonObj.get("typAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typAngazma").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OrganVrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OrganVrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OrganVrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OrganVrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<OrganVrAllOf>() {
-           @Override
-           public void write(JsonWriter out, OrganVrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public OrganVrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of OrganVrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OrganVrAllOf
-  * @throws IOException if the JSON string is invalid with respect to OrganVrAllOf
-  */
-  public static OrganVrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OrganVrAllOf.class);
-  }
-
- /**
-  * Convert an instance of OrganVrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -13,50 +13,51 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickeSubjektyRzpSeznam;
 import org.openapitools.client.model.EkonomickySubjektRzp;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyRzpApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektyRzpApiTest {
 
     private final EkonomickeSubjektyRzpApi api = new EkonomickeSubjektyRzpApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání konkrétního ekonomického subjektu ze zdroje RŽP
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratEkonomickySubjektRzpTest() throws ApiException {
-        String ico = "49779133";
+    public void vratEkonomickySubjektRzpTest() {
+        String ico = null;
         EkonomickySubjektRzp response = api.vratEkonomickySubjektRzp(ico);
-        System.out.println(response.getZaznamy().size());
-        System.out.println(response.getZaznamy().get(0).getAdresySubjektu().get(0).getCisloDomovni());
-    }
 
-    /**
-     * Vyhledání seznamu ekonomických subjektu ze zdroje RŽP
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void vyhledejSeznamEkonomickychSubjektuRzpTest() throws ApiException {
-        EkonomickeSubjektyRegistraceFiltr ekonomickeSubjektyRegistraceFiltr = null;
-        EkonomickeSubjektyRzpSeznam response = api.vyhledejSeznamEkonomickychSubjektuRzp(ekonomickeSubjektyRegistraceFiltr);
         // TODO: test validations
     }
+    
+    /**
+     * 
+     *
+     * Vyhledání seznamu ekonomických subjektu ze zdroje RŽP
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void vyhledejSeznamEkonomickychSubjektuRzpTest() {
+        EkonomickeSubjektyRegistraceFiltr ekonomickeSubjektyRegistraceFiltr = null;
+        EkonomickeSubjektyRzpSeznam response = api.vyhledejSeznamEkonomickychSubjektuRzp(ekonomickeSubjektyRegistraceFiltr);
 
+        // TODO: test validations
+    }
+    
 }

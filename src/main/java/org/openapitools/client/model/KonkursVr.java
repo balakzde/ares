@@ -14,81 +14,59 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AngazmaOsobaVr;
-import org.openapitools.client.model.ObecnyTextVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Konkurzní řízení
  */
 @ApiModel(description = "Konkurzní řízení")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  KonkursVr.JSON_PROPERTY_DATUM_ZAPISU,
+  KonkursVr.JSON_PROPERTY_DATUM_VYMAZU,
+  KonkursVr.JSON_PROPERTY_SPRAVCE,
+  KonkursVr.JSON_PROPERTY_TYP_KONKURSU,
+  KonkursVr.JSON_PROPERTY_DATUM_ROZHODNUTI_OS,
+  KonkursVr.JSON_PROPERTY_DATUM_VYVESENI,
+  KonkursVr.JSON_PROPERTY_SPIS_ZN_OS,
+  KonkursVr.JSON_PROPERTY_TEXT,
+  KonkursVr.JSON_PROPERTY_ZRUSENI_KONKURSU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class KonkursVr {
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU = "datumZapisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
   private LocalDate datumZapisu;
 
-  public static final String SERIALIZED_NAME_DATUM_VYMAZU = "datumVymazu";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYMAZU)
+  public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
   private LocalDate datumVymazu;
 
-  public static final String SERIALIZED_NAME_SPRAVCE = "spravce";
-  @SerializedName(SERIALIZED_NAME_SPRAVCE)
+  public static final String JSON_PROPERTY_SPRAVCE = "spravce";
   private List<AngazmaOsobaVr> spravce = null;
 
-  public static final String SERIALIZED_NAME_TYP_KONKURSU = "typKonkursu";
-  @SerializedName(SERIALIZED_NAME_TYP_KONKURSU)
+  public static final String JSON_PROPERTY_TYP_KONKURSU = "typKonkursu";
   private String typKonkursu;
 
-  public static final String SERIALIZED_NAME_DATUM_ROZHODNUTI_OS = "datumRozhodnutiOs";
-  @SerializedName(SERIALIZED_NAME_DATUM_ROZHODNUTI_OS)
+  public static final String JSON_PROPERTY_DATUM_ROZHODNUTI_OS = "datumRozhodnutiOs";
   private LocalDate datumRozhodnutiOs;
 
-  public static final String SERIALIZED_NAME_DATUM_VYVESENI = "datumVyveseni";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYVESENI)
+  public static final String JSON_PROPERTY_DATUM_VYVESENI = "datumVyveseni";
   private LocalDate datumVyveseni;
 
-  public static final String SERIALIZED_NAME_SPIS_ZN_OS = "spisZnOs";
-  @SerializedName(SERIALIZED_NAME_SPIS_ZN_OS)
+  public static final String JSON_PROPERTY_SPIS_ZN_OS = "spisZnOs";
   private String spisZnOs;
 
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
+  public static final String JSON_PROPERTY_TEXT = "text";
   private String text;
 
-  public static final String SERIALIZED_NAME_ZRUSENI_KONKURSU = "zruseniKonkursu";
-  @SerializedName(SERIALIZED_NAME_ZRUSENI_KONKURSU)
+  public static final String JSON_PROPERTY_ZRUSENI_KONKURSU = "zruseniKonkursu";
   private List<ObecnyTextVr> zruseniKonkursu = null;
 
   public KonkursVr() {
@@ -106,12 +84,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisu() {
     return datumZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisu(LocalDate datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
@@ -129,12 +111,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum výmazu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVymazu() {
     return datumVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVymazu(LocalDate datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
@@ -160,12 +146,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPRAVCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazmaOsobaVr> getSpravce() {
     return spravce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPRAVCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpravce(List<AngazmaOsobaVr> spravce) {
     this.spravce = spravce;
   }
@@ -183,12 +173,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ konkursu - kód (ciselnikKod: TypKonkursu) ")
+  @JsonProperty(JSON_PROPERTY_TYP_KONKURSU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypKonkursu() {
     return typKonkursu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_KONKURSU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypKonkursu(String typKonkursu) {
     this.typKonkursu = typKonkursu;
   }
@@ -206,12 +200,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum rozhodnutí okresního soudu")
+  @JsonProperty(JSON_PROPERTY_DATUM_ROZHODNUTI_OS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumRozhodnutiOs() {
     return datumRozhodnutiOs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ROZHODNUTI_OS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumRozhodnutiOs(LocalDate datumRozhodnutiOs) {
     this.datumRozhodnutiOs = datumRozhodnutiOs;
   }
@@ -229,12 +227,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum vyvěšení rozhodnutí")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYVESENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVyveseni() {
     return datumVyveseni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYVESENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVyveseni(LocalDate datumVyveseni) {
     this.datumVyveseni = datumVyveseni;
   }
@@ -252,12 +254,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPIS_ZN_OS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSpisZnOs() {
     return spisZnOs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPIS_ZN_OS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpisZnOs(String spisZnOs) {
     this.spisZnOs = spisZnOs;
   }
@@ -275,12 +281,16 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Vlastní informace o konkurzním řízení")
+  @JsonProperty(JSON_PROPERTY_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getText() {
     return text;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setText(String text) {
     this.text = text;
   }
@@ -306,16 +316,19 @@ public class KonkursVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ZRUSENI_KONKURSU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getZruseniKonkursu() {
     return zruseniKonkursu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZRUSENI_KONKURSU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZruseniKonkursu(List<ObecnyTextVr> zruseniKonkursu) {
     this.zruseniKonkursu = zruseniKonkursu;
   }
-
 
 
   @Override
@@ -371,135 +384,5 @@ public class KonkursVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumZapisu");
-    openapiFields.add("datumVymazu");
-    openapiFields.add("spravce");
-    openapiFields.add("typKonkursu");
-    openapiFields.add("datumRozhodnutiOs");
-    openapiFields.add("datumVyveseni");
-    openapiFields.add("spisZnOs");
-    openapiFields.add("text");
-    openapiFields.add("zruseniKonkursu");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to KonkursVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (KonkursVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in KonkursVr is not found in the empty JSON string", KonkursVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!KonkursVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `KonkursVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("spravce") != null && !jsonObj.get("spravce").isJsonNull()) {
-        JsonArray jsonArrayspravce = jsonObj.getAsJsonArray("spravce");
-        if (jsonArrayspravce != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("spravce").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `spravce` to be an array in the JSON string but got `%s`", jsonObj.get("spravce").toString()));
-          }
-
-          // validate the optional field `spravce` (array)
-          for (int i = 0; i < jsonArrayspravce.size(); i++) {
-            AngazmaOsobaVr.validateJsonObject(jsonArrayspravce.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("typKonkursu") != null && !jsonObj.get("typKonkursu").isJsonNull()) && !jsonObj.get("typKonkursu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typKonkursu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typKonkursu").toString()));
-      }
-      if ((jsonObj.get("spisZnOs") != null && !jsonObj.get("spisZnOs").isJsonNull()) && !jsonObj.get("spisZnOs").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `spisZnOs` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spisZnOs").toString()));
-      }
-      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
-      }
-      if (jsonObj.get("zruseniKonkursu") != null && !jsonObj.get("zruseniKonkursu").isJsonNull()) {
-        JsonArray jsonArrayzruseniKonkursu = jsonObj.getAsJsonArray("zruseniKonkursu");
-        if (jsonArrayzruseniKonkursu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("zruseniKonkursu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `zruseniKonkursu` to be an array in the JSON string but got `%s`", jsonObj.get("zruseniKonkursu").toString()));
-          }
-
-          // validate the optional field `zruseniKonkursu` (array)
-          for (int i = 0; i < jsonArrayzruseniKonkursu.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArrayzruseniKonkursu.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!KonkursVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'KonkursVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<KonkursVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(KonkursVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<KonkursVr>() {
-           @Override
-           public void write(JsonWriter out, KonkursVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public KonkursVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of KonkursVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of KonkursVr
-  * @throws IOException if the JSON string is invalid with respect to KonkursVr
-  */
-  public static KonkursVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, KonkursVr.class);
-  }
-
- /**
-  * Convert an instance of KonkursVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -14,65 +14,45 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.Adresa;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * AngazovanaOsobaRpshAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  AngazovanaOsobaRpshAllOf.JSON_PROPERTY_FUNKCE,
+  AngazovanaOsobaRpshAllOf.JSON_PROPERTY_PLATNOST_OD,
+  AngazovanaOsobaRpshAllOf.JSON_PROPERTY_PLATNOST_DO,
+  AngazovanaOsobaRpshAllOf.JSON_PROPERTY_ADRESA,
+  AngazovanaOsobaRpshAllOf.JSON_PROPERTY_KOD,
+  AngazovanaOsobaRpshAllOf.JSON_PROPERTY_TYP_ANGAZMA
+})
+@JsonTypeName("AngazovanaOsobaRpsh_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class AngazovanaOsobaRpshAllOf {
-  public static final String SERIALIZED_NAME_FUNKCE = "funkce";
-  @SerializedName(SERIALIZED_NAME_FUNKCE)
+  public static final String JSON_PROPERTY_FUNKCE = "funkce";
   private String funkce;
 
-  public static final String SERIALIZED_NAME_PLATNOST_OD = "platnostOd";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_OD)
+  public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
   private LocalDate platnostOd;
 
-  public static final String SERIALIZED_NAME_PLATNOST_DO = "platnostDo";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_DO)
+  public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
   private LocalDate platnostDo;
 
-  public static final String SERIALIZED_NAME_ADRESA = "adresa";
-  @SerializedName(SERIALIZED_NAME_ADRESA)
+  public static final String JSON_PROPERTY_ADRESA = "adresa";
   private Adresa adresa;
 
-  public static final String SERIALIZED_NAME_KOD = "kod";
-  @SerializedName(SERIALIZED_NAME_KOD)
+  public static final String JSON_PROPERTY_KOD = "kod";
   private String kod;
 
-  public static final String SERIALIZED_NAME_TYP_ANGAZMA = "typAngazma";
-  @SerializedName(SERIALIZED_NAME_TYP_ANGAZMA)
+  public static final String JSON_PROPERTY_TYP_ANGAZMA = "typAngazma";
   private String typAngazma;
 
   public AngazovanaOsobaRpshAllOf() {
@@ -90,12 +70,16 @@ public class AngazovanaOsobaRpshAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název fukce")
+  @JsonProperty(JSON_PROPERTY_FUNKCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFunkce() {
     return funkce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FUNKCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFunkce(String funkce) {
     this.funkce = funkce;
   }
@@ -113,12 +97,16 @@ public class AngazovanaOsobaRpshAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost záznamu od data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostOd() {
     return platnostOd;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostOd(LocalDate platnostOd) {
     this.platnostOd = platnostOd;
   }
@@ -136,12 +124,16 @@ public class AngazovanaOsobaRpshAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost záznamu do data ")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostDo() {
     return platnostDo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostDo(LocalDate platnostDo) {
     this.platnostDo = platnostDo;
   }
@@ -159,12 +151,16 @@ public class AngazovanaOsobaRpshAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Adresa getAdresa() {
     return adresa;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdresa(Adresa adresa) {
     this.adresa = adresa;
   }
@@ -182,12 +178,16 @@ public class AngazovanaOsobaRpshAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód fukce")
+  @JsonProperty(JSON_PROPERTY_KOD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKod() {
     return kod;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKod(String kod) {
     this.kod = kod;
   }
@@ -205,16 +205,19 @@ public class AngazovanaOsobaRpshAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ angažmá osoby  - kód (ciselnikKod: TypAngazma) ")
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypAngazma() {
     return typAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypAngazma(String typAngazma) {
     this.typAngazma = typAngazma;
   }
-
 
 
   @Override
@@ -264,108 +267,5 @@ public class AngazovanaOsobaRpshAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("funkce");
-    openapiFields.add("platnostOd");
-    openapiFields.add("platnostDo");
-    openapiFields.add("adresa");
-    openapiFields.add("kod");
-    openapiFields.add("typAngazma");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AngazovanaOsobaRpshAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AngazovanaOsobaRpshAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AngazovanaOsobaRpshAllOf is not found in the empty JSON string", AngazovanaOsobaRpshAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AngazovanaOsobaRpshAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AngazovanaOsobaRpshAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("funkce") != null && !jsonObj.get("funkce").isJsonNull()) && !jsonObj.get("funkce").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `funkce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("funkce").toString()));
-      }
-      // validate the optional field `adresa`
-      if (jsonObj.get("adresa") != null && !jsonObj.get("adresa").isJsonNull()) {
-        Adresa.validateJsonObject(jsonObj.getAsJsonObject("adresa"));
-      }
-      if ((jsonObj.get("kod") != null && !jsonObj.get("kod").isJsonNull()) && !jsonObj.get("kod").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kod` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kod").toString()));
-      }
-      if ((jsonObj.get("typAngazma") != null && !jsonObj.get("typAngazma").isJsonNull()) && !jsonObj.get("typAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typAngazma").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AngazovanaOsobaRpshAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AngazovanaOsobaRpshAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AngazovanaOsobaRpshAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AngazovanaOsobaRpshAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AngazovanaOsobaRpshAllOf>() {
-           @Override
-           public void write(JsonWriter out, AngazovanaOsobaRpshAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AngazovanaOsobaRpshAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AngazovanaOsobaRpshAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AngazovanaOsobaRpshAllOf
-  * @throws IOException if the JSON string is invalid with respect to AngazovanaOsobaRpshAllOf
-  */
-  public static AngazovanaOsobaRpshAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AngazovanaOsobaRpshAllOf.class);
-  }
-
- /**
-  * Convert an instance of AngazovanaOsobaRpshAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

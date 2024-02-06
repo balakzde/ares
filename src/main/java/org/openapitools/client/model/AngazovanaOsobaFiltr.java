@@ -14,57 +14,36 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Angažovaná osoba
  */
 @ApiModel(description = "Angažovaná osoba")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  AngazovanaOsobaFiltr.JSON_PROPERTY_JMENO,
+  AngazovanaOsobaFiltr.JSON_PROPERTY_RODNE_CISLO,
+  AngazovanaOsobaFiltr.JSON_PROPERTY_PRIJMENI,
+  AngazovanaOsobaFiltr.JSON_PROPERTY_DATUM_NAROZENI
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class AngazovanaOsobaFiltr {
-  public static final String SERIALIZED_NAME_JMENO = "jmeno";
-  @SerializedName(SERIALIZED_NAME_JMENO)
+  public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;
 
-  public static final String SERIALIZED_NAME_RODNE_CISLO = "rodneCislo";
-  @SerializedName(SERIALIZED_NAME_RODNE_CISLO)
+  public static final String JSON_PROPERTY_RODNE_CISLO = "rodneCislo";
   private String rodneCislo;
 
-  public static final String SERIALIZED_NAME_PRIJMENI = "prijmeni";
-  @SerializedName(SERIALIZED_NAME_PRIJMENI)
+  public static final String JSON_PROPERTY_PRIJMENI = "prijmeni";
   private String prijmeni;
 
-  public static final String SERIALIZED_NAME_DATUM_NAROZENI = "datumNarozeni";
-  @SerializedName(SERIALIZED_NAME_DATUM_NAROZENI)
+  public static final String JSON_PROPERTY_DATUM_NAROZENI = "datumNarozeni";
   private LocalDate datumNarozeni;
 
   public AngazovanaOsobaFiltr() {
@@ -82,12 +61,16 @@ public class AngazovanaOsobaFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Jméno angažované osoby")
+  @JsonProperty(JSON_PROPERTY_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getJmeno() {
     return jmeno;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setJmeno(String jmeno) {
     this.jmeno = jmeno;
   }
@@ -105,12 +88,16 @@ public class AngazovanaOsobaFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Rodné číslo osoby")
+  @JsonProperty(JSON_PROPERTY_RODNE_CISLO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRodneCislo() {
     return rodneCislo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RODNE_CISLO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRodneCislo(String rodneCislo) {
     this.rodneCislo = rodneCislo;
   }
@@ -128,12 +115,16 @@ public class AngazovanaOsobaFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Příjmení angažované osoby")
+  @JsonProperty(JSON_PROPERTY_PRIJMENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPrijmeni() {
     return prijmeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRIJMENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrijmeni(String prijmeni) {
     this.prijmeni = prijmeni;
   }
@@ -151,16 +142,19 @@ public class AngazovanaOsobaFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum narození angažované osoby")
+  @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumNarozeni() {
     return datumNarozeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumNarozeni(LocalDate datumNarozeni) {
     this.datumNarozeni = datumNarozeni;
   }
-
 
 
   @Override
@@ -206,102 +200,5 @@ public class AngazovanaOsobaFiltr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("jmeno");
-    openapiFields.add("rodneCislo");
-    openapiFields.add("prijmeni");
-    openapiFields.add("datumNarozeni");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AngazovanaOsobaFiltr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AngazovanaOsobaFiltr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AngazovanaOsobaFiltr is not found in the empty JSON string", AngazovanaOsobaFiltr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AngazovanaOsobaFiltr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AngazovanaOsobaFiltr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("jmeno") != null && !jsonObj.get("jmeno").isJsonNull()) && !jsonObj.get("jmeno").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `jmeno` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jmeno").toString()));
-      }
-      if ((jsonObj.get("rodneCislo") != null && !jsonObj.get("rodneCislo").isJsonNull()) && !jsonObj.get("rodneCislo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rodneCislo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rodneCislo").toString()));
-      }
-      if ((jsonObj.get("prijmeni") != null && !jsonObj.get("prijmeni").isJsonNull()) && !jsonObj.get("prijmeni").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prijmeni` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prijmeni").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AngazovanaOsobaFiltr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AngazovanaOsobaFiltr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AngazovanaOsobaFiltr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AngazovanaOsobaFiltr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AngazovanaOsobaFiltr>() {
-           @Override
-           public void write(JsonWriter out, AngazovanaOsobaFiltr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AngazovanaOsobaFiltr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AngazovanaOsobaFiltr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AngazovanaOsobaFiltr
-  * @throws IOException if the JSON string is invalid with respect to AngazovanaOsobaFiltr
-  */
-  public static AngazovanaOsobaFiltr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AngazovanaOsobaFiltr.class);
-  }
-
- /**
-  * Convert an instance of AngazovanaOsobaFiltr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

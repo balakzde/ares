@@ -13,36 +13,34 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.CiselnikyNazevnikSeznam;
 import org.openapitools.client.model.CiselnikyZakladniFiltr;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for CiselnikyNazevnikyApi
  */
-@Disabled
+@Ignore
 public class CiselnikyNazevnikyApiTest {
 
     private final CiselnikyNazevnikyApi api = new CiselnikyNazevnikyApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání číselníků používaných v IS ARES podle komplexního filtru
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejCiselnikTest() throws ApiException {
+    public void vyhledejCiselnikTest() {
         CiselnikyZakladniFiltr ciselnikyZakladniFiltr = null;
         CiselnikyNazevnikSeznam response = api.vyhledejCiselnik(ciselnikyZakladniFiltr);
+
         // TODO: test validations
     }
-
+    
 }

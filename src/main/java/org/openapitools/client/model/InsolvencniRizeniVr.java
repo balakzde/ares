@@ -14,61 +14,39 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AngazmaOsobaVr;
-import org.openapitools.client.model.InsolvencniZapisVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Insolvence
  */
 @ApiModel(description = "Insolvence")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  InsolvencniRizeniVr.JSON_PROPERTY_DATUM_ZAPISU,
+  InsolvencniRizeniVr.JSON_PROPERTY_DATUM_VYMAZU,
+  InsolvencniRizeniVr.JSON_PROPERTY_SPRAVCE,
+  InsolvencniRizeniVr.JSON_PROPERTY_INSOLVENCNI_ZAPIS
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class InsolvencniRizeniVr {
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU = "datumZapisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
   private LocalDate datumZapisu;
 
-  public static final String SERIALIZED_NAME_DATUM_VYMAZU = "datumVymazu";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYMAZU)
+  public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
   private LocalDate datumVymazu;
 
-  public static final String SERIALIZED_NAME_SPRAVCE = "spravce";
-  @SerializedName(SERIALIZED_NAME_SPRAVCE)
+  public static final String JSON_PROPERTY_SPRAVCE = "spravce";
   private List<AngazmaOsobaVr> spravce = null;
 
-  public static final String SERIALIZED_NAME_INSOLVENCNI_ZAPIS = "insolvencniZapis";
-  @SerializedName(SERIALIZED_NAME_INSOLVENCNI_ZAPIS)
+  public static final String JSON_PROPERTY_INSOLVENCNI_ZAPIS = "insolvencniZapis";
   private List<InsolvencniZapisVr> insolvencniZapis = null;
 
   public InsolvencniRizeniVr() {
@@ -86,12 +64,16 @@ public class InsolvencniRizeniVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisu() {
     return datumZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisu(LocalDate datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
@@ -109,12 +91,16 @@ public class InsolvencniRizeniVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum výmazu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVymazu() {
     return datumVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVymazu(LocalDate datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
@@ -140,12 +126,16 @@ public class InsolvencniRizeniVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPRAVCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazmaOsobaVr> getSpravce() {
     return spravce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPRAVCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpravce(List<AngazmaOsobaVr> spravce) {
     this.spravce = spravce;
   }
@@ -171,16 +161,19 @@ public class InsolvencniRizeniVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INSOLVENCNI_ZAPIS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<InsolvencniZapisVr> getInsolvencniZapis() {
     return insolvencniZapis;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INSOLVENCNI_ZAPIS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInsolvencniZapis(List<InsolvencniZapisVr> insolvencniZapis) {
     this.insolvencniZapis = insolvencniZapis;
   }
-
 
 
   @Override
@@ -226,121 +219,5 @@ public class InsolvencniRizeniVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumZapisu");
-    openapiFields.add("datumVymazu");
-    openapiFields.add("spravce");
-    openapiFields.add("insolvencniZapis");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to InsolvencniRizeniVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (InsolvencniRizeniVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsolvencniRizeniVr is not found in the empty JSON string", InsolvencniRizeniVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!InsolvencniRizeniVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InsolvencniRizeniVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("spravce") != null && !jsonObj.get("spravce").isJsonNull()) {
-        JsonArray jsonArrayspravce = jsonObj.getAsJsonArray("spravce");
-        if (jsonArrayspravce != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("spravce").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `spravce` to be an array in the JSON string but got `%s`", jsonObj.get("spravce").toString()));
-          }
-
-          // validate the optional field `spravce` (array)
-          for (int i = 0; i < jsonArrayspravce.size(); i++) {
-            AngazmaOsobaVr.validateJsonObject(jsonArrayspravce.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("insolvencniZapis") != null && !jsonObj.get("insolvencniZapis").isJsonNull()) {
-        JsonArray jsonArrayinsolvencniZapis = jsonObj.getAsJsonArray("insolvencniZapis");
-        if (jsonArrayinsolvencniZapis != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("insolvencniZapis").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `insolvencniZapis` to be an array in the JSON string but got `%s`", jsonObj.get("insolvencniZapis").toString()));
-          }
-
-          // validate the optional field `insolvencniZapis` (array)
-          for (int i = 0; i < jsonArrayinsolvencniZapis.size(); i++) {
-            InsolvencniZapisVr.validateJsonObject(jsonArrayinsolvencniZapis.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InsolvencniRizeniVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InsolvencniRizeniVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InsolvencniRizeniVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InsolvencniRizeniVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<InsolvencniRizeniVr>() {
-           @Override
-           public void write(JsonWriter out, InsolvencniRizeniVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public InsolvencniRizeniVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of InsolvencniRizeniVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsolvencniRizeniVr
-  * @throws IOException if the JSON string is invalid with respect to InsolvencniRizeniVr
-  */
-  public static InsolvencniRizeniVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InsolvencniRizeniVr.class);
-  }
-
- /**
-  * Convert an instance of InsolvencniRizeniVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -14,51 +14,31 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * PocetClenuVrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  PocetClenuVrAllOf.JSON_PROPERTY_POCET_CLENU,
+  PocetClenuVrAllOf.JSON_PROPERTY_MAX_POCET_CLENU,
+  PocetClenuVrAllOf.JSON_PROPERTY_TYP
+})
+@JsonTypeName("PocetClenuVr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class PocetClenuVrAllOf {
-  public static final String SERIALIZED_NAME_POCET_CLENU = "pocetClenu";
-  @SerializedName(SERIALIZED_NAME_POCET_CLENU)
+  public static final String JSON_PROPERTY_POCET_CLENU = "pocetClenu";
   private Integer pocetClenu;
 
-  public static final String SERIALIZED_NAME_MAX_POCET_CLENU = "maxPocetClenu";
-  @SerializedName(SERIALIZED_NAME_MAX_POCET_CLENU)
+  public static final String JSON_PROPERTY_MAX_POCET_CLENU = "maxPocetClenu";
   private Integer maxPocetClenu;
 
-  public static final String SERIALIZED_NAME_TYP = "typ";
-  @SerializedName(SERIALIZED_NAME_TYP)
+  public static final String JSON_PROPERTY_TYP = "typ";
   private String typ;
 
   public PocetClenuVrAllOf() {
@@ -77,12 +57,16 @@ public class PocetClenuVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POCET_CLENU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocetClenu() {
     return pocetClenu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_CLENU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetClenu(Integer pocetClenu) {
     this.pocetClenu = pocetClenu;
   }
@@ -101,12 +85,16 @@ public class PocetClenuVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MAX_POCET_CLENU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getMaxPocetClenu() {
     return maxPocetClenu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MAX_POCET_CLENU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaxPocetClenu(Integer maxPocetClenu) {
     this.maxPocetClenu = maxPocetClenu;
   }
@@ -124,16 +112,19 @@ public class PocetClenuVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ počet členů - kód (ciselnikKod: TypPocetClenu) ")
+  @JsonProperty(JSON_PROPERTY_TYP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTyp() {
     return typ;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTyp(String typ) {
     this.typ = typ;
   }
-
 
 
   @Override
@@ -177,95 +168,5 @@ public class PocetClenuVrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("pocetClenu");
-    openapiFields.add("maxPocetClenu");
-    openapiFields.add("typ");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PocetClenuVrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (PocetClenuVrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PocetClenuVrAllOf is not found in the empty JSON string", PocetClenuVrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!PocetClenuVrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PocetClenuVrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("typ") != null && !jsonObj.get("typ").isJsonNull()) && !jsonObj.get("typ").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typ` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typ").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PocetClenuVrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PocetClenuVrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PocetClenuVrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PocetClenuVrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<PocetClenuVrAllOf>() {
-           @Override
-           public void write(JsonWriter out, PocetClenuVrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public PocetClenuVrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of PocetClenuVrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PocetClenuVrAllOf
-  * @throws IOException if the JSON string is invalid with respect to PocetClenuVrAllOf
-  */
-  public static PocetClenuVrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PocetClenuVrAllOf.class);
-  }
-
- /**
-  * Convert an instance of PocetClenuVrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

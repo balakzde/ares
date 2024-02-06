@@ -10,61 +10,48 @@
  * Do not edit the class manually.
  */
 
-
 package org.openapitools.client;
 
-import okhttp3.MediaType;
-import okhttp3.ResponseBody;
+import com.fasterxml.jackson.databind.util.StdDateFormat;
 
-import java.io.IOException;
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.util.Date;
+import java.text.DecimalFormat;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
-import okio.Buffer;
-import okio.BufferedSource;
-import okio.ForwardingSource;
-import okio.Okio;
-import okio.Source;
+public class RFC3339DateFormat extends DateFormat {
+  private static final long serialVersionUID = 1L;
+  private static final TimeZone TIMEZONE_Z = TimeZone.getTimeZone("UTC");
 
-public class ProgressResponseBody extends ResponseBody {
+  private final StdDateFormat fmt = new StdDateFormat()
+          .withTimeZone(TIMEZONE_Z)
+          .withColonInTimeZone(true);
 
-    private final ResponseBody responseBody;
-    private final ApiCallback callback;
-    private BufferedSource bufferedSource;
+  public RFC3339DateFormat() {
+    this.calendar = new GregorianCalendar();
+    this.numberFormat = new DecimalFormat();
+  }
 
-    public ProgressResponseBody(ResponseBody responseBody, ApiCallback callback) {
-        this.responseBody = responseBody;
-        this.callback = callback;
-    }
+  @Override
+  public Date parse(String source) {
+    return parse(source, new ParsePosition(0));
+  }
 
-    @Override
-    public MediaType contentType() {
-        return responseBody.contentType();
-    }
+  @Override
+  public Date parse(String source, ParsePosition pos) {
+    return fmt.parse(source, pos);
+  }
 
-    @Override
-    public long contentLength() {
-        return responseBody.contentLength();
-    }
+  @Override
+  public StringBuffer format(Date date, StringBuffer toAppendTo, FieldPosition fieldPosition) {
+    return fmt.format(date, toAppendTo, fieldPosition);
+  }
 
-    @Override
-    public BufferedSource source() {
-        if (bufferedSource == null) {
-            bufferedSource = Okio.buffer(source(responseBody.source()));
-        }
-        return bufferedSource;
-    }
-
-    private Source source(Source source) {
-        return new ForwardingSource(source) {
-            long totalBytesRead = 0L;
-
-            @Override
-            public long read(Buffer sink, long byteCount) throws IOException {
-                long bytesRead = super.read(sink, byteCount);
-                // read() returns the number of bytes read, or -1 if this source is exhausted.
-                totalBytesRead += bytesRead != -1 ? bytesRead : 0;
-                callback.onDownloadProgress(totalBytesRead, responseBody.contentLength(), bytesRead == -1);
-                return bytesRead;
-            }
-        };
-    }
+  @Override
+  public Object clone() {
+    return super.clone();
+  }
 }

@@ -14,47 +14,27 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * InsolvencniZapisVrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  InsolvencniZapisVrAllOf.JSON_PROPERTY_TEXT,
+  InsolvencniZapisVrAllOf.JSON_PROPERTY_TYP_ZAPISU
+})
+@JsonTypeName("InsolvencniZapisVr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class InsolvencniZapisVrAllOf {
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
+  public static final String JSON_PROPERTY_TEXT = "text";
   private String text;
 
-  public static final String SERIALIZED_NAME_TYP_ZAPISU = "typZapisu";
-  @SerializedName(SERIALIZED_NAME_TYP_ZAPISU)
+  public static final String JSON_PROPERTY_TYP_ZAPISU = "typZapisu";
   private String typZapisu;
 
   public InsolvencniZapisVrAllOf() {
@@ -72,12 +52,16 @@ public class InsolvencniZapisVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getText() {
     return text;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setText(String text) {
     this.text = text;
   }
@@ -95,16 +79,19 @@ public class InsolvencniZapisVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ insolvenčního zápisu- kód (ciselnikKod: TypInsolvencnihoZapisu) ")
+  @JsonProperty(JSON_PROPERTY_TYP_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypZapisu() {
     return typZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypZapisu(String typZapisu) {
     this.typZapisu = typZapisu;
   }
-
 
 
   @Override
@@ -146,97 +133,5 @@ public class InsolvencniZapisVrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("text");
-    openapiFields.add("typZapisu");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to InsolvencniZapisVrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (InsolvencniZapisVrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsolvencniZapisVrAllOf is not found in the empty JSON string", InsolvencniZapisVrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!InsolvencniZapisVrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InsolvencniZapisVrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
-      }
-      if ((jsonObj.get("typZapisu") != null && !jsonObj.get("typZapisu").isJsonNull()) && !jsonObj.get("typZapisu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typZapisu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typZapisu").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InsolvencniZapisVrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InsolvencniZapisVrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InsolvencniZapisVrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InsolvencniZapisVrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<InsolvencniZapisVrAllOf>() {
-           @Override
-           public void write(JsonWriter out, InsolvencniZapisVrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public InsolvencniZapisVrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of InsolvencniZapisVrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsolvencniZapisVrAllOf
-  * @throws IOException if the JSON string is invalid with respect to InsolvencniZapisVrAllOf
-  */
-  public static InsolvencniZapisVrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InsolvencniZapisVrAllOf.class);
-  }
-
- /**
-  * Convert an instance of InsolvencniZapisVrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

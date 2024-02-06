@@ -14,58 +14,37 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.Adresa;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Osoba - obecný předek
  */
 @ApiModel(description = "Osoba - obecný předek")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  OsobaVr.JSON_PROPERTY_TEXT_OSOBA,
+  OsobaVr.JSON_PROPERTY_TEXT_OSOBA_OD,
+  OsobaVr.JSON_PROPERTY_ADRESA,
+  OsobaVr.JSON_PROPERTY_TEXT_OSOBA_DO
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class OsobaVr {
-  public static final String SERIALIZED_NAME_TEXT_OSOBA = "textOsoba";
-  @SerializedName(SERIALIZED_NAME_TEXT_OSOBA)
+  public static final String JSON_PROPERTY_TEXT_OSOBA = "textOsoba";
   private String textOsoba;
 
-  public static final String SERIALIZED_NAME_TEXT_OSOBA_OD = "textOsobaOd";
-  @SerializedName(SERIALIZED_NAME_TEXT_OSOBA_OD)
+  public static final String JSON_PROPERTY_TEXT_OSOBA_OD = "textOsobaOd";
   private LocalDate textOsobaOd;
 
-  public static final String SERIALIZED_NAME_ADRESA = "adresa";
-  @SerializedName(SERIALIZED_NAME_ADRESA)
+  public static final String JSON_PROPERTY_ADRESA = "adresa";
   private Adresa adresa;
 
-  public static final String SERIALIZED_NAME_TEXT_OSOBA_DO = "textOsobaDo";
-  @SerializedName(SERIALIZED_NAME_TEXT_OSOBA_DO)
+  public static final String JSON_PROPERTY_TEXT_OSOBA_DO = "textOsobaDo";
   private LocalDate textOsobaDo;
 
   public OsobaVr() {
@@ -83,12 +62,16 @@ public class OsobaVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Doplňková informace k osobě")
+  @JsonProperty(JSON_PROPERTY_TEXT_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTextOsoba() {
     return textOsoba;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXT_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTextOsoba(String textOsoba) {
     this.textOsoba = textOsoba;
   }
@@ -106,12 +89,16 @@ public class OsobaVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost doplňkové informace o osobě od data")
+  @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getTextOsobaOd() {
     return textOsobaOd;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTextOsobaOd(LocalDate textOsobaOd) {
     this.textOsobaOd = textOsobaOd;
   }
@@ -129,12 +116,16 @@ public class OsobaVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Adresa getAdresa() {
     return adresa;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdresa(Adresa adresa) {
     this.adresa = adresa;
   }
@@ -152,16 +143,19 @@ public class OsobaVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost doplňkové informace o osobě od data")
+  @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getTextOsobaDo() {
     return textOsobaDo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTextOsobaDo(LocalDate textOsobaDo) {
     this.textOsobaDo = textOsobaDo;
   }
-
 
 
   @Override
@@ -207,100 +201,5 @@ public class OsobaVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("textOsoba");
-    openapiFields.add("textOsobaOd");
-    openapiFields.add("adresa");
-    openapiFields.add("textOsobaDo");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OsobaVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (OsobaVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OsobaVr is not found in the empty JSON string", OsobaVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!OsobaVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OsobaVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("textOsoba") != null && !jsonObj.get("textOsoba").isJsonNull()) && !jsonObj.get("textOsoba").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `textOsoba` to be a primitive type in the JSON string but got `%s`", jsonObj.get("textOsoba").toString()));
-      }
-      // validate the optional field `adresa`
-      if (jsonObj.get("adresa") != null && !jsonObj.get("adresa").isJsonNull()) {
-        Adresa.validateJsonObject(jsonObj.getAsJsonObject("adresa"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OsobaVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OsobaVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OsobaVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OsobaVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<OsobaVr>() {
-           @Override
-           public void write(JsonWriter out, OsobaVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public OsobaVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of OsobaVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OsobaVr
-  * @throws IOException if the JSON string is invalid with respect to OsobaVr
-  */
-  public static OsobaVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OsobaVr.class);
-  }
-
- /**
-  * Convert an instance of OsobaVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

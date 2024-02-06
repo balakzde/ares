@@ -14,64 +14,42 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * RegistraceRcns
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  RegistraceRcns.JSON_PROPERTY_CISLO_REGISTRACE,
+  RegistraceRcns.JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE,
+  RegistraceRcns.JSON_PROPERTY_DATUM_LIKVIDACE,
+  RegistraceRcns.JSON_PROPERTY_DATUM_KONKURZU,
+  RegistraceRcns.JSON_PROPERTY_DATUM_OPATROVNIK,
+  RegistraceRcns.JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class RegistraceRcns {
-  public static final String SERIALIZED_NAME_CISLO_REGISTRACE = "cisloRegistrace";
-  @SerializedName(SERIALIZED_NAME_CISLO_REGISTRACE)
+  public static final String JSON_PROPERTY_CISLO_REGISTRACE = "cisloRegistrace";
   private String cisloRegistrace;
 
-  public static final String SERIALIZED_NAME_CISLO_ZRUSENI_REGISTRACE = "cisloZruseniRegistrace";
-  @SerializedName(SERIALIZED_NAME_CISLO_ZRUSENI_REGISTRACE)
+  public static final String JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE = "cisloZruseniRegistrace";
   private String cisloZruseniRegistrace;
 
-  public static final String SERIALIZED_NAME_DATUM_LIKVIDACE = "datumLikvidace";
-  @SerializedName(SERIALIZED_NAME_DATUM_LIKVIDACE)
+  public static final String JSON_PROPERTY_DATUM_LIKVIDACE = "datumLikvidace";
   private LocalDate datumLikvidace;
 
-  public static final String SERIALIZED_NAME_DATUM_KONKURZU = "datumKonkurzu";
-  @SerializedName(SERIALIZED_NAME_DATUM_KONKURZU)
+  public static final String JSON_PROPERTY_DATUM_KONKURZU = "datumKonkurzu";
   private LocalDate datumKonkurzu;
 
-  public static final String SERIALIZED_NAME_DATUM_OPATROVNIK = "datumOpatrovnik";
-  @SerializedName(SERIALIZED_NAME_DATUM_OPATROVNIK)
+  public static final String JSON_PROPERTY_DATUM_OPATROVNIK = "datumOpatrovnik";
   private LocalDate datumOpatrovnik;
 
-  public static final String SERIALIZED_NAME_DATUM_ZRUSENI_REGISTRACE = "datumZruseniRegistrace";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZRUSENI_REGISTRACE)
+  public static final String JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE = "datumZruseniRegistrace";
   private LocalDate datumZruseniRegistrace;
 
   public RegistraceRcns() {
@@ -89,12 +67,16 @@ public class RegistraceRcns {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Pro subjekt typu církev a svaz církví je zde uvedeno registrační číslo pod kterým byl daný subjekt zaregistrován na MK. Pro subjekty typu právnická osoba je zde uvedeno evidenční číslo pod kterým byl daný subjekt zaevidován na MK.")
+  @JsonProperty(JSON_PROPERTY_CISLO_REGISTRACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCisloRegistrace() {
     return cisloRegistrace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_REGISTRACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloRegistrace(String cisloRegistrace) {
     this.cisloRegistrace = cisloRegistrace;
   }
@@ -112,12 +94,16 @@ public class RegistraceRcns {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zrušení registrace, evidence subjektu na MK")
+  @JsonProperty(JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCisloZruseniRegistrace() {
     return cisloZruseniRegistrace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloZruseniRegistrace(String cisloZruseniRegistrace) {
     this.cisloZruseniRegistrace = cisloZruseniRegistrace;
   }
@@ -135,12 +121,16 @@ public class RegistraceRcns {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum vyhlášení likvidace subjektu")
+  @JsonProperty(JSON_PROPERTY_DATUM_LIKVIDACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumLikvidace() {
     return datumLikvidace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_LIKVIDACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumLikvidace(LocalDate datumLikvidace) {
     this.datumLikvidace = datumLikvidace;
   }
@@ -158,12 +148,16 @@ public class RegistraceRcns {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum vyhlášení konkurzu subjektu")
+  @JsonProperty(JSON_PROPERTY_DATUM_KONKURZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumKonkurzu() {
     return datumKonkurzu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_KONKURZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumKonkurzu(LocalDate datumKonkurzu) {
     this.datumKonkurzu = datumKonkurzu;
   }
@@ -181,12 +175,16 @@ public class RegistraceRcns {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum jmenování opatrovníka")
+  @JsonProperty(JSON_PROPERTY_DATUM_OPATROVNIK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumOpatrovnik() {
     return datumOpatrovnik;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_OPATROVNIK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumOpatrovnik(LocalDate datumOpatrovnik) {
     this.datumOpatrovnik = datumOpatrovnik;
   }
@@ -204,16 +202,19 @@ public class RegistraceRcns {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zrušení registrace, evidence subjektu na MK")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZruseniRegistrace() {
     return datumZruseniRegistrace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZruseniRegistrace(LocalDate datumZruseniRegistrace) {
     this.datumZruseniRegistrace = datumZruseniRegistrace;
   }
-
 
 
   @Override
@@ -263,101 +264,5 @@ public class RegistraceRcns {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cisloRegistrace");
-    openapiFields.add("cisloZruseniRegistrace");
-    openapiFields.add("datumLikvidace");
-    openapiFields.add("datumKonkurzu");
-    openapiFields.add("datumOpatrovnik");
-    openapiFields.add("datumZruseniRegistrace");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RegistraceRcns
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (RegistraceRcns.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RegistraceRcns is not found in the empty JSON string", RegistraceRcns.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!RegistraceRcns.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RegistraceRcns` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("cisloRegistrace") != null && !jsonObj.get("cisloRegistrace").isJsonNull()) && !jsonObj.get("cisloRegistrace").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cisloRegistrace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cisloRegistrace").toString()));
-      }
-      if ((jsonObj.get("cisloZruseniRegistrace") != null && !jsonObj.get("cisloZruseniRegistrace").isJsonNull()) && !jsonObj.get("cisloZruseniRegistrace").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cisloZruseniRegistrace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cisloZruseniRegistrace").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RegistraceRcns.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RegistraceRcns' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RegistraceRcns> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RegistraceRcns.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<RegistraceRcns>() {
-           @Override
-           public void write(JsonWriter out, RegistraceRcns value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public RegistraceRcns read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of RegistraceRcns given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RegistraceRcns
-  * @throws IOException if the JSON string is invalid with respect to RegistraceRcns
-  */
-  public static RegistraceRcns fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RegistraceRcns.class);
-  }
-
- /**
-  * Convert an instance of RegistraceRcns to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

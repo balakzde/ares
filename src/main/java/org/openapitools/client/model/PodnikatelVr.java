@@ -14,73 +14,51 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AdresaVr;
-import org.openapitools.client.model.AngazmaFyzickaOsobaVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Podnikatel
  */
 @ApiModel(description = "Podnikatel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  PodnikatelVr.JSON_PROPERTY_DATUM_ZAPISU,
+  PodnikatelVr.JSON_PROPERTY_DATUM_VYMAZU,
+  PodnikatelVr.JSON_PROPERTY_BYDLISTE,
+  PodnikatelVr.JSON_PROPERTY_OSOBA_PODNIKATEL,
+  PodnikatelVr.JSON_PROPERTY_POBYT,
+  PodnikatelVr.JSON_PROPERTY_TYP_ANGAZMA,
+  PodnikatelVr.JSON_PROPERTY_NAZEV_ANGAZMA
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class PodnikatelVr {
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU = "datumZapisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
   private LocalDate datumZapisu;
 
-  public static final String SERIALIZED_NAME_DATUM_VYMAZU = "datumVymazu";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYMAZU)
+  public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
   private LocalDate datumVymazu;
 
-  public static final String SERIALIZED_NAME_BYDLISTE = "bydliste";
-  @SerializedName(SERIALIZED_NAME_BYDLISTE)
+  public static final String JSON_PROPERTY_BYDLISTE = "bydliste";
   private List<AdresaVr> bydliste = null;
 
-  public static final String SERIALIZED_NAME_OSOBA_PODNIKATEL = "osobaPodnikatel";
-  @SerializedName(SERIALIZED_NAME_OSOBA_PODNIKATEL)
+  public static final String JSON_PROPERTY_OSOBA_PODNIKATEL = "osobaPodnikatel";
   private AngazmaFyzickaOsobaVr osobaPodnikatel;
 
-  public static final String SERIALIZED_NAME_POBYT = "pobyt";
-  @SerializedName(SERIALIZED_NAME_POBYT)
+  public static final String JSON_PROPERTY_POBYT = "pobyt";
   private List<AdresaVr> pobyt = null;
 
-  public static final String SERIALIZED_NAME_TYP_ANGAZMA = "typAngazma";
-  @SerializedName(SERIALIZED_NAME_TYP_ANGAZMA)
+  public static final String JSON_PROPERTY_TYP_ANGAZMA = "typAngazma";
   private String typAngazma;
 
-  public static final String SERIALIZED_NAME_NAZEV_ANGAZMA = "nazevAngazma";
-  @SerializedName(SERIALIZED_NAME_NAZEV_ANGAZMA)
+  public static final String JSON_PROPERTY_NAZEV_ANGAZMA = "nazevAngazma";
   private String nazevAngazma;
 
   public PodnikatelVr() {
@@ -98,12 +76,16 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisu() {
     return datumZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisu(LocalDate datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
@@ -121,12 +103,16 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum výmazu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVymazu() {
     return datumVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVymazu(LocalDate datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
@@ -152,12 +138,16 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BYDLISTE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AdresaVr> getBydliste() {
     return bydliste;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BYDLISTE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBydliste(List<AdresaVr> bydliste) {
     this.bydliste = bydliste;
   }
@@ -175,12 +165,16 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OSOBA_PODNIKATEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AngazmaFyzickaOsobaVr getOsobaPodnikatel() {
     return osobaPodnikatel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OSOBA_PODNIKATEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOsobaPodnikatel(AngazmaFyzickaOsobaVr osobaPodnikatel) {
     this.osobaPodnikatel = osobaPodnikatel;
   }
@@ -206,12 +200,16 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POBYT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AdresaVr> getPobyt() {
     return pobyt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POBYT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPobyt(List<AdresaVr> pobyt) {
     this.pobyt = pobyt;
   }
@@ -229,12 +227,16 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ angažmá  - kód (ciselnikKod: TypAngazma, zdroj: vr) ")
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypAngazma() {
     return typAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypAngazma(String typAngazma) {
     this.typAngazma = typAngazma;
   }
@@ -252,16 +254,19 @@ public class PodnikatelVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název angažmá - nestandardní")
+  @JsonProperty(JSON_PROPERTY_NAZEV_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevAngazma() {
     return nazevAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevAngazma(String nazevAngazma) {
     this.nazevAngazma = nazevAngazma;
   }
-
 
 
   @Override
@@ -313,134 +318,5 @@ public class PodnikatelVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumZapisu");
-    openapiFields.add("datumVymazu");
-    openapiFields.add("bydliste");
-    openapiFields.add("osobaPodnikatel");
-    openapiFields.add("pobyt");
-    openapiFields.add("typAngazma");
-    openapiFields.add("nazevAngazma");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PodnikatelVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (PodnikatelVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PodnikatelVr is not found in the empty JSON string", PodnikatelVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!PodnikatelVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PodnikatelVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("bydliste") != null && !jsonObj.get("bydliste").isJsonNull()) {
-        JsonArray jsonArraybydliste = jsonObj.getAsJsonArray("bydliste");
-        if (jsonArraybydliste != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("bydliste").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `bydliste` to be an array in the JSON string but got `%s`", jsonObj.get("bydliste").toString()));
-          }
-
-          // validate the optional field `bydliste` (array)
-          for (int i = 0; i < jsonArraybydliste.size(); i++) {
-            AdresaVr.validateJsonObject(jsonArraybydliste.get(i).getAsJsonObject());
-          };
-        }
-      }
-      // validate the optional field `osobaPodnikatel`
-      if (jsonObj.get("osobaPodnikatel") != null && !jsonObj.get("osobaPodnikatel").isJsonNull()) {
-        AngazmaFyzickaOsobaVr.validateJsonObject(jsonObj.getAsJsonObject("osobaPodnikatel"));
-      }
-      if (jsonObj.get("pobyt") != null && !jsonObj.get("pobyt").isJsonNull()) {
-        JsonArray jsonArraypobyt = jsonObj.getAsJsonArray("pobyt");
-        if (jsonArraypobyt != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pobyt").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pobyt` to be an array in the JSON string but got `%s`", jsonObj.get("pobyt").toString()));
-          }
-
-          // validate the optional field `pobyt` (array)
-          for (int i = 0; i < jsonArraypobyt.size(); i++) {
-            AdresaVr.validateJsonObject(jsonArraypobyt.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("typAngazma") != null && !jsonObj.get("typAngazma").isJsonNull()) && !jsonObj.get("typAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typAngazma").toString()));
-      }
-      if ((jsonObj.get("nazevAngazma") != null && !jsonObj.get("nazevAngazma").isJsonNull()) && !jsonObj.get("nazevAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevAngazma").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PodnikatelVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PodnikatelVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PodnikatelVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PodnikatelVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<PodnikatelVr>() {
-           @Override
-           public void write(JsonWriter out, PodnikatelVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public PodnikatelVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of PodnikatelVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PodnikatelVr
-  * @throws IOException if the JSON string is invalid with respect to PodnikatelVr
-  */
-  public static PodnikatelVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PodnikatelVr.class);
-  }
-
- /**
-  * Convert an instance of PodnikatelVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

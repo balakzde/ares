@@ -14,48 +14,27 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Statistické informace o subjektu
  */
 @ApiModel(description = "Statistické informace o subjektu")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  StatistickeUdaje.JSON_PROPERTY_INSTITUCIONALNI_SEKTOR2010,
+  StatistickeUdaje.JSON_PROPERTY_KATEGORIE_POCTU_PRACOVNIKU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class StatistickeUdaje {
-  public static final String SERIALIZED_NAME_INSTITUCIONALNI_SEKTOR2010 = "institucionalniSektor2010";
-  @SerializedName(SERIALIZED_NAME_INSTITUCIONALNI_SEKTOR2010)
+  public static final String JSON_PROPERTY_INSTITUCIONALNI_SEKTOR2010 = "institucionalniSektor2010";
   private String institucionalniSektor2010;
 
-  public static final String SERIALIZED_NAME_KATEGORIE_POCTU_PRACOVNIKU = "kategoriePoctuPracovniku";
-  @SerializedName(SERIALIZED_NAME_KATEGORIE_POCTU_PRACOVNIKU)
+  public static final String JSON_PROPERTY_KATEGORIE_POCTU_PRACOVNIKU = "kategoriePoctuPracovniku";
   private String kategoriePoctuPracovniku;
 
   public StatistickeUdaje() {
@@ -73,12 +52,16 @@ public class StatistickeUdaje {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Institucinální sektor dle ESA2010 - kód (ciselnikKod: FceVladnichInstituci) ")
+  @JsonProperty(JSON_PROPERTY_INSTITUCIONALNI_SEKTOR2010)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getInstitucionalniSektor2010() {
     return institucionalniSektor2010;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INSTITUCIONALNI_SEKTOR2010)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInstitucionalniSektor2010(String institucionalniSektor2010) {
     this.institucionalniSektor2010 = institucionalniSektor2010;
   }
@@ -96,16 +79,19 @@ public class StatistickeUdaje {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kategorie dle počtu pracovníků - kód (ciselnikKod: KategoriePoctuPracovniku, zdroj: res) ")
+  @JsonProperty(JSON_PROPERTY_KATEGORIE_POCTU_PRACOVNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKategoriePoctuPracovniku() {
     return kategoriePoctuPracovniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KATEGORIE_POCTU_PRACOVNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKategoriePoctuPracovniku(String kategoriePoctuPracovniku) {
     this.kategoriePoctuPracovniku = kategoriePoctuPracovniku;
   }
-
 
 
   @Override
@@ -147,97 +133,5 @@ public class StatistickeUdaje {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("institucionalniSektor2010");
-    openapiFields.add("kategoriePoctuPracovniku");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StatistickeUdaje
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (StatistickeUdaje.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatistickeUdaje is not found in the empty JSON string", StatistickeUdaje.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!StatistickeUdaje.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StatistickeUdaje` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("institucionalniSektor2010") != null && !jsonObj.get("institucionalniSektor2010").isJsonNull()) && !jsonObj.get("institucionalniSektor2010").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `institucionalniSektor2010` to be a primitive type in the JSON string but got `%s`", jsonObj.get("institucionalniSektor2010").toString()));
-      }
-      if ((jsonObj.get("kategoriePoctuPracovniku") != null && !jsonObj.get("kategoriePoctuPracovniku").isJsonNull()) && !jsonObj.get("kategoriePoctuPracovniku").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kategoriePoctuPracovniku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kategoriePoctuPracovniku").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StatistickeUdaje.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StatistickeUdaje' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StatistickeUdaje> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StatistickeUdaje.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<StatistickeUdaje>() {
-           @Override
-           public void write(JsonWriter out, StatistickeUdaje value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public StatistickeUdaje read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of StatistickeUdaje given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StatistickeUdaje
-  * @throws IOException if the JSON string is invalid with respect to StatistickeUdaje
-  */
-  public static StatistickeUdaje fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StatistickeUdaje.class);
-  }
-
- /**
-  * Convert an instance of StatistickeUdaje to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

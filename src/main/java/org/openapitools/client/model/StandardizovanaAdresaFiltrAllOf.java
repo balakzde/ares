@@ -14,95 +14,75 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * StandardizovanaAdresaFiltrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_KOD_OBCE,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_NAZEV_OBCE,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_KOD_CASTI_OBCE,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_NAZEV_CASTI_OBCE,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_KOD_MESTSKEHO_CASTI_OBVODU,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_NAZEV_MESTSKEHO_CASTI_OBVODU,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_KOD_ULICE,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_NAZEV_ULICE,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_CISLO_DOMOVNI,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_CISLO_ORIENTACNI,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_CISLO_ORIENTACNI_PISMENO,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_KOD_ADRESNIHO_MISTA,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_TEXTOVA_ADRESA,
+  StandardizovanaAdresaFiltrAllOf.JSON_PROPERTY_TYP_STANDARDIZACE_ADRESY
+})
+@JsonTypeName("StandardizovanaAdresaFiltr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class StandardizovanaAdresaFiltrAllOf {
-  public static final String SERIALIZED_NAME_KOD_OBCE = "kodObce";
-  @SerializedName(SERIALIZED_NAME_KOD_OBCE)
+  public static final String JSON_PROPERTY_KOD_OBCE = "kodObce";
   private Integer kodObce;
 
-  public static final String SERIALIZED_NAME_NAZEV_OBCE = "nazevObce";
-  @SerializedName(SERIALIZED_NAME_NAZEV_OBCE)
+  public static final String JSON_PROPERTY_NAZEV_OBCE = "nazevObce";
   private String nazevObce;
 
-  public static final String SERIALIZED_NAME_KOD_CASTI_OBCE = "kodCastiObce";
-  @SerializedName(SERIALIZED_NAME_KOD_CASTI_OBCE)
+  public static final String JSON_PROPERTY_KOD_CASTI_OBCE = "kodCastiObce";
   private Integer kodCastiObce;
 
-  public static final String SERIALIZED_NAME_NAZEV_CASTI_OBCE = "nazevCastiObce";
-  @SerializedName(SERIALIZED_NAME_NAZEV_CASTI_OBCE)
+  public static final String JSON_PROPERTY_NAZEV_CASTI_OBCE = "nazevCastiObce";
   private String nazevCastiObce;
 
-  public static final String SERIALIZED_NAME_KOD_MESTSKEHO_CASTI_OBVODU = "kodMestskehoCastiObvodu";
-  @SerializedName(SERIALIZED_NAME_KOD_MESTSKEHO_CASTI_OBVODU)
+  public static final String JSON_PROPERTY_KOD_MESTSKEHO_CASTI_OBVODU = "kodMestskehoCastiObvodu";
   private Integer kodMestskehoCastiObvodu;
 
-  public static final String SERIALIZED_NAME_NAZEV_MESTSKEHO_CASTI_OBVODU = "nazevMestskehoCastiObvodu";
-  @SerializedName(SERIALIZED_NAME_NAZEV_MESTSKEHO_CASTI_OBVODU)
+  public static final String JSON_PROPERTY_NAZEV_MESTSKEHO_CASTI_OBVODU = "nazevMestskehoCastiObvodu";
   private String nazevMestskehoCastiObvodu;
 
-  public static final String SERIALIZED_NAME_KOD_ULICE = "kodUlice";
-  @SerializedName(SERIALIZED_NAME_KOD_ULICE)
+  public static final String JSON_PROPERTY_KOD_ULICE = "kodUlice";
   private Integer kodUlice;
 
-  public static final String SERIALIZED_NAME_NAZEV_ULICE = "nazevUlice";
-  @SerializedName(SERIALIZED_NAME_NAZEV_ULICE)
+  public static final String JSON_PROPERTY_NAZEV_ULICE = "nazevUlice";
   private String nazevUlice;
 
-  public static final String SERIALIZED_NAME_CISLO_DOMOVNI = "cisloDomovni";
-  @SerializedName(SERIALIZED_NAME_CISLO_DOMOVNI)
+  public static final String JSON_PROPERTY_CISLO_DOMOVNI = "cisloDomovni";
   private Integer cisloDomovni;
 
-  public static final String SERIALIZED_NAME_CISLO_ORIENTACNI = "cisloOrientacni";
-  @SerializedName(SERIALIZED_NAME_CISLO_ORIENTACNI)
+  public static final String JSON_PROPERTY_CISLO_ORIENTACNI = "cisloOrientacni";
   private Integer cisloOrientacni;
 
-  public static final String SERIALIZED_NAME_CISLO_ORIENTACNI_PISMENO = "cisloOrientacniPismeno";
-  @SerializedName(SERIALIZED_NAME_CISLO_ORIENTACNI_PISMENO)
+  public static final String JSON_PROPERTY_CISLO_ORIENTACNI_PISMENO = "cisloOrientacniPismeno";
   private String cisloOrientacniPismeno;
 
-  public static final String SERIALIZED_NAME_KOD_ADRESNIHO_MISTA = "kodAdresnihoMista";
-  @SerializedName(SERIALIZED_NAME_KOD_ADRESNIHO_MISTA)
+  public static final String JSON_PROPERTY_KOD_ADRESNIHO_MISTA = "kodAdresnihoMista";
   private Integer kodAdresnihoMista;
 
-  public static final String SERIALIZED_NAME_TEXTOVA_ADRESA = "textovaAdresa";
-  @SerializedName(SERIALIZED_NAME_TEXTOVA_ADRESA)
+  public static final String JSON_PROPERTY_TEXTOVA_ADRESA = "textovaAdresa";
   private String textovaAdresa;
 
-  public static final String SERIALIZED_NAME_TYP_STANDARDIZACE_ADRESY = "typStandardizaceAdresy";
-  @SerializedName(SERIALIZED_NAME_TYP_STANDARDIZACE_ADRESY)
+  public static final String JSON_PROPERTY_TYP_STANDARDIZACE_ADRESY = "typStandardizaceAdresy";
   private String typStandardizaceAdresy;
 
   public StandardizovanaAdresaFiltrAllOf() {
@@ -122,12 +102,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód obce")
+  @JsonProperty(JSON_PROPERTY_KOD_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getKodObce() {
     return kodObce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodObce(Integer kodObce) {
     this.kodObce = kodObce;
   }
@@ -145,12 +129,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název obce")
+  @JsonProperty(JSON_PROPERTY_NAZEV_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevObce() {
     return nazevObce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevObce(String nazevObce) {
     this.nazevObce = nazevObce;
   }
@@ -170,12 +158,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód části obce")
+  @JsonProperty(JSON_PROPERTY_KOD_CASTI_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getKodCastiObce() {
     return kodCastiObce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_CASTI_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodCastiObce(Integer kodCastiObce) {
     this.kodCastiObce = kodCastiObce;
   }
@@ -193,12 +185,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název části obce")
+  @JsonProperty(JSON_PROPERTY_NAZEV_CASTI_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevCastiObce() {
     return nazevCastiObce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_CASTI_OBCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevCastiObce(String nazevCastiObce) {
     this.nazevCastiObce = nazevCastiObce;
   }
@@ -218,12 +214,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód městské části statutárního města nebo Prahy ")
+  @JsonProperty(JSON_PROPERTY_KOD_MESTSKEHO_CASTI_OBVODU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getKodMestskehoCastiObvodu() {
     return kodMestskehoCastiObvodu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_MESTSKEHO_CASTI_OBVODU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodMestskehoCastiObvodu(Integer kodMestskehoCastiObvodu) {
     this.kodMestskehoCastiObvodu = kodMestskehoCastiObvodu;
   }
@@ -241,12 +241,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název městské části statutárního města nebo Prahy")
+  @JsonProperty(JSON_PROPERTY_NAZEV_MESTSKEHO_CASTI_OBVODU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevMestskehoCastiObvodu() {
     return nazevMestskehoCastiObvodu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_MESTSKEHO_CASTI_OBVODU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevMestskehoCastiObvodu(String nazevMestskehoCastiObvodu) {
     this.nazevMestskehoCastiObvodu = nazevMestskehoCastiObvodu;
   }
@@ -266,12 +270,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód ulice, veřejného prostranství ")
+  @JsonProperty(JSON_PROPERTY_KOD_ULICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getKodUlice() {
     return kodUlice;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_ULICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodUlice(Integer kodUlice) {
     this.kodUlice = kodUlice;
   }
@@ -289,12 +297,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název ulice, veřejného prostranství ")
+  @JsonProperty(JSON_PROPERTY_NAZEV_ULICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevUlice() {
     return nazevUlice;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_ULICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevUlice(String nazevUlice) {
     this.nazevUlice = nazevUlice;
   }
@@ -313,12 +325,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Číslo domovní")
+  @JsonProperty(JSON_PROPERTY_CISLO_DOMOVNI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCisloDomovni() {
     return cisloDomovni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_DOMOVNI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloDomovni(Integer cisloDomovni) {
     this.cisloDomovni = cisloDomovni;
   }
@@ -337,12 +353,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Číslo orientační - číselná část")
+  @JsonProperty(JSON_PROPERTY_CISLO_ORIENTACNI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCisloOrientacni() {
     return cisloOrientacni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_ORIENTACNI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloOrientacni(Integer cisloOrientacni) {
     this.cisloOrientacni = cisloOrientacni;
   }
@@ -360,12 +380,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Číslo orientační - písmenná část")
+  @JsonProperty(JSON_PROPERTY_CISLO_ORIENTACNI_PISMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCisloOrientacniPismeno() {
     return cisloOrientacniPismeno;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_ORIENTACNI_PISMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloOrientacniPismeno(String cisloOrientacniPismeno) {
     this.cisloOrientacniPismeno = cisloOrientacniPismeno;
   }
@@ -385,12 +409,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód adresního místa")
+  @JsonProperty(JSON_PROPERTY_KOD_ADRESNIHO_MISTA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getKodAdresnihoMista() {
     return kodAdresnihoMista;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_ADRESNIHO_MISTA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodAdresnihoMista(Integer kodAdresnihoMista) {
     this.kodAdresnihoMista = kodAdresnihoMista;
   }
@@ -408,12 +436,16 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Nestrukturovaná adresa")
+  @JsonProperty(JSON_PROPERTY_TEXTOVA_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTextovaAdresa() {
     return textovaAdresa;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXTOVA_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTextovaAdresa(String textovaAdresa) {
     this.textovaAdresa = textovaAdresa;
   }
@@ -431,16 +463,19 @@ public class StandardizovanaAdresaFiltrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ požadované standardizace - kód (číselník kod:TypStandardizaceAdresy) UPLNA_STANDARDIZACE, VYHOVUJICI_ADRESY")
+  @JsonProperty(JSON_PROPERTY_TYP_STANDARDIZACE_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypStandardizaceAdresy() {
     return typStandardizaceAdresy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_STANDARDIZACE_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypStandardizaceAdresy(String typStandardizaceAdresy) {
     this.typStandardizaceAdresy = typStandardizaceAdresy;
   }
-
 
 
   @Override
@@ -506,124 +541,5 @@ public class StandardizovanaAdresaFiltrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kodObce");
-    openapiFields.add("nazevObce");
-    openapiFields.add("kodCastiObce");
-    openapiFields.add("nazevCastiObce");
-    openapiFields.add("kodMestskehoCastiObvodu");
-    openapiFields.add("nazevMestskehoCastiObvodu");
-    openapiFields.add("kodUlice");
-    openapiFields.add("nazevUlice");
-    openapiFields.add("cisloDomovni");
-    openapiFields.add("cisloOrientacni");
-    openapiFields.add("cisloOrientacniPismeno");
-    openapiFields.add("kodAdresnihoMista");
-    openapiFields.add("textovaAdresa");
-    openapiFields.add("typStandardizaceAdresy");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StandardizovanaAdresaFiltrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (StandardizovanaAdresaFiltrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StandardizovanaAdresaFiltrAllOf is not found in the empty JSON string", StandardizovanaAdresaFiltrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!StandardizovanaAdresaFiltrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StandardizovanaAdresaFiltrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("nazevObce") != null && !jsonObj.get("nazevObce").isJsonNull()) && !jsonObj.get("nazevObce").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevObce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevObce").toString()));
-      }
-      if ((jsonObj.get("nazevCastiObce") != null && !jsonObj.get("nazevCastiObce").isJsonNull()) && !jsonObj.get("nazevCastiObce").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevCastiObce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevCastiObce").toString()));
-      }
-      if ((jsonObj.get("nazevMestskehoCastiObvodu") != null && !jsonObj.get("nazevMestskehoCastiObvodu").isJsonNull()) && !jsonObj.get("nazevMestskehoCastiObvodu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevMestskehoCastiObvodu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevMestskehoCastiObvodu").toString()));
-      }
-      if ((jsonObj.get("nazevUlice") != null && !jsonObj.get("nazevUlice").isJsonNull()) && !jsonObj.get("nazevUlice").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevUlice` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevUlice").toString()));
-      }
-      if ((jsonObj.get("cisloOrientacniPismeno") != null && !jsonObj.get("cisloOrientacniPismeno").isJsonNull()) && !jsonObj.get("cisloOrientacniPismeno").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cisloOrientacniPismeno` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cisloOrientacniPismeno").toString()));
-      }
-      if ((jsonObj.get("textovaAdresa") != null && !jsonObj.get("textovaAdresa").isJsonNull()) && !jsonObj.get("textovaAdresa").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `textovaAdresa` to be a primitive type in the JSON string but got `%s`", jsonObj.get("textovaAdresa").toString()));
-      }
-      if ((jsonObj.get("typStandardizaceAdresy") != null && !jsonObj.get("typStandardizaceAdresy").isJsonNull()) && !jsonObj.get("typStandardizaceAdresy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typStandardizaceAdresy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typStandardizaceAdresy").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StandardizovanaAdresaFiltrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StandardizovanaAdresaFiltrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StandardizovanaAdresaFiltrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StandardizovanaAdresaFiltrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<StandardizovanaAdresaFiltrAllOf>() {
-           @Override
-           public void write(JsonWriter out, StandardizovanaAdresaFiltrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public StandardizovanaAdresaFiltrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of StandardizovanaAdresaFiltrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StandardizovanaAdresaFiltrAllOf
-  * @throws IOException if the JSON string is invalid with respect to StandardizovanaAdresaFiltrAllOf
-  */
-  public static StandardizovanaAdresaFiltrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StandardizovanaAdresaFiltrAllOf.class);
-  }
-
- /**
-  * Convert an instance of StandardizovanaAdresaFiltrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -13,49 +13,51 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickeSubjektyRpshSeznam;
 import org.openapitools.client.model.EkonomickySubjektRpsh;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyRpshApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektyRpshApiTest {
 
     private final EkonomickeSubjektyRpshApi api = new EkonomickeSubjektyRpshApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání konkrétního ekonomického subjektu ze zdroje RPSH
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratEkonomickySubjektRpshTest() throws ApiException {
+    public void vratEkonomickySubjektRpshTest() {
         String ico = null;
         EkonomickySubjektRpsh response = api.vratEkonomickySubjektRpsh(ico);
+
         // TODO: test validations
     }
-
+    
     /**
+     * 
+     *
      * Vyhledání seznamu ekonomických subjektu ze zdroje RPSH
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejSeznamEkonomickychSubjektuRpshTest() throws ApiException {
+    public void vyhledejSeznamEkonomickychSubjektuRpshTest() {
         EkonomickeSubjektyRegistraceFiltr ekonomickeSubjektyRegistraceFiltr = null;
         EkonomickeSubjektyRpshSeznam response = api.vyhledejSeznamEkonomickychSubjektuRpsh(ekonomickeSubjektyRegistraceFiltr);
+
         // TODO: test validations
     }
-
+    
 }

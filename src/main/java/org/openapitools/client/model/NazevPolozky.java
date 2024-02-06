@@ -14,48 +14,27 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Seznam názvů položky číselníků z ohledem na jazykovou mutaci
  */
 @ApiModel(description = "Seznam názvů položky číselníků z ohledem na jazykovou mutaci")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  NazevPolozky.JSON_PROPERTY_KOD_JAZYKA,
+  NazevPolozky.JSON_PROPERTY_NAZEV
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class NazevPolozky {
-  public static final String SERIALIZED_NAME_KOD_JAZYKA = "kodJazyka";
-  @SerializedName(SERIALIZED_NAME_KOD_JAZYKA)
+  public static final String JSON_PROPERTY_KOD_JAZYKA = "kodJazyka";
   private String kodJazyka;
 
-  public static final String SERIALIZED_NAME_NAZEV = "nazev";
-  @SerializedName(SERIALIZED_NAME_NAZEV)
+  public static final String JSON_PROPERTY_NAZEV = "nazev";
   private String nazev;
 
   public NazevPolozky() {
@@ -73,12 +52,16 @@ public class NazevPolozky {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód jazyka položky číselníku")
+  @JsonProperty(JSON_PROPERTY_KOD_JAZYKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKodJazyka() {
     return kodJazyka;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_JAZYKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodJazyka(String kodJazyka) {
     this.kodJazyka = kodJazyka;
   }
@@ -96,16 +79,19 @@ public class NazevPolozky {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název položky číselníku")
+  @JsonProperty(JSON_PROPERTY_NAZEV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazev() {
     return nazev;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazev(String nazev) {
     this.nazev = nazev;
   }
-
 
 
   @Override
@@ -147,97 +133,5 @@ public class NazevPolozky {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kodJazyka");
-    openapiFields.add("nazev");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NazevPolozky
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (NazevPolozky.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NazevPolozky is not found in the empty JSON string", NazevPolozky.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!NazevPolozky.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NazevPolozky` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("kodJazyka") != null && !jsonObj.get("kodJazyka").isJsonNull()) && !jsonObj.get("kodJazyka").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kodJazyka` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kodJazyka").toString()));
-      }
-      if ((jsonObj.get("nazev") != null && !jsonObj.get("nazev").isJsonNull()) && !jsonObj.get("nazev").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazev` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazev").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!NazevPolozky.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'NazevPolozky' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<NazevPolozky> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(NazevPolozky.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<NazevPolozky>() {
-           @Override
-           public void write(JsonWriter out, NazevPolozky value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public NazevPolozky read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of NazevPolozky given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NazevPolozky
-  * @throws IOException if the JSON string is invalid with respect to NazevPolozky
-  */
-  public static NazevPolozky fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, NazevPolozky.class);
-  }
-
- /**
-  * Convert an instance of NazevPolozky to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

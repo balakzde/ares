@@ -14,90 +14,67 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.EkonomickySubjektRzpAdresa;
-import org.openapitools.client.model.InsolvencniRizeni;
-import org.openapitools.client.model.ProvozovnyRzpStav;
-import org.openapitools.client.model.ZivnostiRzpStav;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ZaznamRzpZakladAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_INSOLVENCNI_RIZENI,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_DATUM_DORUCENI_VYPISU,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_ADRESY_SUBJEKTU,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_TYP_SUBJEKTU,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_ZIVNOSTENSKY_URAD,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_ORGANIZACNI_SLOZKA,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_ZIVNOSTI_STAV,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_DATUM_ZAPISU_VR,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_PROVOZOVNY_STAV,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_PRIMARNI_ZAZNAM,
+  ZaznamRzpZakladAllOf.JSON_PROPERTY_KOD_STATU
+})
+@JsonTypeName("ZaznamRzpZaklad_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZaznamRzpZakladAllOf {
-  public static final String SERIALIZED_NAME_INSOLVENCNI_RIZENI = "insolvencniRizeni";
-  @SerializedName(SERIALIZED_NAME_INSOLVENCNI_RIZENI)
+  public static final String JSON_PROPERTY_INSOLVENCNI_RIZENI = "insolvencniRizeni";
   private InsolvencniRizeni insolvencniRizeni;
 
-  public static final String SERIALIZED_NAME_DATUM_DORUCENI_VYPISU = "datumDoruceniVypisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_DORUCENI_VYPISU)
+  public static final String JSON_PROPERTY_DATUM_DORUCENI_VYPISU = "datumDoruceniVypisu";
   private LocalDate datumDoruceniVypisu;
 
-  public static final String SERIALIZED_NAME_ADRESY_SUBJEKTU = "adresySubjektu";
-  @SerializedName(SERIALIZED_NAME_ADRESY_SUBJEKTU)
+  public static final String JSON_PROPERTY_ADRESY_SUBJEKTU = "adresySubjektu";
   private List<EkonomickySubjektRzpAdresa> adresySubjektu = null;
 
-  public static final String SERIALIZED_NAME_TYP_SUBJEKTU = "typSubjektu";
-  @SerializedName(SERIALIZED_NAME_TYP_SUBJEKTU)
+  public static final String JSON_PROPERTY_TYP_SUBJEKTU = "typSubjektu";
   private String typSubjektu;
 
-  public static final String SERIALIZED_NAME_ZIVNOSTENSKY_URAD = "zivnostenskyUrad";
-  @SerializedName(SERIALIZED_NAME_ZIVNOSTENSKY_URAD)
+  public static final String JSON_PROPERTY_ZIVNOSTENSKY_URAD = "zivnostenskyUrad";
   private String zivnostenskyUrad;
 
-  public static final String SERIALIZED_NAME_ORGANIZACNI_SLOZKA = "organizacniSlozka";
-  @SerializedName(SERIALIZED_NAME_ORGANIZACNI_SLOZKA)
+  public static final String JSON_PROPERTY_ORGANIZACNI_SLOZKA = "organizacniSlozka";
   private String organizacniSlozka;
 
-  public static final String SERIALIZED_NAME_ZIVNOSTI_STAV = "zivnostiStav";
-  @SerializedName(SERIALIZED_NAME_ZIVNOSTI_STAV)
+  public static final String JSON_PROPERTY_ZIVNOSTI_STAV = "zivnostiStav";
   private ZivnostiRzpStav zivnostiStav;
 
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU_VR = "datumZapisuVr";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU_VR)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU_VR = "datumZapisuVr";
   private LocalDate datumZapisuVr;
 
-  public static final String SERIALIZED_NAME_PROVOZOVNY_STAV = "provozovnyStav";
-  @SerializedName(SERIALIZED_NAME_PROVOZOVNY_STAV)
+  public static final String JSON_PROPERTY_PROVOZOVNY_STAV = "provozovnyStav";
   private ProvozovnyRzpStav provozovnyStav;
 
-  public static final String SERIALIZED_NAME_PRIMARNI_ZAZNAM = "primarniZaznam";
-  @SerializedName(SERIALIZED_NAME_PRIMARNI_ZAZNAM)
+  public static final String JSON_PROPERTY_PRIMARNI_ZAZNAM = "primarniZaznam";
   private Boolean primarniZaznam;
 
-  public static final String SERIALIZED_NAME_KOD_STATU = "kodStatu";
-  @SerializedName(SERIALIZED_NAME_KOD_STATU)
+  public static final String JSON_PROPERTY_KOD_STATU = "kodStatu";
   private String kodStatu;
 
   public ZaznamRzpZakladAllOf() {
@@ -115,12 +92,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INSOLVENCNI_RIZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public InsolvencniRizeni getInsolvencniRizeni() {
     return insolvencniRizeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INSOLVENCNI_RIZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInsolvencniRizeni(InsolvencniRizeni insolvencniRizeni) {
     this.insolvencniRizeni = insolvencniRizeni;
   }
@@ -138,12 +119,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum doručení prvního výpisu sloužícího jako průkaz živnostenského podnikání, ")
+  @JsonProperty(JSON_PROPERTY_DATUM_DORUCENI_VYPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumDoruceniVypisu() {
     return datumDoruceniVypisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_DORUCENI_VYPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumDoruceniVypisu(LocalDate datumDoruceniVypisu) {
     this.datumDoruceniVypisu = datumDoruceniVypisu;
   }
@@ -169,12 +154,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADRESY_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<EkonomickySubjektRzpAdresa> getAdresySubjektu() {
     return adresySubjektu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADRESY_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdresySubjektu(List<EkonomickySubjektRzpAdresa> adresySubjektu) {
     this.adresySubjektu = adresySubjektu;
   }
@@ -192,12 +181,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ subjektu - kód (ciselnikKod: TypSubjektu, zdroj: rzp) ")
+  @JsonProperty(JSON_PROPERTY_TYP_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypSubjektu() {
     return typSubjektu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypSubjektu(String typSubjektu) {
     this.typSubjektu = typSubjektu;
   }
@@ -215,12 +208,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Živnostenský úřadu - kód")
+  @JsonProperty(JSON_PROPERTY_ZIVNOSTENSKY_URAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getZivnostenskyUrad() {
     return zivnostenskyUrad;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZIVNOSTENSKY_URAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZivnostenskyUrad(String zivnostenskyUrad) {
     this.zivnostenskyUrad = zivnostenskyUrad;
   }
@@ -238,12 +235,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název organizační složky")
+  @JsonProperty(JSON_PROPERTY_ORGANIZACNI_SLOZKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOrganizacniSlozka() {
     return organizacniSlozka;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ORGANIZACNI_SLOZKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOrganizacniSlozka(String organizacniSlozka) {
     this.organizacniSlozka = organizacniSlozka;
   }
@@ -261,12 +262,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ZIVNOSTI_STAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ZivnostiRzpStav getZivnostiStav() {
     return zivnostiStav;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZIVNOSTI_STAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZivnostiStav(ZivnostiRzpStav zivnostiStav) {
     this.zivnostiStav = zivnostiStav;
   }
@@ -284,12 +289,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu do Obchodního nebo podobného rejstříku ")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU_VR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisuVr() {
     return datumZapisuVr;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU_VR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisuVr(LocalDate datumZapisuVr) {
     this.datumZapisuVr = datumZapisuVr;
   }
@@ -307,12 +316,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PROVOZOVNY_STAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ProvozovnyRzpStav getProvozovnyStav() {
     return provozovnyStav;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROVOZOVNY_STAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProvozovnyStav(ProvozovnyRzpStav provozovnyStav) {
     this.provozovnyStav = provozovnyStav;
   }
@@ -330,12 +343,16 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Identifikace primárního záznamu  pozn.: U multiplicitních registrací je pouze jedna registrace primární")
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getPrimarniZaznam() {
     return primarniZaznam;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimarniZaznam(Boolean primarniZaznam) {
     this.primarniZaznam = primarniZaznam;
   }
@@ -353,16 +370,19 @@ public class ZaznamRzpZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód státu  (ciselnikKod: Stat, zdroj:com) ")
+  @JsonProperty(JSON_PROPERTY_KOD_STATU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKodStatu() {
     return kodStatu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_STATU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodStatu(String kodStatu) {
     this.kodStatu = kodStatu;
   }
-
 
 
   @Override
@@ -422,138 +442,5 @@ public class ZaznamRzpZakladAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("insolvencniRizeni");
-    openapiFields.add("datumDoruceniVypisu");
-    openapiFields.add("adresySubjektu");
-    openapiFields.add("typSubjektu");
-    openapiFields.add("zivnostenskyUrad");
-    openapiFields.add("organizacniSlozka");
-    openapiFields.add("zivnostiStav");
-    openapiFields.add("datumZapisuVr");
-    openapiFields.add("provozovnyStav");
-    openapiFields.add("primarniZaznam");
-    openapiFields.add("kodStatu");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZaznamRzpZakladAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZaznamRzpZakladAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZaznamRzpZakladAllOf is not found in the empty JSON string", ZaznamRzpZakladAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZaznamRzpZakladAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZaznamRzpZakladAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `insolvencniRizeni`
-      if (jsonObj.get("insolvencniRizeni") != null && !jsonObj.get("insolvencniRizeni").isJsonNull()) {
-        InsolvencniRizeni.validateJsonObject(jsonObj.getAsJsonObject("insolvencniRizeni"));
-      }
-      if (jsonObj.get("adresySubjektu") != null && !jsonObj.get("adresySubjektu").isJsonNull()) {
-        JsonArray jsonArrayadresySubjektu = jsonObj.getAsJsonArray("adresySubjektu");
-        if (jsonArrayadresySubjektu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("adresySubjektu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `adresySubjektu` to be an array in the JSON string but got `%s`", jsonObj.get("adresySubjektu").toString()));
-          }
-
-          // validate the optional field `adresySubjektu` (array)
-          for (int i = 0; i < jsonArrayadresySubjektu.size(); i++) {
-            EkonomickySubjektRzpAdresa.validateJsonObject(jsonArrayadresySubjektu.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("typSubjektu") != null && !jsonObj.get("typSubjektu").isJsonNull()) && !jsonObj.get("typSubjektu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typSubjektu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typSubjektu").toString()));
-      }
-      if ((jsonObj.get("zivnostenskyUrad") != null && !jsonObj.get("zivnostenskyUrad").isJsonNull()) && !jsonObj.get("zivnostenskyUrad").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `zivnostenskyUrad` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zivnostenskyUrad").toString()));
-      }
-      if ((jsonObj.get("organizacniSlozka") != null && !jsonObj.get("organizacniSlozka").isJsonNull()) && !jsonObj.get("organizacniSlozka").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organizacniSlozka` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organizacniSlozka").toString()));
-      }
-      // validate the optional field `zivnostiStav`
-      if (jsonObj.get("zivnostiStav") != null && !jsonObj.get("zivnostiStav").isJsonNull()) {
-        ZivnostiRzpStav.validateJsonObject(jsonObj.getAsJsonObject("zivnostiStav"));
-      }
-      // validate the optional field `provozovnyStav`
-      if (jsonObj.get("provozovnyStav") != null && !jsonObj.get("provozovnyStav").isJsonNull()) {
-        ProvozovnyRzpStav.validateJsonObject(jsonObj.getAsJsonObject("provozovnyStav"));
-      }
-      if ((jsonObj.get("kodStatu") != null && !jsonObj.get("kodStatu").isJsonNull()) && !jsonObj.get("kodStatu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kodStatu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kodStatu").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZaznamRzpZakladAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZaznamRzpZakladAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZaznamRzpZakladAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZaznamRzpZakladAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZaznamRzpZakladAllOf>() {
-           @Override
-           public void write(JsonWriter out, ZaznamRzpZakladAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZaznamRzpZakladAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZaznamRzpZakladAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZaznamRzpZakladAllOf
-  * @throws IOException if the JSON string is invalid with respect to ZaznamRzpZakladAllOf
-  */
-  public static ZaznamRzpZakladAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZaznamRzpZakladAllOf.class);
-  }
-
- /**
-  * Convert an instance of ZaznamRzpZakladAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

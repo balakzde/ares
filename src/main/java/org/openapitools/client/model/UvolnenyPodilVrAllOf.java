@@ -14,49 +14,27 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.openapitools.client.model.AngazmaClenstviVr;
-import org.openapitools.client.model.PodilVr;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * UvolnenyPodilVrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  UvolnenyPodilVrAllOf.JSON_PROPERTY_CLENSTVI,
+  UvolnenyPodilVrAllOf.JSON_PROPERTY_PODIL
+})
+@JsonTypeName("UvolnenyPodilVr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class UvolnenyPodilVrAllOf {
-  public static final String SERIALIZED_NAME_CLENSTVI = "clenstvi";
-  @SerializedName(SERIALIZED_NAME_CLENSTVI)
+  public static final String JSON_PROPERTY_CLENSTVI = "clenstvi";
   private AngazmaClenstviVr clenstvi;
 
-  public static final String SERIALIZED_NAME_PODIL = "podil";
-  @SerializedName(SERIALIZED_NAME_PODIL)
+  public static final String JSON_PROPERTY_PODIL = "podil";
   private PodilVr podil;
 
   public UvolnenyPodilVrAllOf() {
@@ -74,12 +52,16 @@ public class UvolnenyPodilVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CLENSTVI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AngazmaClenstviVr getClenstvi() {
     return clenstvi;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CLENSTVI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setClenstvi(AngazmaClenstviVr clenstvi) {
     this.clenstvi = clenstvi;
   }
@@ -97,16 +79,19 @@ public class UvolnenyPodilVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PODIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public PodilVr getPodil() {
     return podil;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodil(PodilVr podil) {
     this.podil = podil;
   }
-
 
 
   @Override
@@ -148,99 +133,5 @@ public class UvolnenyPodilVrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("clenstvi");
-    openapiFields.add("podil");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UvolnenyPodilVrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UvolnenyPodilVrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UvolnenyPodilVrAllOf is not found in the empty JSON string", UvolnenyPodilVrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UvolnenyPodilVrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UvolnenyPodilVrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `clenstvi`
-      if (jsonObj.get("clenstvi") != null && !jsonObj.get("clenstvi").isJsonNull()) {
-        AngazmaClenstviVr.validateJsonObject(jsonObj.getAsJsonObject("clenstvi"));
-      }
-      // validate the optional field `podil`
-      if (jsonObj.get("podil") != null && !jsonObj.get("podil").isJsonNull()) {
-        PodilVr.validateJsonObject(jsonObj.getAsJsonObject("podil"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UvolnenyPodilVrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UvolnenyPodilVrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UvolnenyPodilVrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UvolnenyPodilVrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UvolnenyPodilVrAllOf>() {
-           @Override
-           public void write(JsonWriter out, UvolnenyPodilVrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UvolnenyPodilVrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UvolnenyPodilVrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UvolnenyPodilVrAllOf
-  * @throws IOException if the JSON string is invalid with respect to UvolnenyPodilVrAllOf
-  */
-  public static UvolnenyPodilVrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UvolnenyPodilVrAllOf.class);
-  }
-
- /**
-  * Convert an instance of UvolnenyPodilVrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

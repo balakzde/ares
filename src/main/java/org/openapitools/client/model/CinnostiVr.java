@@ -14,59 +14,38 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ObecnyTextVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Činnosti
  */
 @ApiModel(description = "Činnosti")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  CinnostiVr.JSON_PROPERTY_PREDMET_PODNIKANI,
+  CinnostiVr.JSON_PROPERTY_DOPLNKOVA_CINNOST,
+  CinnostiVr.JSON_PROPERTY_PREDMET_CINNOSTI,
+  CinnostiVr.JSON_PROPERTY_UCEL
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class CinnostiVr {
-  public static final String SERIALIZED_NAME_PREDMET_PODNIKANI = "predmetPodnikani";
-  @SerializedName(SERIALIZED_NAME_PREDMET_PODNIKANI)
+  public static final String JSON_PROPERTY_PREDMET_PODNIKANI = "predmetPodnikani";
   private List<ObecnyTextVr> predmetPodnikani = null;
 
-  public static final String SERIALIZED_NAME_DOPLNKOVA_CINNOST = "doplnkovaCinnost";
-  @SerializedName(SERIALIZED_NAME_DOPLNKOVA_CINNOST)
+  public static final String JSON_PROPERTY_DOPLNKOVA_CINNOST = "doplnkovaCinnost";
   private List<ObecnyTextVr> doplnkovaCinnost = null;
 
-  public static final String SERIALIZED_NAME_PREDMET_CINNOSTI = "predmetCinnosti";
-  @SerializedName(SERIALIZED_NAME_PREDMET_CINNOSTI)
+  public static final String JSON_PROPERTY_PREDMET_CINNOSTI = "predmetCinnosti";
   private List<ObecnyTextVr> predmetCinnosti = null;
 
-  public static final String SERIALIZED_NAME_UCEL = "ucel";
-  @SerializedName(SERIALIZED_NAME_UCEL)
+  public static final String JSON_PROPERTY_UCEL = "ucel";
   private List<ObecnyTextVr> ucel = null;
 
   public CinnostiVr() {
@@ -92,12 +71,16 @@ public class CinnostiVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PREDMET_PODNIKANI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getPredmetPodnikani() {
     return predmetPodnikani;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PREDMET_PODNIKANI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPredmetPodnikani(List<ObecnyTextVr> predmetPodnikani) {
     this.predmetPodnikani = predmetPodnikani;
   }
@@ -123,12 +106,16 @@ public class CinnostiVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DOPLNKOVA_CINNOST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getDoplnkovaCinnost() {
     return doplnkovaCinnost;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DOPLNKOVA_CINNOST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDoplnkovaCinnost(List<ObecnyTextVr> doplnkovaCinnost) {
     this.doplnkovaCinnost = doplnkovaCinnost;
   }
@@ -154,12 +141,16 @@ public class CinnostiVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PREDMET_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getPredmetCinnosti() {
     return predmetCinnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PREDMET_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPredmetCinnosti(List<ObecnyTextVr> predmetCinnosti) {
     this.predmetCinnosti = predmetCinnosti;
   }
@@ -185,16 +176,19 @@ public class CinnostiVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UCEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getUcel() {
     return ucel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UCEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUcel(List<ObecnyTextVr> ucel) {
     this.ucel = ucel;
   }
-
 
 
   @Override
@@ -240,149 +234,5 @@ public class CinnostiVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("predmetPodnikani");
-    openapiFields.add("doplnkovaCinnost");
-    openapiFields.add("predmetCinnosti");
-    openapiFields.add("ucel");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CinnostiVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (CinnostiVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CinnostiVr is not found in the empty JSON string", CinnostiVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!CinnostiVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CinnostiVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("predmetPodnikani") != null && !jsonObj.get("predmetPodnikani").isJsonNull()) {
-        JsonArray jsonArraypredmetPodnikani = jsonObj.getAsJsonArray("predmetPodnikani");
-        if (jsonArraypredmetPodnikani != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("predmetPodnikani").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `predmetPodnikani` to be an array in the JSON string but got `%s`", jsonObj.get("predmetPodnikani").toString()));
-          }
-
-          // validate the optional field `predmetPodnikani` (array)
-          for (int i = 0; i < jsonArraypredmetPodnikani.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArraypredmetPodnikani.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("doplnkovaCinnost") != null && !jsonObj.get("doplnkovaCinnost").isJsonNull()) {
-        JsonArray jsonArraydoplnkovaCinnost = jsonObj.getAsJsonArray("doplnkovaCinnost");
-        if (jsonArraydoplnkovaCinnost != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("doplnkovaCinnost").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `doplnkovaCinnost` to be an array in the JSON string but got `%s`", jsonObj.get("doplnkovaCinnost").toString()));
-          }
-
-          // validate the optional field `doplnkovaCinnost` (array)
-          for (int i = 0; i < jsonArraydoplnkovaCinnost.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArraydoplnkovaCinnost.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("predmetCinnosti") != null && !jsonObj.get("predmetCinnosti").isJsonNull()) {
-        JsonArray jsonArraypredmetCinnosti = jsonObj.getAsJsonArray("predmetCinnosti");
-        if (jsonArraypredmetCinnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("predmetCinnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `predmetCinnosti` to be an array in the JSON string but got `%s`", jsonObj.get("predmetCinnosti").toString()));
-          }
-
-          // validate the optional field `predmetCinnosti` (array)
-          for (int i = 0; i < jsonArraypredmetCinnosti.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArraypredmetCinnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("ucel") != null && !jsonObj.get("ucel").isJsonNull()) {
-        JsonArray jsonArrayucel = jsonObj.getAsJsonArray("ucel");
-        if (jsonArrayucel != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("ucel").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ucel` to be an array in the JSON string but got `%s`", jsonObj.get("ucel").toString()));
-          }
-
-          // validate the optional field `ucel` (array)
-          for (int i = 0; i < jsonArrayucel.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArrayucel.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CinnostiVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CinnostiVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CinnostiVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CinnostiVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CinnostiVr>() {
-           @Override
-           public void write(JsonWriter out, CinnostiVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CinnostiVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of CinnostiVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CinnostiVr
-  * @throws IOException if the JSON string is invalid with respect to CinnostiVr
-  */
-  public static CinnostiVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CinnostiVr.class);
-  }
-
- /**
-  * Convert an instance of CinnostiVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

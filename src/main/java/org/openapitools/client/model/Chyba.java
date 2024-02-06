@@ -14,52 +14,29 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.openapitools.client.model.KodChybyEnum;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Chyba
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  Chyba.JSON_PROPERTY_KOD,
+  Chyba.JSON_PROPERTY_POPIS,
+  Chyba.JSON_PROPERTY_SUB_KOD
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class Chyba {
-  public static final String SERIALIZED_NAME_KOD = "kod";
-  @SerializedName(SERIALIZED_NAME_KOD)
+  public static final String JSON_PROPERTY_KOD = "kod";
   private KodChybyEnum kod;
 
-  public static final String SERIALIZED_NAME_POPIS = "popis";
-  @SerializedName(SERIALIZED_NAME_POPIS)
+  public static final String JSON_PROPERTY_POPIS = "popis";
   private String popis;
 
-  public static final String SERIALIZED_NAME_SUB_KOD = "subKod";
-  @SerializedName(SERIALIZED_NAME_SUB_KOD)
+  public static final String JSON_PROPERTY_SUB_KOD = "subKod";
   private String subKod;
 
   public Chyba() {
@@ -77,12 +54,16 @@ public class Chyba {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_KOD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public KodChybyEnum getKod() {
     return kod;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKod(KodChybyEnum kod) {
     this.kod = kod;
   }
@@ -100,12 +81,16 @@ public class Chyba {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Popis chyby")
+  @JsonProperty(JSON_PROPERTY_POPIS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPopis() {
     return popis;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POPIS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPopis(String popis) {
     this.popis = popis;
   }
@@ -123,16 +108,19 @@ public class Chyba {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Subkod chyby")
+  @JsonProperty(JSON_PROPERTY_SUB_KOD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSubKod() {
     return subKod;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SUB_KOD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSubKod(String subKod) {
     this.subKod = subKod;
   }
-
 
 
   @Override
@@ -176,98 +164,5 @@ public class Chyba {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kod");
-    openapiFields.add("popis");
-    openapiFields.add("subKod");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Chyba
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Chyba.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Chyba is not found in the empty JSON string", Chyba.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Chyba.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Chyba` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("popis") != null && !jsonObj.get("popis").isJsonNull()) && !jsonObj.get("popis").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `popis` to be a primitive type in the JSON string but got `%s`", jsonObj.get("popis").toString()));
-      }
-      if ((jsonObj.get("subKod") != null && !jsonObj.get("subKod").isJsonNull()) && !jsonObj.get("subKod").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subKod` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subKod").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Chyba.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Chyba' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Chyba> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Chyba.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Chyba>() {
-           @Override
-           public void write(JsonWriter out, Chyba value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Chyba read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Chyba given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Chyba
-  * @throws IOException if the JSON string is invalid with respect to Chyba
-  */
-  public static Chyba fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Chyba.class);
-  }
-
- /**
-  * Convert an instance of Chyba to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

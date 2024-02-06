@@ -14,92 +14,71 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Seznam registrací ekonomického subjektu v jednotlivých zdrojích
  */
 @ApiModel(description = "Seznam registrací ekonomického subjektu v jednotlivých zdrojích")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_VR,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_RES,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_RZP,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_NRPZS,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_RPSH,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_RCNS,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_SZR,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_DPH,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_SD,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_IR,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_CEU,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_RS,
+  SeznamRegistraci.JSON_PROPERTY_STAV_ZDROJE_RED
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class SeznamRegistraci {
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_VR = "stavZdrojeVr";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_VR)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_VR = "stavZdrojeVr";
   private String stavZdrojeVr;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_RES = "stavZdrojeRes";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_RES)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_RES = "stavZdrojeRes";
   private String stavZdrojeRes;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_RZP = "stavZdrojeRzp";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_RZP)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_RZP = "stavZdrojeRzp";
   private String stavZdrojeRzp;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_NRPZS = "stavZdrojeNrpzs";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_NRPZS)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_NRPZS = "stavZdrojeNrpzs";
   private String stavZdrojeNrpzs;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_RPSH = "stavZdrojeRpsh";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_RPSH)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_RPSH = "stavZdrojeRpsh";
   private String stavZdrojeRpsh;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_RCNS = "stavZdrojeRcns";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_RCNS)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_RCNS = "stavZdrojeRcns";
   private String stavZdrojeRcns;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_SZR = "stavZdrojeSzr";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_SZR)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_SZR = "stavZdrojeSzr";
   private String stavZdrojeSzr;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_DPH = "stavZdrojeDph";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_DPH)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_DPH = "stavZdrojeDph";
   private String stavZdrojeDph;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_SD = "stavZdrojeSd";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_SD)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_SD = "stavZdrojeSd";
   private String stavZdrojeSd;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_IR = "stavZdrojeIr";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_IR)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_IR = "stavZdrojeIr";
   private String stavZdrojeIr;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_CEU = "stavZdrojeCeu";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_CEU)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_CEU = "stavZdrojeCeu";
   private String stavZdrojeCeu;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_RS = "stavZdrojeRs";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_RS)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_RS = "stavZdrojeRs";
   private String stavZdrojeRs;
 
-  public static final String SERIALIZED_NAME_STAV_ZDROJE_RED = "stavZdrojeRed";
-  @SerializedName(SERIALIZED_NAME_STAV_ZDROJE_RED)
+  public static final String JSON_PROPERTY_STAV_ZDROJE_RED = "stavZdrojeRed";
   private String stavZdrojeRed;
 
   public SeznamRegistraci() {
@@ -117,12 +96,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji VR (Veřejné rejstříky) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_VR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeVr() {
     return stavZdrojeVr;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_VR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeVr(String stavZdrojeVr) {
     this.stavZdrojeVr = stavZdrojeVr;
   }
@@ -140,12 +123,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji RES (Registr ekonomických subjektů) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeRes() {
     return stavZdrojeRes;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeRes(String stavZdrojeRes) {
     this.stavZdrojeRes = stavZdrojeRes;
   }
@@ -163,12 +150,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji RŽP (Registr živnostenského podnikání) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RZP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeRzp() {
     return stavZdrojeRzp;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RZP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeRzp(String stavZdrojeRzp) {
     this.stavZdrojeRzp = stavZdrojeRzp;
   }
@@ -186,12 +177,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji NRPZS (Národní registr poskytovatelů zdrovotnických služeb) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_NRPZS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeNrpzs() {
     return stavZdrojeNrpzs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_NRPZS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeNrpzs(String stavZdrojeNrpzs) {
     this.stavZdrojeNrpzs = stavZdrojeNrpzs;
   }
@@ -209,12 +204,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji RPSH (Registr politických stran a hnutí) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RPSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeRpsh() {
     return stavZdrojeRpsh;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RPSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeRpsh(String stavZdrojeRpsh) {
     this.stavZdrojeRpsh = stavZdrojeRpsh;
   }
@@ -232,12 +231,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji RCNS(Registr církví a náboženských společenství) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RCNS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeRcns() {
     return stavZdrojeRcns;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RCNS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeRcns(String stavZdrojeRcns) {
     this.stavZdrojeRcns = stavZdrojeRcns;
   }
@@ -255,12 +258,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji  SZR(Společný zemědělský registr) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_SZR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeSzr() {
     return stavZdrojeSzr;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_SZR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeSzr(String stavZdrojeSzr) {
     this.stavZdrojeSzr = stavZdrojeSzr;
   }
@@ -278,12 +285,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji DPH(Registr plátců daně s přidané hodnoty) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_DPH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeDph() {
     return stavZdrojeDph;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_DPH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeDph(String stavZdrojeDph) {
     this.stavZdrojeDph = stavZdrojeDph;
   }
@@ -301,12 +312,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji SD(Registr plátců spotřební daně) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_SD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeSd() {
     return stavZdrojeSd;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_SD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeSd(String stavZdrojeSd) {
     this.stavZdrojeSd = stavZdrojeSd;
   }
@@ -324,12 +339,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji ISIR(Insolvenční rejstřík) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_IR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeIr() {
     return stavZdrojeIr;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_IR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeIr(String stavZdrojeIr) {
     this.stavZdrojeIr = stavZdrojeIr;
   }
@@ -347,12 +366,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji CEÚ(Centrální evidence úpadců) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_CEU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeCeu() {
     return stavZdrojeCeu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_CEU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeCeu(String stavZdrojeCeu) {
     this.stavZdrojeCeu = stavZdrojeCeu;
   }
@@ -370,12 +393,16 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji RŠ(Registr škol) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeRs() {
     return stavZdrojeRs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeRs(String stavZdrojeRs) {
     this.stavZdrojeRs = stavZdrojeRs;
   }
@@ -393,16 +420,19 @@ public class SeznamRegistraci {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu ve zdroji RED(Registr evidence dotací) - kód (ciselnikKod: StavZdroje, zdroj: com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavZdrojeRed() {
     return stavZdrojeRed;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_ZDROJE_RED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavZdrojeRed(String stavZdrojeRed) {
     this.stavZdrojeRed = stavZdrojeRed;
   }
-
 
 
   @Override
@@ -466,141 +496,5 @@ public class SeznamRegistraci {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("stavZdrojeVr");
-    openapiFields.add("stavZdrojeRes");
-    openapiFields.add("stavZdrojeRzp");
-    openapiFields.add("stavZdrojeNrpzs");
-    openapiFields.add("stavZdrojeRpsh");
-    openapiFields.add("stavZdrojeRcns");
-    openapiFields.add("stavZdrojeSzr");
-    openapiFields.add("stavZdrojeDph");
-    openapiFields.add("stavZdrojeSd");
-    openapiFields.add("stavZdrojeIr");
-    openapiFields.add("stavZdrojeCeu");
-    openapiFields.add("stavZdrojeRs");
-    openapiFields.add("stavZdrojeRed");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SeznamRegistraci
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SeznamRegistraci.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SeznamRegistraci is not found in the empty JSON string", SeznamRegistraci.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SeznamRegistraci.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SeznamRegistraci` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("stavZdrojeVr") != null && !jsonObj.get("stavZdrojeVr").isJsonNull()) && !jsonObj.get("stavZdrojeVr").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeVr` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeVr").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeRes") != null && !jsonObj.get("stavZdrojeRes").isJsonNull()) && !jsonObj.get("stavZdrojeRes").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeRes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeRes").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeRzp") != null && !jsonObj.get("stavZdrojeRzp").isJsonNull()) && !jsonObj.get("stavZdrojeRzp").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeRzp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeRzp").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeNrpzs") != null && !jsonObj.get("stavZdrojeNrpzs").isJsonNull()) && !jsonObj.get("stavZdrojeNrpzs").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeNrpzs` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeNrpzs").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeRpsh") != null && !jsonObj.get("stavZdrojeRpsh").isJsonNull()) && !jsonObj.get("stavZdrojeRpsh").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeRpsh` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeRpsh").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeRcns") != null && !jsonObj.get("stavZdrojeRcns").isJsonNull()) && !jsonObj.get("stavZdrojeRcns").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeRcns` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeRcns").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeSzr") != null && !jsonObj.get("stavZdrojeSzr").isJsonNull()) && !jsonObj.get("stavZdrojeSzr").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeSzr` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeSzr").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeDph") != null && !jsonObj.get("stavZdrojeDph").isJsonNull()) && !jsonObj.get("stavZdrojeDph").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeDph` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeDph").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeSd") != null && !jsonObj.get("stavZdrojeSd").isJsonNull()) && !jsonObj.get("stavZdrojeSd").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeSd` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeSd").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeIr") != null && !jsonObj.get("stavZdrojeIr").isJsonNull()) && !jsonObj.get("stavZdrojeIr").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeIr` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeIr").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeCeu") != null && !jsonObj.get("stavZdrojeCeu").isJsonNull()) && !jsonObj.get("stavZdrojeCeu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeCeu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeCeu").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeRs") != null && !jsonObj.get("stavZdrojeRs").isJsonNull()) && !jsonObj.get("stavZdrojeRs").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeRs` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeRs").toString()));
-      }
-      if ((jsonObj.get("stavZdrojeRed") != null && !jsonObj.get("stavZdrojeRed").isJsonNull()) && !jsonObj.get("stavZdrojeRed").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavZdrojeRed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavZdrojeRed").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SeznamRegistraci.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SeznamRegistraci' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SeznamRegistraci> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SeznamRegistraci.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SeznamRegistraci>() {
-           @Override
-           public void write(JsonWriter out, SeznamRegistraci value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SeznamRegistraci read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SeznamRegistraci given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SeznamRegistraci
-  * @throws IOException if the JSON string is invalid with respect to SeznamRegistraci
-  */
-  public static SeznamRegistraci fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SeznamRegistraci.class);
-  }
-
- /**
-  * Convert an instance of SeznamRegistraci to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

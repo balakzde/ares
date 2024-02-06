@@ -14,53 +14,32 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Podmínky pro vykonávání živnosti
  */
 @ApiModel(description = "Podmínky pro vykonávání živnosti")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZivnostPodminky.JSON_PROPERTY_PLATNOST_OD,
+  ZivnostPodminky.JSON_PROPERTY_PLATNOST_DO,
+  ZivnostPodminky.JSON_PROPERTY_PODMINKA
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZivnostPodminky {
-  public static final String SERIALIZED_NAME_PLATNOST_OD = "platnostOd";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_OD)
+  public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
   private LocalDate platnostOd;
 
-  public static final String SERIALIZED_NAME_PLATNOST_DO = "platnostDo";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_DO)
+  public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
   private LocalDate platnostDo;
 
-  public static final String SERIALIZED_NAME_PODMINKA = "podminka";
-  @SerializedName(SERIALIZED_NAME_PODMINKA)
+  public static final String JSON_PROPERTY_PODMINKA = "podminka";
   private String podminka;
 
   public ZivnostPodminky() {
@@ -78,12 +57,16 @@ public class ZivnostPodminky {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost podmínky od data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostOd() {
     return platnostOd;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostOd(LocalDate platnostOd) {
     this.platnostOd = platnostOd;
   }
@@ -101,12 +84,16 @@ public class ZivnostPodminky {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost podmínky do data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostDo() {
     return platnostDo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostDo(LocalDate platnostDo) {
     this.platnostDo = platnostDo;
   }
@@ -124,16 +111,19 @@ public class ZivnostPodminky {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Text podmínky provozování živnosti")
+  @JsonProperty(JSON_PROPERTY_PODMINKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPodminka() {
     return podminka;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODMINKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodminka(String podminka) {
     this.podminka = podminka;
   }
-
 
 
   @Override
@@ -177,95 +167,5 @@ public class ZivnostPodminky {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("platnostOd");
-    openapiFields.add("platnostDo");
-    openapiFields.add("podminka");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZivnostPodminky
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZivnostPodminky.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZivnostPodminky is not found in the empty JSON string", ZivnostPodminky.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZivnostPodminky.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZivnostPodminky` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("podminka") != null && !jsonObj.get("podminka").isJsonNull()) && !jsonObj.get("podminka").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `podminka` to be a primitive type in the JSON string but got `%s`", jsonObj.get("podminka").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZivnostPodminky.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZivnostPodminky' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZivnostPodminky> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZivnostPodminky.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZivnostPodminky>() {
-           @Override
-           public void write(JsonWriter out, ZivnostPodminky value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZivnostPodminky read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZivnostPodminky given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZivnostPodminky
-  * @throws IOException if the JSON string is invalid with respect to ZivnostPodminky
-  */
-  public static ZivnostPodminky fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZivnostPodminky.class);
-  }
-
- /**
-  * Convert an instance of ZivnostPodminky to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -14,58 +14,37 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.Adresa;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Adresa s platností
  */
 @ApiModel(description = "Adresa s platností")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  AdresaAres.JSON_PROPERTY_SIDLO,
+  AdresaAres.JSON_PROPERTY_PRIMARNI_ZAZNAM,
+  AdresaAres.JSON_PROPERTY_PLATNOST_OD,
+  AdresaAres.JSON_PROPERTY_PLATNOST_DO
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class AdresaAres {
-  public static final String SERIALIZED_NAME_SIDLO = "sidlo";
-  @SerializedName(SERIALIZED_NAME_SIDLO)
+  public static final String JSON_PROPERTY_SIDLO = "sidlo";
   private Adresa sidlo;
 
-  public static final String SERIALIZED_NAME_PRIMARNI_ZAZNAM = "primarniZaznam";
-  @SerializedName(SERIALIZED_NAME_PRIMARNI_ZAZNAM)
+  public static final String JSON_PROPERTY_PRIMARNI_ZAZNAM = "primarniZaznam";
   private Boolean primarniZaznam;
 
-  public static final String SERIALIZED_NAME_PLATNOST_OD = "platnostOd";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_OD)
+  public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
   private LocalDate platnostOd;
 
-  public static final String SERIALIZED_NAME_PLATNOST_DO = "platnostDo";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_DO)
+  public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
   private LocalDate platnostDo;
 
   public AdresaAres() {
@@ -83,12 +62,16 @@ public class AdresaAres {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SIDLO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Adresa getSidlo() {
     return sidlo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SIDLO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSidlo(Adresa sidlo) {
     this.sidlo = sidlo;
   }
@@ -106,12 +89,16 @@ public class AdresaAres {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Primární záznam")
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getPrimarniZaznam() {
     return primarniZaznam;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimarniZaznam(Boolean primarniZaznam) {
     this.primarniZaznam = primarniZaznam;
   }
@@ -129,12 +116,16 @@ public class AdresaAres {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost údaje od data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostOd() {
     return platnostOd;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostOd(LocalDate platnostOd) {
     this.platnostOd = platnostOd;
   }
@@ -152,16 +143,19 @@ public class AdresaAres {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost údaje od data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostDo() {
     return platnostDo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostDo(LocalDate platnostDo) {
     this.platnostDo = platnostDo;
   }
-
 
 
   @Override
@@ -207,97 +201,5 @@ public class AdresaAres {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("sidlo");
-    openapiFields.add("primarniZaznam");
-    openapiFields.add("platnostOd");
-    openapiFields.add("platnostDo");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AdresaAres
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AdresaAres.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AdresaAres is not found in the empty JSON string", AdresaAres.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AdresaAres.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AdresaAres` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `sidlo`
-      if (jsonObj.get("sidlo") != null && !jsonObj.get("sidlo").isJsonNull()) {
-        Adresa.validateJsonObject(jsonObj.getAsJsonObject("sidlo"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AdresaAres.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AdresaAres' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AdresaAres> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AdresaAres.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AdresaAres>() {
-           @Override
-           public void write(JsonWriter out, AdresaAres value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AdresaAres read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AdresaAres given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AdresaAres
-  * @throws IOException if the JSON string is invalid with respect to AdresaAres
-  */
-  public static AdresaAres fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AdresaAres.class);
-  }
-
- /**
-  * Convert an instance of AdresaAres to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

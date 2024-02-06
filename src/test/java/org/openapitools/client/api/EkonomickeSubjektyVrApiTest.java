@@ -13,49 +13,51 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickeSubjektyVrSeznam;
 import org.openapitools.client.model.EkonomickySubjektVr;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyVrApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektyVrApiTest {
 
     private final EkonomickeSubjektyVrApi api = new EkonomickeSubjektyVrApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání konkrétního ekonomického subjektu ze zdroje VR
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratEkonomickySubjektVrTest() throws ApiException {
-        String ico = null;
+    public void vratEkonomickySubjektVrTest() {
+        String ico = "49779133";
         EkonomickySubjektVr response = api.vratEkonomickySubjektVr(ico);
-        // TODO: test validations
-    }
 
+        System.out.println(response.getZaznamy().get(0).getFinancniUrad());
+    }
+    
     /**
+     * 
+     *
      * Vyhledání seznamu ekonomických subjektu ze zdroje VR
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejSeznamEkonomickychSubjektuVrTest() throws ApiException {
+    public void vyhledejSeznamEkonomickychSubjektuVrTest() {
         EkonomickeSubjektyRegistraceFiltr ekonomickeSubjektyRegistraceFiltr = null;
         EkonomickeSubjektyVrSeznam response = api.vyhledejSeznamEkonomickychSubjektuVr(ekonomickeSubjektyRegistraceFiltr);
+
         // TODO: test validations
     }
-
+    
 }

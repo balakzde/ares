@@ -14,188 +14,147 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AdresaVr;
-import org.openapitools.client.model.CinnostiVr;
-import org.openapitools.client.model.DatumVr;
-import org.openapitools.client.model.EmiseAkcieVr;
-import org.openapitools.client.model.IcoVr;
-import org.openapitools.client.model.InsolvencniRizeniVr;
-import org.openapitools.client.model.KategorieZoVr;
-import org.openapitools.client.model.KonkursVr;
-import org.openapitools.client.model.ObchodniJmenoCiziVr;
-import org.openapitools.client.model.ObchodniJmenoVr;
-import org.openapitools.client.model.ObecnyTextVr;
-import org.openapitools.client.model.OdstepnyZavodVr;
-import org.openapitools.client.model.OrganVr;
-import org.openapitools.client.model.PodnikatelVr;
-import org.openapitools.client.model.PravniFormaVr;
-import org.openapitools.client.model.SpisovaZnackaVr;
-import org.openapitools.client.model.SpolecniciVr;
-import org.openapitools.client.model.StatutarniOrganVr;
-import org.openapitools.client.model.VkladVr;
-import org.openapitools.client.model.ZakladniKapitalVr;
-import org.openapitools.client.model.ZpusobRizeniVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Detailní informace o ekonomickém subjektu ze zdroje VR
  */
 @ApiModel(description = "Detailní informace o ekonomickém subjektu ze zdroje VR")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZaznamVr.JSON_PROPERTY_AKCIE,
+  ZaznamVr.JSON_PROPERTY_REJSTRIK,
+  ZaznamVr.JSON_PROPERTY_PRIMARNI_ZAZNAM,
+  ZaznamVr.JSON_PROPERTY_SPISOVA_ZNACKA,
+  ZaznamVr.JSON_PROPERTY_ICO,
+  ZaznamVr.JSON_PROPERTY_OBCHODNI_JMENO,
+  ZaznamVr.JSON_PROPERTY_VKLADY,
+  ZaznamVr.JSON_PROPERTY_OBCHODNI_JMENO_CIZI,
+  ZaznamVr.JSON_PROPERTY_ZAKLADNI_KAPITAL,
+  ZaznamVr.JSON_PROPERTY_PRAVNI_FORMA,
+  ZaznamVr.JSON_PROPERTY_FINANCNI_URAD,
+  ZaznamVr.JSON_PROPERTY_ADRESY,
+  ZaznamVr.JSON_PROPERTY_OSTATNI_SKUTECNOSTI,
+  ZaznamVr.JSON_PROPERTY_DATUM_AKTUALIZACE,
+  ZaznamVr.JSON_PROPERTY_STAV_SUBJEKTU,
+  ZaznamVr.JSON_PROPERTY_DATUM_VZNIKU,
+  ZaznamVr.JSON_PROPERTY_DATUM_ZAPISU,
+  ZaznamVr.JSON_PROPERTY_DATUM_VYMAZU,
+  ZaznamVr.JSON_PROPERTY_ZPUSOB_RIZENI,
+  ZaznamVr.JSON_PROPERTY_KATEGORIE_Z_O,
+  ZaznamVr.JSON_PROPERTY_PRAVNI_DUVOD_VYMAZU,
+  ZaznamVr.JSON_PROPERTY_CINNOSTI,
+  ZaznamVr.JSON_PROPERTY_NAZEV_NEJVYSSIHO_ORGANU,
+  ZaznamVr.JSON_PROPERTY_EXEKUCE,
+  ZaznamVr.JSON_PROPERTY_OSTATNI_ORGANY,
+  ZaznamVr.JSON_PROPERTY_STATUTARNI_ORGANY,
+  ZaznamVr.JSON_PROPERTY_PODNIKATEL,
+  ZaznamVr.JSON_PROPERTY_SPOLECNICI,
+  ZaznamVr.JSON_PROPERTY_ODSTEPNE_ZAVODY,
+  ZaznamVr.JSON_PROPERTY_INSOLVENCE,
+  ZaznamVr.JSON_PROPERTY_KONKURSY
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZaznamVr {
-  public static final String SERIALIZED_NAME_AKCIE = "akcie";
-  @SerializedName(SERIALIZED_NAME_AKCIE)
+  public static final String JSON_PROPERTY_AKCIE = "akcie";
   private List<EmiseAkcieVr> akcie = null;
 
-  public static final String SERIALIZED_NAME_REJSTRIK = "rejstrik";
-  @SerializedName(SERIALIZED_NAME_REJSTRIK)
+  public static final String JSON_PROPERTY_REJSTRIK = "rejstrik";
   private String rejstrik;
 
-  public static final String SERIALIZED_NAME_PRIMARNI_ZAZNAM = "primarniZaznam";
-  @SerializedName(SERIALIZED_NAME_PRIMARNI_ZAZNAM)
+  public static final String JSON_PROPERTY_PRIMARNI_ZAZNAM = "primarniZaznam";
   private Boolean primarniZaznam;
 
-  public static final String SERIALIZED_NAME_SPISOVA_ZNACKA = "spisovaZnacka";
-  @SerializedName(SERIALIZED_NAME_SPISOVA_ZNACKA)
+  public static final String JSON_PROPERTY_SPISOVA_ZNACKA = "spisovaZnacka";
   private List<SpisovaZnackaVr> spisovaZnacka = null;
 
-  public static final String SERIALIZED_NAME_ICO = "ico";
-  @SerializedName(SERIALIZED_NAME_ICO)
+  public static final String JSON_PROPERTY_ICO = "ico";
   private List<IcoVr> ico = null;
 
-  public static final String SERIALIZED_NAME_OBCHODNI_JMENO = "obchodniJmeno";
-  @SerializedName(SERIALIZED_NAME_OBCHODNI_JMENO)
+  public static final String JSON_PROPERTY_OBCHODNI_JMENO = "obchodniJmeno";
   private List<ObchodniJmenoVr> obchodniJmeno = null;
 
-  public static final String SERIALIZED_NAME_VKLADY = "vklady";
-  @SerializedName(SERIALIZED_NAME_VKLADY)
+  public static final String JSON_PROPERTY_VKLADY = "vklady";
   private List<VkladVr> vklady = null;
 
-  public static final String SERIALIZED_NAME_OBCHODNI_JMENO_CIZI = "obchodniJmenoCizi";
-  @SerializedName(SERIALIZED_NAME_OBCHODNI_JMENO_CIZI)
+  public static final String JSON_PROPERTY_OBCHODNI_JMENO_CIZI = "obchodniJmenoCizi";
   private List<ObchodniJmenoCiziVr> obchodniJmenoCizi = null;
 
-  public static final String SERIALIZED_NAME_ZAKLADNI_KAPITAL = "zakladniKapital";
-  @SerializedName(SERIALIZED_NAME_ZAKLADNI_KAPITAL)
+  public static final String JSON_PROPERTY_ZAKLADNI_KAPITAL = "zakladniKapital";
   private List<ZakladniKapitalVr> zakladniKapital = null;
 
-  public static final String SERIALIZED_NAME_PRAVNI_FORMA = "pravniForma";
-  @SerializedName(SERIALIZED_NAME_PRAVNI_FORMA)
+  public static final String JSON_PROPERTY_PRAVNI_FORMA = "pravniForma";
   private List<PravniFormaVr> pravniForma = null;
 
-  public static final String SERIALIZED_NAME_FINANCNI_URAD = "financniUrad";
-  @SerializedName(SERIALIZED_NAME_FINANCNI_URAD)
+  public static final String JSON_PROPERTY_FINANCNI_URAD = "financniUrad";
   private String financniUrad;
 
-  public static final String SERIALIZED_NAME_ADRESY = "adresy";
-  @SerializedName(SERIALIZED_NAME_ADRESY)
+  public static final String JSON_PROPERTY_ADRESY = "adresy";
   private List<AdresaVr> adresy = null;
 
-  public static final String SERIALIZED_NAME_OSTATNI_SKUTECNOSTI = "ostatniSkutecnosti";
-  @SerializedName(SERIALIZED_NAME_OSTATNI_SKUTECNOSTI)
+  public static final String JSON_PROPERTY_OSTATNI_SKUTECNOSTI = "ostatniSkutecnosti";
   private List<ObecnyTextVr> ostatniSkutecnosti = null;
 
-  public static final String SERIALIZED_NAME_DATUM_AKTUALIZACE = "datumAktualizace";
-  @SerializedName(SERIALIZED_NAME_DATUM_AKTUALIZACE)
+  public static final String JSON_PROPERTY_DATUM_AKTUALIZACE = "datumAktualizace";
   private LocalDate datumAktualizace;
 
-  public static final String SERIALIZED_NAME_STAV_SUBJEKTU = "stavSubjektu";
-  @SerializedName(SERIALIZED_NAME_STAV_SUBJEKTU)
+  public static final String JSON_PROPERTY_STAV_SUBJEKTU = "stavSubjektu";
   private String stavSubjektu;
 
-  public static final String SERIALIZED_NAME_DATUM_VZNIKU = "datumVzniku";
-  @SerializedName(SERIALIZED_NAME_DATUM_VZNIKU)
+  public static final String JSON_PROPERTY_DATUM_VZNIKU = "datumVzniku";
   private List<DatumVr> datumVzniku = null;
 
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU = "datumZapisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
   private LocalDate datumZapisu;
 
-  public static final String SERIALIZED_NAME_DATUM_VYMAZU = "datumVymazu";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYMAZU)
+  public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
   private LocalDate datumVymazu;
 
-  public static final String SERIALIZED_NAME_ZPUSOB_RIZENI = "zpusobRizeni";
-  @SerializedName(SERIALIZED_NAME_ZPUSOB_RIZENI)
+  public static final String JSON_PROPERTY_ZPUSOB_RIZENI = "zpusobRizeni";
   private List<ZpusobRizeniVr> zpusobRizeni = null;
 
-  public static final String SERIALIZED_NAME_KATEGORIE_Z_O = "kategorieZO";
-  @SerializedName(SERIALIZED_NAME_KATEGORIE_Z_O)
+  public static final String JSON_PROPERTY_KATEGORIE_Z_O = "kategorieZO";
   private List<KategorieZoVr> kategorieZO = null;
 
-  public static final String SERIALIZED_NAME_PRAVNI_DUVOD_VYMAZU = "pravniDuvodVymazu";
-  @SerializedName(SERIALIZED_NAME_PRAVNI_DUVOD_VYMAZU)
+  public static final String JSON_PROPERTY_PRAVNI_DUVOD_VYMAZU = "pravniDuvodVymazu";
   private List<ObecnyTextVr> pravniDuvodVymazu = null;
 
-  public static final String SERIALIZED_NAME_CINNOSTI = "cinnosti";
-  @SerializedName(SERIALIZED_NAME_CINNOSTI)
+  public static final String JSON_PROPERTY_CINNOSTI = "cinnosti";
   private CinnostiVr cinnosti;
 
-  public static final String SERIALIZED_NAME_NAZEV_NEJVYSSIHO_ORGANU = "nazevNejvyssihoOrganu";
-  @SerializedName(SERIALIZED_NAME_NAZEV_NEJVYSSIHO_ORGANU)
+  public static final String JSON_PROPERTY_NAZEV_NEJVYSSIHO_ORGANU = "nazevNejvyssihoOrganu";
   private List<ObecnyTextVr> nazevNejvyssihoOrganu = null;
 
-  public static final String SERIALIZED_NAME_EXEKUCE = "exekuce";
-  @SerializedName(SERIALIZED_NAME_EXEKUCE)
+  public static final String JSON_PROPERTY_EXEKUCE = "exekuce";
   private List<ObecnyTextVr> exekuce = null;
 
-  public static final String SERIALIZED_NAME_OSTATNI_ORGANY = "ostatniOrgany";
-  @SerializedName(SERIALIZED_NAME_OSTATNI_ORGANY)
+  public static final String JSON_PROPERTY_OSTATNI_ORGANY = "ostatniOrgany";
   private List<OrganVr> ostatniOrgany = null;
 
-  public static final String SERIALIZED_NAME_STATUTARNI_ORGANY = "statutarniOrgany";
-  @SerializedName(SERIALIZED_NAME_STATUTARNI_ORGANY)
+  public static final String JSON_PROPERTY_STATUTARNI_ORGANY = "statutarniOrgany";
   private List<StatutarniOrganVr> statutarniOrgany = null;
 
-  public static final String SERIALIZED_NAME_PODNIKATEL = "podnikatel";
-  @SerializedName(SERIALIZED_NAME_PODNIKATEL)
+  public static final String JSON_PROPERTY_PODNIKATEL = "podnikatel";
   private List<PodnikatelVr> podnikatel = null;
 
-  public static final String SERIALIZED_NAME_SPOLECNICI = "spolecnici";
-  @SerializedName(SERIALIZED_NAME_SPOLECNICI)
+  public static final String JSON_PROPERTY_SPOLECNICI = "spolecnici";
   private List<SpolecniciVr> spolecnici = null;
 
-  public static final String SERIALIZED_NAME_ODSTEPNE_ZAVODY = "odstepneZavody";
-  @SerializedName(SERIALIZED_NAME_ODSTEPNE_ZAVODY)
+  public static final String JSON_PROPERTY_ODSTEPNE_ZAVODY = "odstepneZavody";
   private List<OdstepnyZavodVr> odstepneZavody = null;
 
-  public static final String SERIALIZED_NAME_INSOLVENCE = "insolvence";
-  @SerializedName(SERIALIZED_NAME_INSOLVENCE)
+  public static final String JSON_PROPERTY_INSOLVENCE = "insolvence";
   private List<InsolvencniRizeniVr> insolvence = null;
 
-  public static final String SERIALIZED_NAME_KONKURSY = "konkursy";
-  @SerializedName(SERIALIZED_NAME_KONKURSY)
+  public static final String JSON_PROPERTY_KONKURSY = "konkursy";
   private List<KonkursVr> konkursy = null;
 
   public ZaznamVr() {
@@ -221,12 +180,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_AKCIE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<EmiseAkcieVr> getAkcie() {
     return akcie;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_AKCIE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAkcie(List<EmiseAkcieVr> akcie) {
     this.akcie = akcie;
   }
@@ -244,12 +207,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ veřejného rejstříku (VR) - kód (ciselnikKod: TypRejstriku ) ")
+  @JsonProperty(JSON_PROPERTY_REJSTRIK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRejstrik() {
     return rejstrik;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REJSTRIK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRejstrik(String rejstrik) {
     this.rejstrik = rejstrik;
   }
@@ -267,12 +234,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Primární záznam")
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getPrimarniZaznam() {
     return primarniZaznam;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimarniZaznam(Boolean primarniZaznam) {
     this.primarniZaznam = primarniZaznam;
   }
@@ -298,12 +269,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPISOVA_ZNACKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SpisovaZnackaVr> getSpisovaZnacka() {
     return spisovaZnacka;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPISOVA_ZNACKA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpisovaZnacka(List<SpisovaZnackaVr> spisovaZnacka) {
     this.spisovaZnacka = spisovaZnacka;
   }
@@ -329,12 +304,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ICO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<IcoVr> getIco() {
     return ico;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ICO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIco(List<IcoVr> ico) {
     this.ico = ico;
   }
@@ -360,12 +339,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObchodniJmenoVr> getObchodniJmeno() {
     return obchodniJmeno;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObchodniJmeno(List<ObchodniJmenoVr> obchodniJmeno) {
     this.obchodniJmeno = obchodniJmeno;
   }
@@ -391,12 +374,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_VKLADY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<VkladVr> getVklady() {
     return vklady;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_VKLADY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVklady(List<VkladVr> vklady) {
     this.vklady = vklady;
   }
@@ -422,12 +409,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO_CIZI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObchodniJmenoCiziVr> getObchodniJmenoCizi() {
     return obchodniJmenoCizi;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO_CIZI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObchodniJmenoCizi(List<ObchodniJmenoCiziVr> obchodniJmenoCizi) {
     this.obchodniJmenoCizi = obchodniJmenoCizi;
   }
@@ -453,12 +444,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ZAKLADNI_KAPITAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZakladniKapitalVr> getZakladniKapital() {
     return zakladniKapital;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZAKLADNI_KAPITAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZakladniKapital(List<ZakladniKapitalVr> zakladniKapital) {
     this.zakladniKapital = zakladniKapital;
   }
@@ -484,12 +479,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PRAVNI_FORMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<PravniFormaVr> getPravniForma() {
     return pravniForma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRAVNI_FORMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPravniForma(List<PravniFormaVr> pravniForma) {
     this.pravniForma = pravniForma;
   }
@@ -507,12 +506,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Finanční úřad - kód (ciselnikKod: FinancniUrad, zdroj: ufo) ")
+  @JsonProperty(JSON_PROPERTY_FINANCNI_URAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFinancniUrad() {
     return financniUrad;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FINANCNI_URAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFinancniUrad(String financniUrad) {
     this.financniUrad = financniUrad;
   }
@@ -538,12 +541,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AdresaVr> getAdresy() {
     return adresy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdresy(List<AdresaVr> adresy) {
     this.adresy = adresy;
   }
@@ -569,12 +576,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OSTATNI_SKUTECNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getOstatniSkutecnosti() {
     return ostatniSkutecnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OSTATNI_SKUTECNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOstatniSkutecnosti(List<ObecnyTextVr> ostatniSkutecnosti) {
     this.ostatniSkutecnosti = ostatniSkutecnosti;
   }
@@ -592,12 +603,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum aktualizace")
+  @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumAktualizace() {
     return datumAktualizace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumAktualizace(LocalDate datumAktualizace) {
     this.datumAktualizace = datumAktualizace;
   }
@@ -615,12 +630,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav ekonomického subjektu v ARES - kód (ciselnikKod: StavZdroje, zdroj:com) ")
+  @JsonProperty(JSON_PROPERTY_STAV_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavSubjektu() {
     return stavSubjektu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavSubjektu(String stavSubjektu) {
     this.stavSubjektu = stavSubjektu;
   }
@@ -646,12 +665,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<DatumVr> getDatumVzniku() {
     return datumVzniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVzniku(List<DatumVr> datumVzniku) {
     this.datumVzniku = datumVzniku;
   }
@@ -669,12 +692,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu subjektu do VR")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisu() {
     return datumZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisu(LocalDate datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
@@ -692,12 +719,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum výmazu subjektu z VR")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVymazu() {
     return datumVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVymazu(LocalDate datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
@@ -723,12 +754,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ZPUSOB_RIZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZpusobRizeniVr> getZpusobRizeni() {
     return zpusobRizeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZPUSOB_RIZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZpusobRizeni(List<ZpusobRizeniVr> zpusobRizeni) {
     this.zpusobRizeni = zpusobRizeni;
   }
@@ -754,12 +789,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_KATEGORIE_Z_O)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<KategorieZoVr> getKategorieZO() {
     return kategorieZO;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KATEGORIE_Z_O)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKategorieZO(List<KategorieZoVr> kategorieZO) {
     this.kategorieZO = kategorieZO;
   }
@@ -785,12 +824,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PRAVNI_DUVOD_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getPravniDuvodVymazu() {
     return pravniDuvodVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRAVNI_DUVOD_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPravniDuvodVymazu(List<ObecnyTextVr> pravniDuvodVymazu) {
     this.pravniDuvodVymazu = pravniDuvodVymazu;
   }
@@ -808,12 +851,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CinnostiVr getCinnosti() {
     return cinnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCinnosti(CinnostiVr cinnosti) {
     this.cinnosti = cinnosti;
   }
@@ -839,12 +886,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NAZEV_NEJVYSSIHO_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getNazevNejvyssihoOrganu() {
     return nazevNejvyssihoOrganu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_NEJVYSSIHO_ORGANU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevNejvyssihoOrganu(List<ObecnyTextVr> nazevNejvyssihoOrganu) {
     this.nazevNejvyssihoOrganu = nazevNejvyssihoOrganu;
   }
@@ -870,12 +921,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EXEKUCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ObecnyTextVr> getExekuce() {
     return exekuce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_EXEKUCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExekuce(List<ObecnyTextVr> exekuce) {
     this.exekuce = exekuce;
   }
@@ -901,12 +956,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OSTATNI_ORGANY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<OrganVr> getOstatniOrgany() {
     return ostatniOrgany;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OSTATNI_ORGANY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOstatniOrgany(List<OrganVr> ostatniOrgany) {
     this.ostatniOrgany = ostatniOrgany;
   }
@@ -932,12 +991,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STATUTARNI_ORGANY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<StatutarniOrganVr> getStatutarniOrgany() {
     return statutarniOrgany;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STATUTARNI_ORGANY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStatutarniOrgany(List<StatutarniOrganVr> statutarniOrgany) {
     this.statutarniOrgany = statutarniOrgany;
   }
@@ -963,12 +1026,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PODNIKATEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<PodnikatelVr> getPodnikatel() {
     return podnikatel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODNIKATEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodnikatel(List<PodnikatelVr> podnikatel) {
     this.podnikatel = podnikatel;
   }
@@ -994,12 +1061,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPOLECNICI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SpolecniciVr> getSpolecnici() {
     return spolecnici;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPOLECNICI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpolecnici(List<SpolecniciVr> spolecnici) {
     this.spolecnici = spolecnici;
   }
@@ -1025,12 +1096,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ODSTEPNE_ZAVODY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<OdstepnyZavodVr> getOdstepneZavody() {
     return odstepneZavody;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ODSTEPNE_ZAVODY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOdstepneZavody(List<OdstepnyZavodVr> odstepneZavody) {
     this.odstepneZavody = odstepneZavody;
   }
@@ -1056,12 +1131,16 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INSOLVENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<InsolvencniRizeniVr> getInsolvence() {
     return insolvence;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INSOLVENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInsolvence(List<InsolvencniRizeniVr> insolvence) {
     this.insolvence = insolvence;
   }
@@ -1087,16 +1166,19 @@ public class ZaznamVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_KONKURSY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<KonkursVr> getKonkursy() {
     return konkursy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KONKURSY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKonkursy(List<KonkursVr> konkursy) {
     this.konkursy = konkursy;
   }
-
 
 
   @Override
@@ -1196,455 +1278,5 @@ public class ZaznamVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("akcie");
-    openapiFields.add("rejstrik");
-    openapiFields.add("primarniZaznam");
-    openapiFields.add("spisovaZnacka");
-    openapiFields.add("ico");
-    openapiFields.add("obchodniJmeno");
-    openapiFields.add("vklady");
-    openapiFields.add("obchodniJmenoCizi");
-    openapiFields.add("zakladniKapital");
-    openapiFields.add("pravniForma");
-    openapiFields.add("financniUrad");
-    openapiFields.add("adresy");
-    openapiFields.add("ostatniSkutecnosti");
-    openapiFields.add("datumAktualizace");
-    openapiFields.add("stavSubjektu");
-    openapiFields.add("datumVzniku");
-    openapiFields.add("datumZapisu");
-    openapiFields.add("datumVymazu");
-    openapiFields.add("zpusobRizeni");
-    openapiFields.add("kategorieZO");
-    openapiFields.add("pravniDuvodVymazu");
-    openapiFields.add("cinnosti");
-    openapiFields.add("nazevNejvyssihoOrganu");
-    openapiFields.add("exekuce");
-    openapiFields.add("ostatniOrgany");
-    openapiFields.add("statutarniOrgany");
-    openapiFields.add("podnikatel");
-    openapiFields.add("spolecnici");
-    openapiFields.add("odstepneZavody");
-    openapiFields.add("insolvence");
-    openapiFields.add("konkursy");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZaznamVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZaznamVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZaznamVr is not found in the empty JSON string", ZaznamVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZaznamVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZaznamVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("akcie") != null && !jsonObj.get("akcie").isJsonNull()) {
-        JsonArray jsonArrayakcie = jsonObj.getAsJsonArray("akcie");
-        if (jsonArrayakcie != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("akcie").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `akcie` to be an array in the JSON string but got `%s`", jsonObj.get("akcie").toString()));
-          }
-
-          // validate the optional field `akcie` (array)
-          for (int i = 0; i < jsonArrayakcie.size(); i++) {
-            EmiseAkcieVr.validateJsonObject(jsonArrayakcie.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("rejstrik") != null && !jsonObj.get("rejstrik").isJsonNull()) && !jsonObj.get("rejstrik").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rejstrik` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rejstrik").toString()));
-      }
-      if (jsonObj.get("spisovaZnacka") != null && !jsonObj.get("spisovaZnacka").isJsonNull()) {
-        JsonArray jsonArrayspisovaZnacka = jsonObj.getAsJsonArray("spisovaZnacka");
-        if (jsonArrayspisovaZnacka != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("spisovaZnacka").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `spisovaZnacka` to be an array in the JSON string but got `%s`", jsonObj.get("spisovaZnacka").toString()));
-          }
-
-          // validate the optional field `spisovaZnacka` (array)
-          for (int i = 0; i < jsonArrayspisovaZnacka.size(); i++) {
-            SpisovaZnackaVr.validateJsonObject(jsonArrayspisovaZnacka.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("ico") != null && !jsonObj.get("ico").isJsonNull()) {
-        JsonArray jsonArrayico = jsonObj.getAsJsonArray("ico");
-        if (jsonArrayico != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("ico").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ico` to be an array in the JSON string but got `%s`", jsonObj.get("ico").toString()));
-          }
-
-          // validate the optional field `ico` (array)
-          for (int i = 0; i < jsonArrayico.size(); i++) {
-            IcoVr.validateJsonObject(jsonArrayico.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("obchodniJmeno") != null && !jsonObj.get("obchodniJmeno").isJsonNull()) {
-        JsonArray jsonArrayobchodniJmeno = jsonObj.getAsJsonArray("obchodniJmeno");
-        if (jsonArrayobchodniJmeno != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("obchodniJmeno").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `obchodniJmeno` to be an array in the JSON string but got `%s`", jsonObj.get("obchodniJmeno").toString()));
-          }
-
-          // validate the optional field `obchodniJmeno` (array)
-          for (int i = 0; i < jsonArrayobchodniJmeno.size(); i++) {
-            ObchodniJmenoVr.validateJsonObject(jsonArrayobchodniJmeno.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("vklady") != null && !jsonObj.get("vklady").isJsonNull()) {
-        JsonArray jsonArrayvklady = jsonObj.getAsJsonArray("vklady");
-        if (jsonArrayvklady != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("vklady").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `vklady` to be an array in the JSON string but got `%s`", jsonObj.get("vklady").toString()));
-          }
-
-          // validate the optional field `vklady` (array)
-          for (int i = 0; i < jsonArrayvklady.size(); i++) {
-            VkladVr.validateJsonObject(jsonArrayvklady.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("obchodniJmenoCizi") != null && !jsonObj.get("obchodniJmenoCizi").isJsonNull()) {
-        JsonArray jsonArrayobchodniJmenoCizi = jsonObj.getAsJsonArray("obchodniJmenoCizi");
-        if (jsonArrayobchodniJmenoCizi != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("obchodniJmenoCizi").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `obchodniJmenoCizi` to be an array in the JSON string but got `%s`", jsonObj.get("obchodniJmenoCizi").toString()));
-          }
-
-          // validate the optional field `obchodniJmenoCizi` (array)
-          for (int i = 0; i < jsonArrayobchodniJmenoCizi.size(); i++) {
-            ObchodniJmenoCiziVr.validateJsonObject(jsonArrayobchodniJmenoCizi.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("zakladniKapital") != null && !jsonObj.get("zakladniKapital").isJsonNull()) {
-        JsonArray jsonArrayzakladniKapital = jsonObj.getAsJsonArray("zakladniKapital");
-        if (jsonArrayzakladniKapital != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("zakladniKapital").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `zakladniKapital` to be an array in the JSON string but got `%s`", jsonObj.get("zakladniKapital").toString()));
-          }
-
-          // validate the optional field `zakladniKapital` (array)
-          for (int i = 0; i < jsonArrayzakladniKapital.size(); i++) {
-            ZakladniKapitalVr.validateJsonObject(jsonArrayzakladniKapital.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("pravniForma") != null && !jsonObj.get("pravniForma").isJsonNull()) {
-        JsonArray jsonArraypravniForma = jsonObj.getAsJsonArray("pravniForma");
-        if (jsonArraypravniForma != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pravniForma").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pravniForma` to be an array in the JSON string but got `%s`", jsonObj.get("pravniForma").toString()));
-          }
-
-          // validate the optional field `pravniForma` (array)
-          for (int i = 0; i < jsonArraypravniForma.size(); i++) {
-            PravniFormaVr.validateJsonObject(jsonArraypravniForma.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("financniUrad") != null && !jsonObj.get("financniUrad").isJsonNull()) && !jsonObj.get("financniUrad").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `financniUrad` to be a primitive type in the JSON string but got `%s`", jsonObj.get("financniUrad").toString()));
-      }
-      if (jsonObj.get("adresy") != null && !jsonObj.get("adresy").isJsonNull()) {
-        JsonArray jsonArrayadresy = jsonObj.getAsJsonArray("adresy");
-        if (jsonArrayadresy != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("adresy").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `adresy` to be an array in the JSON string but got `%s`", jsonObj.get("adresy").toString()));
-          }
-
-          // validate the optional field `adresy` (array)
-          for (int i = 0; i < jsonArrayadresy.size(); i++) {
-            AdresaVr.validateJsonObject(jsonArrayadresy.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("ostatniSkutecnosti") != null && !jsonObj.get("ostatniSkutecnosti").isJsonNull()) {
-        JsonArray jsonArrayostatniSkutecnosti = jsonObj.getAsJsonArray("ostatniSkutecnosti");
-        if (jsonArrayostatniSkutecnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("ostatniSkutecnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ostatniSkutecnosti` to be an array in the JSON string but got `%s`", jsonObj.get("ostatniSkutecnosti").toString()));
-          }
-
-          // validate the optional field `ostatniSkutecnosti` (array)
-          for (int i = 0; i < jsonArrayostatniSkutecnosti.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArrayostatniSkutecnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("stavSubjektu") != null && !jsonObj.get("stavSubjektu").isJsonNull()) && !jsonObj.get("stavSubjektu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavSubjektu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavSubjektu").toString()));
-      }
-      if (jsonObj.get("datumVzniku") != null && !jsonObj.get("datumVzniku").isJsonNull()) {
-        JsonArray jsonArraydatumVzniku = jsonObj.getAsJsonArray("datumVzniku");
-        if (jsonArraydatumVzniku != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("datumVzniku").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `datumVzniku` to be an array in the JSON string but got `%s`", jsonObj.get("datumVzniku").toString()));
-          }
-
-          // validate the optional field `datumVzniku` (array)
-          for (int i = 0; i < jsonArraydatumVzniku.size(); i++) {
-            DatumVr.validateJsonObject(jsonArraydatumVzniku.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("zpusobRizeni") != null && !jsonObj.get("zpusobRizeni").isJsonNull()) {
-        JsonArray jsonArrayzpusobRizeni = jsonObj.getAsJsonArray("zpusobRizeni");
-        if (jsonArrayzpusobRizeni != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("zpusobRizeni").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `zpusobRizeni` to be an array in the JSON string but got `%s`", jsonObj.get("zpusobRizeni").toString()));
-          }
-
-          // validate the optional field `zpusobRizeni` (array)
-          for (int i = 0; i < jsonArrayzpusobRizeni.size(); i++) {
-            ZpusobRizeniVr.validateJsonObject(jsonArrayzpusobRizeni.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("kategorieZO") != null && !jsonObj.get("kategorieZO").isJsonNull()) {
-        JsonArray jsonArraykategorieZO = jsonObj.getAsJsonArray("kategorieZO");
-        if (jsonArraykategorieZO != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("kategorieZO").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `kategorieZO` to be an array in the JSON string but got `%s`", jsonObj.get("kategorieZO").toString()));
-          }
-
-          // validate the optional field `kategorieZO` (array)
-          for (int i = 0; i < jsonArraykategorieZO.size(); i++) {
-            KategorieZoVr.validateJsonObject(jsonArraykategorieZO.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("pravniDuvodVymazu") != null && !jsonObj.get("pravniDuvodVymazu").isJsonNull()) {
-        JsonArray jsonArraypravniDuvodVymazu = jsonObj.getAsJsonArray("pravniDuvodVymazu");
-        if (jsonArraypravniDuvodVymazu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pravniDuvodVymazu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pravniDuvodVymazu` to be an array in the JSON string but got `%s`", jsonObj.get("pravniDuvodVymazu").toString()));
-          }
-
-          // validate the optional field `pravniDuvodVymazu` (array)
-          for (int i = 0; i < jsonArraypravniDuvodVymazu.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArraypravniDuvodVymazu.get(i).getAsJsonObject());
-          };
-        }
-      }
-      // validate the optional field `cinnosti`
-      if (jsonObj.get("cinnosti") != null && !jsonObj.get("cinnosti").isJsonNull()) {
-        CinnostiVr.validateJsonObject(jsonObj.getAsJsonObject("cinnosti"));
-      }
-      if (jsonObj.get("nazevNejvyssihoOrganu") != null && !jsonObj.get("nazevNejvyssihoOrganu").isJsonNull()) {
-        JsonArray jsonArraynazevNejvyssihoOrganu = jsonObj.getAsJsonArray("nazevNejvyssihoOrganu");
-        if (jsonArraynazevNejvyssihoOrganu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("nazevNejvyssihoOrganu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `nazevNejvyssihoOrganu` to be an array in the JSON string but got `%s`", jsonObj.get("nazevNejvyssihoOrganu").toString()));
-          }
-
-          // validate the optional field `nazevNejvyssihoOrganu` (array)
-          for (int i = 0; i < jsonArraynazevNejvyssihoOrganu.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArraynazevNejvyssihoOrganu.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("exekuce") != null && !jsonObj.get("exekuce").isJsonNull()) {
-        JsonArray jsonArrayexekuce = jsonObj.getAsJsonArray("exekuce");
-        if (jsonArrayexekuce != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("exekuce").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `exekuce` to be an array in the JSON string but got `%s`", jsonObj.get("exekuce").toString()));
-          }
-
-          // validate the optional field `exekuce` (array)
-          for (int i = 0; i < jsonArrayexekuce.size(); i++) {
-            ObecnyTextVr.validateJsonObject(jsonArrayexekuce.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("ostatniOrgany") != null && !jsonObj.get("ostatniOrgany").isJsonNull()) {
-        JsonArray jsonArrayostatniOrgany = jsonObj.getAsJsonArray("ostatniOrgany");
-        if (jsonArrayostatniOrgany != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("ostatniOrgany").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ostatniOrgany` to be an array in the JSON string but got `%s`", jsonObj.get("ostatniOrgany").toString()));
-          }
-
-          // validate the optional field `ostatniOrgany` (array)
-          for (int i = 0; i < jsonArrayostatniOrgany.size(); i++) {
-            OrganVr.validateJsonObject(jsonArrayostatniOrgany.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("statutarniOrgany") != null && !jsonObj.get("statutarniOrgany").isJsonNull()) {
-        JsonArray jsonArraystatutarniOrgany = jsonObj.getAsJsonArray("statutarniOrgany");
-        if (jsonArraystatutarniOrgany != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("statutarniOrgany").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `statutarniOrgany` to be an array in the JSON string but got `%s`", jsonObj.get("statutarniOrgany").toString()));
-          }
-
-          // validate the optional field `statutarniOrgany` (array)
-          for (int i = 0; i < jsonArraystatutarniOrgany.size(); i++) {
-            StatutarniOrganVr.validateJsonObject(jsonArraystatutarniOrgany.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("podnikatel") != null && !jsonObj.get("podnikatel").isJsonNull()) {
-        JsonArray jsonArraypodnikatel = jsonObj.getAsJsonArray("podnikatel");
-        if (jsonArraypodnikatel != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("podnikatel").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `podnikatel` to be an array in the JSON string but got `%s`", jsonObj.get("podnikatel").toString()));
-          }
-
-          // validate the optional field `podnikatel` (array)
-          for (int i = 0; i < jsonArraypodnikatel.size(); i++) {
-            PodnikatelVr.validateJsonObject(jsonArraypodnikatel.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("spolecnici") != null && !jsonObj.get("spolecnici").isJsonNull()) {
-        JsonArray jsonArrayspolecnici = jsonObj.getAsJsonArray("spolecnici");
-        if (jsonArrayspolecnici != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("spolecnici").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `spolecnici` to be an array in the JSON string but got `%s`", jsonObj.get("spolecnici").toString()));
-          }
-
-          // validate the optional field `spolecnici` (array)
-          for (int i = 0; i < jsonArrayspolecnici.size(); i++) {
-            SpolecniciVr.validateJsonObject(jsonArrayspolecnici.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("odstepneZavody") != null && !jsonObj.get("odstepneZavody").isJsonNull()) {
-        JsonArray jsonArrayodstepneZavody = jsonObj.getAsJsonArray("odstepneZavody");
-        if (jsonArrayodstepneZavody != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("odstepneZavody").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `odstepneZavody` to be an array in the JSON string but got `%s`", jsonObj.get("odstepneZavody").toString()));
-          }
-
-          // validate the optional field `odstepneZavody` (array)
-          for (int i = 0; i < jsonArrayodstepneZavody.size(); i++) {
-            OdstepnyZavodVr.validateJsonObject(jsonArrayodstepneZavody.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("insolvence") != null && !jsonObj.get("insolvence").isJsonNull()) {
-        JsonArray jsonArrayinsolvence = jsonObj.getAsJsonArray("insolvence");
-        if (jsonArrayinsolvence != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("insolvence").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `insolvence` to be an array in the JSON string but got `%s`", jsonObj.get("insolvence").toString()));
-          }
-
-          // validate the optional field `insolvence` (array)
-          for (int i = 0; i < jsonArrayinsolvence.size(); i++) {
-            InsolvencniRizeniVr.validateJsonObject(jsonArrayinsolvence.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("konkursy") != null && !jsonObj.get("konkursy").isJsonNull()) {
-        JsonArray jsonArraykonkursy = jsonObj.getAsJsonArray("konkursy");
-        if (jsonArraykonkursy != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("konkursy").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `konkursy` to be an array in the JSON string but got `%s`", jsonObj.get("konkursy").toString()));
-          }
-
-          // validate the optional field `konkursy` (array)
-          for (int i = 0; i < jsonArraykonkursy.size(); i++) {
-            KonkursVr.validateJsonObject(jsonArraykonkursy.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZaznamVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZaznamVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZaznamVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZaznamVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZaznamVr>() {
-           @Override
-           public void write(JsonWriter out, ZaznamVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZaznamVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZaznamVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZaznamVr
-  * @throws IOException if the JSON string is invalid with respect to ZaznamVr
-  */
-  public static ZaznamVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZaznamVr.class);
-  }
-
- /**
-  * Convert an instance of ZaznamVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

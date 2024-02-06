@@ -14,50 +14,28 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ZaznamRzp;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * EkonomickySubjektRzp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  EkonomickySubjektRzp.JSON_PROPERTY_ICO_ID,
+  EkonomickySubjektRzp.JSON_PROPERTY_ZAZNAMY
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class EkonomickySubjektRzp {
-  public static final String SERIALIZED_NAME_ICO_ID = "icoId";
-  @SerializedName(SERIALIZED_NAME_ICO_ID)
+  public static final String JSON_PROPERTY_ICO_ID = "icoId";
   private String icoId;
 
-  public static final String SERIALIZED_NAME_ZAZNAMY = "zaznamy";
-  @SerializedName(SERIALIZED_NAME_ZAZNAMY)
+  public static final String JSON_PROPERTY_ZAZNAMY = "zaznamy";
   private List<ZaznamRzp> zaznamy = null;
 
   public EkonomickySubjektRzp() {
@@ -75,12 +53,16 @@ public class EkonomickySubjektRzp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "ičo/id ekonomického subjektu")
+  @JsonProperty(JSON_PROPERTY_ICO_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIcoId() {
     return icoId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ICO_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIcoId(String icoId) {
     this.icoId = icoId;
   }
@@ -106,16 +88,19 @@ public class EkonomickySubjektRzp {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ZAZNAMY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZaznamRzp> getZaznamy() {
     return zaznamy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZAZNAMY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZaznamy(List<ZaznamRzp> zaznamy) {
     this.zaznamy = zaznamy;
   }
-
 
 
   @Override
@@ -157,108 +142,5 @@ public class EkonomickySubjektRzp {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("icoId");
-    openapiFields.add("zaznamy");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to EkonomickySubjektRzp
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (EkonomickySubjektRzp.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EkonomickySubjektRzp is not found in the empty JSON string", EkonomickySubjektRzp.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!EkonomickySubjektRzp.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EkonomickySubjektRzp` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("icoId") != null && !jsonObj.get("icoId").isJsonNull()) && !jsonObj.get("icoId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `icoId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icoId").toString()));
-      }
-      if (jsonObj.get("zaznamy") != null && !jsonObj.get("zaznamy").isJsonNull()) {
-        JsonArray jsonArrayzaznamy = jsonObj.getAsJsonArray("zaznamy");
-        if (jsonArrayzaznamy != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("zaznamy").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `zaznamy` to be an array in the JSON string but got `%s`", jsonObj.get("zaznamy").toString()));
-          }
-
-          // validate the optional field `zaznamy` (array)
-          for (int i = 0; i < jsonArrayzaznamy.size(); i++) {
-            ZaznamRzp.validateJsonObject(jsonArrayzaznamy.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!EkonomickySubjektRzp.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'EkonomickySubjektRzp' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<EkonomickySubjektRzp> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(EkonomickySubjektRzp.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<EkonomickySubjektRzp>() {
-           @Override
-           public void write(JsonWriter out, EkonomickySubjektRzp value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public EkonomickySubjektRzp read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of EkonomickySubjektRzp given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EkonomickySubjektRzp
-  * @throws IOException if the JSON string is invalid with respect to EkonomickySubjektRzp
-  */
-  public static EkonomickySubjektRzp fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, EkonomickySubjektRzp.class);
-  }
-
- /**
-  * Convert an instance of EkonomickySubjektRzp to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

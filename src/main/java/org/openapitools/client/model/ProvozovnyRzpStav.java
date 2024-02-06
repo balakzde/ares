@@ -14,55 +14,33 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ProvozovnyRzpStav
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ProvozovnyRzpStav.JSON_PROPERTY_POCET_CELKEM,
+  ProvozovnyRzpStav.JSON_PROPERTY_POCET_ZANIKLYCH,
+  ProvozovnyRzpStav.JSON_PROPERTY_POCET_AKTIVNICH,
+  ProvozovnyRzpStav.JSON_PROPERTY_POCET_POZASTAVENYCH
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ProvozovnyRzpStav {
-  public static final String SERIALIZED_NAME_POCET_CELKEM = "pocetCelkem";
-  @SerializedName(SERIALIZED_NAME_POCET_CELKEM)
+  public static final String JSON_PROPERTY_POCET_CELKEM = "pocetCelkem";
   private Integer pocetCelkem;
 
-  public static final String SERIALIZED_NAME_POCET_ZANIKLYCH = "pocetZaniklych";
-  @SerializedName(SERIALIZED_NAME_POCET_ZANIKLYCH)
+  public static final String JSON_PROPERTY_POCET_ZANIKLYCH = "pocetZaniklych";
   private Integer pocetZaniklych;
 
-  public static final String SERIALIZED_NAME_POCET_AKTIVNICH = "pocetAktivnich";
-  @SerializedName(SERIALIZED_NAME_POCET_AKTIVNICH)
+  public static final String JSON_PROPERTY_POCET_AKTIVNICH = "pocetAktivnich";
   private Integer pocetAktivnich;
 
-  public static final String SERIALIZED_NAME_POCET_POZASTAVENYCH = "pocetPozastavenych";
-  @SerializedName(SERIALIZED_NAME_POCET_POZASTAVENYCH)
+  public static final String JSON_PROPERTY_POCET_POZASTAVENYCH = "pocetPozastavenych";
   private Integer pocetPozastavenych;
 
   public ProvozovnyRzpStav() {
@@ -81,12 +59,16 @@ public class ProvozovnyRzpStav {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Celkový počet provozoven")
+  @JsonProperty(JSON_PROPERTY_POCET_CELKEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocetCelkem() {
     return pocetCelkem;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_CELKEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetCelkem(Integer pocetCelkem) {
     this.pocetCelkem = pocetCelkem;
   }
@@ -105,12 +87,16 @@ public class ProvozovnyRzpStav {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Celkový počet zaniklých provozoven")
+  @JsonProperty(JSON_PROPERTY_POCET_ZANIKLYCH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocetZaniklych() {
     return pocetZaniklych;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_ZANIKLYCH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetZaniklych(Integer pocetZaniklych) {
     this.pocetZaniklych = pocetZaniklych;
   }
@@ -129,12 +115,16 @@ public class ProvozovnyRzpStav {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Celkový počet aktivnich provozoven")
+  @JsonProperty(JSON_PROPERTY_POCET_AKTIVNICH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocetAktivnich() {
     return pocetAktivnich;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_AKTIVNICH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetAktivnich(Integer pocetAktivnich) {
     this.pocetAktivnich = pocetAktivnich;
   }
@@ -153,16 +143,19 @@ public class ProvozovnyRzpStav {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Celkový počet zaniklých provozoven")
+  @JsonProperty(JSON_PROPERTY_POCET_POZASTAVENYCH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocetPozastavenych() {
     return pocetPozastavenych;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_POZASTAVENYCH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetPozastavenych(Integer pocetPozastavenych) {
     this.pocetPozastavenych = pocetPozastavenych;
   }
-
 
 
   @Override
@@ -208,93 +201,5 @@ public class ProvozovnyRzpStav {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("pocetCelkem");
-    openapiFields.add("pocetZaniklych");
-    openapiFields.add("pocetAktivnich");
-    openapiFields.add("pocetPozastavenych");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ProvozovnyRzpStav
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ProvozovnyRzpStav.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProvozovnyRzpStav is not found in the empty JSON string", ProvozovnyRzpStav.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ProvozovnyRzpStav.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ProvozovnyRzpStav` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ProvozovnyRzpStav.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ProvozovnyRzpStav' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ProvozovnyRzpStav> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ProvozovnyRzpStav.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ProvozovnyRzpStav>() {
-           @Override
-           public void write(JsonWriter out, ProvozovnyRzpStav value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ProvozovnyRzpStav read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ProvozovnyRzpStav given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProvozovnyRzpStav
-  * @throws IOException if the JSON string is invalid with respect to ProvozovnyRzpStav
-  */
-  public static ProvozovnyRzpStav fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ProvozovnyRzpStav.class);
-  }
-
- /**
-  * Convert an instance of ProvozovnyRzpStav to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

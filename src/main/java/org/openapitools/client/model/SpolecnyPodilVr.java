@@ -14,61 +14,39 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AngazmaOsobaVr;
-import org.openapitools.client.model.PodilVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Společný podíl
  */
 @ApiModel(description = "Společný podíl")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  SpolecnyPodilVr.JSON_PROPERTY_DATUM_ZAPISU,
+  SpolecnyPodilVr.JSON_PROPERTY_DATUM_VYMAZU,
+  SpolecnyPodilVr.JSON_PROPERTY_PODILNIK,
+  SpolecnyPodilVr.JSON_PROPERTY_PODIL
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class SpolecnyPodilVr {
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU = "datumZapisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
   private LocalDate datumZapisu;
 
-  public static final String SERIALIZED_NAME_DATUM_VYMAZU = "datumVymazu";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYMAZU)
+  public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
   private LocalDate datumVymazu;
 
-  public static final String SERIALIZED_NAME_PODILNIK = "podilnik";
-  @SerializedName(SERIALIZED_NAME_PODILNIK)
+  public static final String JSON_PROPERTY_PODILNIK = "podilnik";
   private List<AngazmaOsobaVr> podilnik = null;
 
-  public static final String SERIALIZED_NAME_PODIL = "podil";
-  @SerializedName(SERIALIZED_NAME_PODIL)
+  public static final String JSON_PROPERTY_PODIL = "podil";
   private PodilVr podil;
 
   public SpolecnyPodilVr() {
@@ -86,12 +64,16 @@ public class SpolecnyPodilVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisu() {
     return datumZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisu(LocalDate datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
@@ -109,12 +91,16 @@ public class SpolecnyPodilVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum výmazu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVymazu() {
     return datumVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVymazu(LocalDate datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
@@ -140,12 +126,16 @@ public class SpolecnyPodilVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PODILNIK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazmaOsobaVr> getPodilnik() {
     return podilnik;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODILNIK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodilnik(List<AngazmaOsobaVr> podilnik) {
     this.podilnik = podilnik;
   }
@@ -163,16 +153,19 @@ public class SpolecnyPodilVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PODIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public PodilVr getPodil() {
     return podil;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodil(PodilVr podil) {
     this.podil = podil;
   }
-
 
 
   @Override
@@ -218,111 +211,5 @@ public class SpolecnyPodilVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumZapisu");
-    openapiFields.add("datumVymazu");
-    openapiFields.add("podilnik");
-    openapiFields.add("podil");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SpolecnyPodilVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SpolecnyPodilVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SpolecnyPodilVr is not found in the empty JSON string", SpolecnyPodilVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SpolecnyPodilVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SpolecnyPodilVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("podilnik") != null && !jsonObj.get("podilnik").isJsonNull()) {
-        JsonArray jsonArraypodilnik = jsonObj.getAsJsonArray("podilnik");
-        if (jsonArraypodilnik != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("podilnik").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `podilnik` to be an array in the JSON string but got `%s`", jsonObj.get("podilnik").toString()));
-          }
-
-          // validate the optional field `podilnik` (array)
-          for (int i = 0; i < jsonArraypodilnik.size(); i++) {
-            AngazmaOsobaVr.validateJsonObject(jsonArraypodilnik.get(i).getAsJsonObject());
-          };
-        }
-      }
-      // validate the optional field `podil`
-      if (jsonObj.get("podil") != null && !jsonObj.get("podil").isJsonNull()) {
-        PodilVr.validateJsonObject(jsonObj.getAsJsonObject("podil"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SpolecnyPodilVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SpolecnyPodilVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SpolecnyPodilVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SpolecnyPodilVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SpolecnyPodilVr>() {
-           @Override
-           public void write(JsonWriter out, SpolecnyPodilVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SpolecnyPodilVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SpolecnyPodilVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SpolecnyPodilVr
-  * @throws IOException if the JSON string is invalid with respect to SpolecnyPodilVr
-  */
-  public static SpolecnyPodilVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SpolecnyPodilVr.class);
-  }
-
- /**
-  * Convert an instance of SpolecnyPodilVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

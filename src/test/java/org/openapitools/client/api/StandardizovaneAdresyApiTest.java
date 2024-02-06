@@ -13,36 +13,34 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.StandardizovanaAdresaFiltr;
 import org.openapitools.client.model.StandardizovaneAdresySeznam;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for StandardizovaneAdresyApi
  */
-@Disabled
+@Ignore
 public class StandardizovaneAdresyApiTest {
 
     private final StandardizovaneAdresyApi api = new StandardizovaneAdresyApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání seznamu standardizovaných adres RÚIAN podle komplexního filtru
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejStandardizovaneAdresyTest() throws ApiException {
+    public void vyhledejStandardizovaneAdresyTest() {
         StandardizovanaAdresaFiltr standardizovanaAdresaFiltr = null;
         StandardizovaneAdresySeznam response = api.vyhledejStandardizovaneAdresy(standardizovanaAdresaFiltr);
+
         // TODO: test validations
     }
-
+    
 }

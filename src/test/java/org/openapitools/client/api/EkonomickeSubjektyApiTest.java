@@ -13,49 +13,51 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyKomplexFiltr;
 import org.openapitools.client.model.EkonomickeSubjektySeznam;
 import org.openapitools.client.model.EkonomickySubjekt;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektyApiTest {
 
     private final EkonomickeSubjektyApi api = new EkonomickeSubjektyApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání ekonomického subjektu ARES podle zadaného iča 
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratEkonomickySubjektTest() throws ApiException {
+    public void vratEkonomickySubjektTest() {
         String ico = null;
         EkonomickySubjekt response = api.vratEkonomickySubjekt(ico);
+
         // TODO: test validations
     }
-
+    
     /**
+     * 
+     *
      * Vyhledání seznamu ekonomických subjektů ARES podle komplexního filtru
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejEkonomickeSubjektyTest() throws ApiException {
+    public void vyhledejEkonomickeSubjektyTest() {
         EkonomickeSubjektyKomplexFiltr ekonomickeSubjektyKomplexFiltr = null;
         EkonomickeSubjektySeznam response = api.vyhledejEkonomickeSubjekty(ekonomickeSubjektyKomplexFiltr);
+
         // TODO: test validations
     }
-
+    
 }

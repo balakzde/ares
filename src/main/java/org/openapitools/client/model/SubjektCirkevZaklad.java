@@ -14,67 +14,45 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.PravoZvlastni;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * SubjektCirkevZaklad
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  SubjektCirkevZaklad.JSON_PROPERTY_DATUM_REGISTRACE_PRAV,
+  SubjektCirkevZaklad.JSON_PROPERTY_CISLO_REGISTRACE_PRAV,
+  SubjektCirkevZaklad.JSON_PROPERTY_ICO_NASTUPCE,
+  SubjektCirkevZaklad.JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV,
+  SubjektCirkevZaklad.JSON_PROPERTY_PRAVO_ZVLASTNI,
+  SubjektCirkevZaklad.JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE_PRAV
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class SubjektCirkevZaklad {
-  public static final String SERIALIZED_NAME_DATUM_REGISTRACE_PRAV = "datumRegistracePrav";
-  @SerializedName(SERIALIZED_NAME_DATUM_REGISTRACE_PRAV)
+  public static final String JSON_PROPERTY_DATUM_REGISTRACE_PRAV = "datumRegistracePrav";
   private LocalDate datumRegistracePrav;
 
-  public static final String SERIALIZED_NAME_CISLO_REGISTRACE_PRAV = "cisloRegistracePrav";
-  @SerializedName(SERIALIZED_NAME_CISLO_REGISTRACE_PRAV)
+  public static final String JSON_PROPERTY_CISLO_REGISTRACE_PRAV = "cisloRegistracePrav";
   private String cisloRegistracePrav;
 
-  public static final String SERIALIZED_NAME_ICO_NASTUPCE = "icoNastupce";
-  @SerializedName(SERIALIZED_NAME_ICO_NASTUPCE)
+  public static final String JSON_PROPERTY_ICO_NASTUPCE = "icoNastupce";
   private String icoNastupce;
 
-  public static final String SERIALIZED_NAME_DATUM_ZRUSENI_REGISTRACE_PRAV = "datumZruseniRegistracePrav";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZRUSENI_REGISTRACE_PRAV)
+  public static final String JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV = "datumZruseniRegistracePrav";
   private LocalDate datumZruseniRegistracePrav;
 
-  public static final String SERIALIZED_NAME_PRAVO_ZVLASTNI = "pravoZvlastni";
-  @SerializedName(SERIALIZED_NAME_PRAVO_ZVLASTNI)
+  public static final String JSON_PROPERTY_PRAVO_ZVLASTNI = "pravoZvlastni";
   private List<PravoZvlastni> pravoZvlastni = null;
 
-  public static final String SERIALIZED_NAME_CISLO_ZRUSENI_REGISTRACE_PRAV = "cisloZruseniRegistracePrav";
-  @SerializedName(SERIALIZED_NAME_CISLO_ZRUSENI_REGISTRACE_PRAV)
+  public static final String JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE_PRAV = "cisloZruseniRegistracePrav";
   private String cisloZruseniRegistracePrav;
 
   public SubjektCirkevZaklad() {
@@ -92,12 +70,16 @@ public class SubjektCirkevZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum registrace práv dané církvi.")
+  @JsonProperty(JSON_PROPERTY_DATUM_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumRegistracePrav() {
     return datumRegistracePrav;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumRegistracePrav(LocalDate datumRegistracePrav) {
     this.datumRegistracePrav = datumRegistracePrav;
   }
@@ -115,12 +97,16 @@ public class SubjektCirkevZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Číslo registrace práv dané církvi.")
+  @JsonProperty(JSON_PROPERTY_CISLO_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCisloRegistracePrav() {
     return cisloRegistracePrav;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloRegistracePrav(String cisloRegistracePrav) {
     this.cisloRegistracePrav = cisloRegistracePrav;
   }
@@ -138,12 +124,16 @@ public class SubjektCirkevZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "IČO nástupce zrušené právnické osoby. ")
+  @JsonProperty(JSON_PROPERTY_ICO_NASTUPCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIcoNastupce() {
     return icoNastupce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ICO_NASTUPCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIcoNastupce(String icoNastupce) {
     this.icoNastupce = icoNastupce;
   }
@@ -161,12 +151,16 @@ public class SubjektCirkevZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zrušení registrace práv dané církvi.")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZruseniRegistracePrav() {
     return datumZruseniRegistracePrav;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZruseniRegistracePrav(LocalDate datumZruseniRegistracePrav) {
     this.datumZruseniRegistracePrav = datumZruseniRegistracePrav;
   }
@@ -192,12 +186,16 @@ public class SubjektCirkevZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PRAVO_ZVLASTNI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<PravoZvlastni> getPravoZvlastni() {
     return pravoZvlastni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRAVO_ZVLASTNI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPravoZvlastni(List<PravoZvlastni> pravoZvlastni) {
     this.pravoZvlastni = pravoZvlastni;
   }
@@ -215,16 +213,19 @@ public class SubjektCirkevZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Číslo zrušení registrace práv dané církvi.")
+  @JsonProperty(JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCisloZruseniRegistracePrav() {
     return cisloZruseniRegistracePrav;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE_PRAV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloZruseniRegistracePrav(String cisloZruseniRegistracePrav) {
     this.cisloZruseniRegistracePrav = cisloZruseniRegistracePrav;
   }
-
 
 
   @Override
@@ -274,118 +275,5 @@ public class SubjektCirkevZaklad {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumRegistracePrav");
-    openapiFields.add("cisloRegistracePrav");
-    openapiFields.add("icoNastupce");
-    openapiFields.add("datumZruseniRegistracePrav");
-    openapiFields.add("pravoZvlastni");
-    openapiFields.add("cisloZruseniRegistracePrav");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SubjektCirkevZaklad
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SubjektCirkevZaklad.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SubjektCirkevZaklad is not found in the empty JSON string", SubjektCirkevZaklad.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SubjektCirkevZaklad.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SubjektCirkevZaklad` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("cisloRegistracePrav") != null && !jsonObj.get("cisloRegistracePrav").isJsonNull()) && !jsonObj.get("cisloRegistracePrav").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cisloRegistracePrav` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cisloRegistracePrav").toString()));
-      }
-      if ((jsonObj.get("icoNastupce") != null && !jsonObj.get("icoNastupce").isJsonNull()) && !jsonObj.get("icoNastupce").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `icoNastupce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icoNastupce").toString()));
-      }
-      if (jsonObj.get("pravoZvlastni") != null && !jsonObj.get("pravoZvlastni").isJsonNull()) {
-        JsonArray jsonArraypravoZvlastni = jsonObj.getAsJsonArray("pravoZvlastni");
-        if (jsonArraypravoZvlastni != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pravoZvlastni").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pravoZvlastni` to be an array in the JSON string but got `%s`", jsonObj.get("pravoZvlastni").toString()));
-          }
-
-          // validate the optional field `pravoZvlastni` (array)
-          for (int i = 0; i < jsonArraypravoZvlastni.size(); i++) {
-            PravoZvlastni.validateJsonObject(jsonArraypravoZvlastni.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("cisloZruseniRegistracePrav") != null && !jsonObj.get("cisloZruseniRegistracePrav").isJsonNull()) && !jsonObj.get("cisloZruseniRegistracePrav").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cisloZruseniRegistracePrav` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cisloZruseniRegistracePrav").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SubjektCirkevZaklad.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SubjektCirkevZaklad' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SubjektCirkevZaklad> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SubjektCirkevZaklad.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SubjektCirkevZaklad>() {
-           @Override
-           public void write(JsonWriter out, SubjektCirkevZaklad value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SubjektCirkevZaklad read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SubjektCirkevZaklad given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubjektCirkevZaklad
-  * @throws IOException if the JSON string is invalid with respect to SubjektCirkevZaklad
-  */
-  public static SubjektCirkevZaklad fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SubjektCirkevZaklad.class);
-  }
-
- /**
-  * Convert an instance of SubjektCirkevZaklad to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

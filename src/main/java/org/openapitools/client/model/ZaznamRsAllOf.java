@@ -14,51 +14,30 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AngazovanaOsobaRs;
-import org.openapitools.client.model.AngazovanySubjektRs;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ZaznamRsAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZaznamRsAllOf.JSON_PROPERTY_ANGAZOVANY_SUBJEKT,
+  ZaznamRsAllOf.JSON_PROPERTY_ANGAZOVANA_OSOBA
+})
+@JsonTypeName("ZaznamRs_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZaznamRsAllOf {
-  public static final String SERIALIZED_NAME_ANGAZOVANY_SUBJEKT = "angazovanySubjekt";
-  @SerializedName(SERIALIZED_NAME_ANGAZOVANY_SUBJEKT)
+  public static final String JSON_PROPERTY_ANGAZOVANY_SUBJEKT = "angazovanySubjekt";
   private List<AngazovanySubjektRs> angazovanySubjekt = null;
 
-  public static final String SERIALIZED_NAME_ANGAZOVANA_OSOBA = "angazovanaOsoba";
-  @SerializedName(SERIALIZED_NAME_ANGAZOVANA_OSOBA)
+  public static final String JSON_PROPERTY_ANGAZOVANA_OSOBA = "angazovanaOsoba";
   private List<AngazovanaOsobaRs> angazovanaOsoba = null;
 
   public ZaznamRsAllOf() {
@@ -84,12 +63,16 @@ public class ZaznamRsAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ANGAZOVANY_SUBJEKT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazovanySubjektRs> getAngazovanySubjekt() {
     return angazovanySubjekt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ANGAZOVANY_SUBJEKT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAngazovanySubjekt(List<AngazovanySubjektRs> angazovanySubjekt) {
     this.angazovanySubjekt = angazovanySubjekt;
   }
@@ -115,16 +98,19 @@ public class ZaznamRsAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ANGAZOVANA_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazovanaOsobaRs> getAngazovanaOsoba() {
     return angazovanaOsoba;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ANGAZOVANA_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAngazovanaOsoba(List<AngazovanaOsobaRs> angazovanaOsoba) {
     this.angazovanaOsoba = angazovanaOsoba;
   }
-
 
 
   @Override
@@ -166,119 +152,5 @@ public class ZaznamRsAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("angazovanySubjekt");
-    openapiFields.add("angazovanaOsoba");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZaznamRsAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZaznamRsAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZaznamRsAllOf is not found in the empty JSON string", ZaznamRsAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZaznamRsAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZaznamRsAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("angazovanySubjekt") != null && !jsonObj.get("angazovanySubjekt").isJsonNull()) {
-        JsonArray jsonArrayangazovanySubjekt = jsonObj.getAsJsonArray("angazovanySubjekt");
-        if (jsonArrayangazovanySubjekt != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("angazovanySubjekt").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `angazovanySubjekt` to be an array in the JSON string but got `%s`", jsonObj.get("angazovanySubjekt").toString()));
-          }
-
-          // validate the optional field `angazovanySubjekt` (array)
-          for (int i = 0; i < jsonArrayangazovanySubjekt.size(); i++) {
-            AngazovanySubjektRs.validateJsonObject(jsonArrayangazovanySubjekt.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("angazovanaOsoba") != null && !jsonObj.get("angazovanaOsoba").isJsonNull()) {
-        JsonArray jsonArrayangazovanaOsoba = jsonObj.getAsJsonArray("angazovanaOsoba");
-        if (jsonArrayangazovanaOsoba != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("angazovanaOsoba").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `angazovanaOsoba` to be an array in the JSON string but got `%s`", jsonObj.get("angazovanaOsoba").toString()));
-          }
-
-          // validate the optional field `angazovanaOsoba` (array)
-          for (int i = 0; i < jsonArrayangazovanaOsoba.size(); i++) {
-            AngazovanaOsobaRs.validateJsonObject(jsonArrayangazovanaOsoba.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZaznamRsAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZaznamRsAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZaznamRsAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZaznamRsAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZaznamRsAllOf>() {
-           @Override
-           public void write(JsonWriter out, ZaznamRsAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZaznamRsAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZaznamRsAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZaznamRsAllOf
-  * @throws IOException if the JSON string is invalid with respect to ZaznamRsAllOf
-  */
-  public static ZaznamRsAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZaznamRsAllOf.class);
-  }
-
- /**
-  * Convert an instance of ZaznamRsAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

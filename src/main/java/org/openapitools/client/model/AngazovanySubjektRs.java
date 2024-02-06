@@ -14,74 +14,53 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.Adresa;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Detailní informace o ekonomickém subjektu ze zdroje RŠ
  */
 @ApiModel(description = "Detailní informace o ekonomickém subjektu ze zdroje RŠ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  AngazovanySubjektRs.JSON_PROPERTY_ICO,
+  AngazovanySubjektRs.JSON_PROPERTY_OBCHODNI_JMENO,
+  AngazovanySubjektRs.JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE,
+  AngazovanySubjektRs.JSON_PROPERTY_TYP_ANGAZMA,
+  AngazovanySubjektRs.JSON_PROPERTY_ADRESA,
+  AngazovanySubjektRs.JSON_PROPERTY_PRAVNI_FORMA,
+  AngazovanySubjektRs.JSON_PROPERTY_DATUM_VZNIKU,
+  AngazovanySubjektRs.JSON_PROPERTY_DATUM_ZANIKU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class AngazovanySubjektRs {
-  public static final String SERIALIZED_NAME_ICO = "ico";
-  @SerializedName(SERIALIZED_NAME_ICO)
+  public static final String JSON_PROPERTY_ICO = "ico";
   private String ico;
 
-  public static final String SERIALIZED_NAME_OBCHODNI_JMENO = "obchodniJmeno";
-  @SerializedName(SERIALIZED_NAME_OBCHODNI_JMENO)
+  public static final String JSON_PROPERTY_OBCHODNI_JMENO = "obchodniJmeno";
   private String obchodniJmeno;
 
-  public static final String SERIALIZED_NAME_OBCHODNI_JMENO_ZKRACENE = "obchodniJmenoZkracene";
-  @SerializedName(SERIALIZED_NAME_OBCHODNI_JMENO_ZKRACENE)
+  public static final String JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE = "obchodniJmenoZkracene";
   private String obchodniJmenoZkracene;
 
-  public static final String SERIALIZED_NAME_TYP_ANGAZMA = "typAngazma";
-  @SerializedName(SERIALIZED_NAME_TYP_ANGAZMA)
+  public static final String JSON_PROPERTY_TYP_ANGAZMA = "typAngazma";
   private String typAngazma;
 
-  public static final String SERIALIZED_NAME_ADRESA = "adresa";
-  @SerializedName(SERIALIZED_NAME_ADRESA)
+  public static final String JSON_PROPERTY_ADRESA = "adresa";
   private Adresa adresa;
 
-  public static final String SERIALIZED_NAME_PRAVNI_FORMA = "pravniForma";
-  @SerializedName(SERIALIZED_NAME_PRAVNI_FORMA)
+  public static final String JSON_PROPERTY_PRAVNI_FORMA = "pravniForma";
   private String pravniForma;
 
-  public static final String SERIALIZED_NAME_DATUM_VZNIKU = "datumVzniku";
-  @SerializedName(SERIALIZED_NAME_DATUM_VZNIKU)
+  public static final String JSON_PROPERTY_DATUM_VZNIKU = "datumVzniku";
   private LocalDate datumVzniku;
 
-  public static final String SERIALIZED_NAME_DATUM_ZANIKU = "datumZaniku";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZANIKU)
+  public static final String JSON_PROPERTY_DATUM_ZANIKU = "datumZaniku";
   private LocalDate datumZaniku;
 
   public AngazovanySubjektRs() {
@@ -99,12 +78,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "IČO")
+  @JsonProperty(JSON_PROPERTY_ICO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIco() {
     return ico;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ICO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIco(String ico) {
     this.ico = ico;
   }
@@ -122,12 +105,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Jméno subjektu")
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObchodniJmeno() {
     return obchodniJmeno;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObchodniJmeno(String obchodniJmeno) {
     this.obchodniJmeno = obchodniJmeno;
   }
@@ -145,12 +132,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Zkrácené jméno subjektu")
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObchodniJmenoZkracene() {
     return obchodniJmenoZkracene;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObchodniJmenoZkracene(String obchodniJmenoZkracene) {
     this.obchodniJmenoZkracene = obchodniJmenoZkracene;
   }
@@ -168,12 +159,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypAngazma() {
     return typAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypAngazma(String typAngazma) {
     this.typAngazma = typAngazma;
   }
@@ -191,12 +186,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Adresa getAdresa() {
     return adresa;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADRESA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdresa(Adresa adresa) {
     this.adresa = adresa;
   }
@@ -214,12 +213,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Právní forma ")
+  @JsonProperty(JSON_PROPERTY_PRAVNI_FORMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPravniForma() {
     return pravniForma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRAVNI_FORMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPravniForma(String pravniForma) {
     this.pravniForma = pravniForma;
   }
@@ -237,12 +240,16 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum vzniku")
+  @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVzniku() {
     return datumVzniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVzniku(LocalDate datumVzniku) {
     this.datumVzniku = datumVzniku;
   }
@@ -260,16 +267,19 @@ public class AngazovanySubjektRs {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zániku")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZaniku() {
     return datumZaniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZaniku(LocalDate datumZaniku) {
     this.datumZaniku = datumZaniku;
   }
-
 
 
   @Override
@@ -323,116 +333,5 @@ public class AngazovanySubjektRs {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ico");
-    openapiFields.add("obchodniJmeno");
-    openapiFields.add("obchodniJmenoZkracene");
-    openapiFields.add("typAngazma");
-    openapiFields.add("adresa");
-    openapiFields.add("pravniForma");
-    openapiFields.add("datumVzniku");
-    openapiFields.add("datumZaniku");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AngazovanySubjektRs
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AngazovanySubjektRs.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AngazovanySubjektRs is not found in the empty JSON string", AngazovanySubjektRs.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AngazovanySubjektRs.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AngazovanySubjektRs` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("ico") != null && !jsonObj.get("ico").isJsonNull()) && !jsonObj.get("ico").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ico` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ico").toString()));
-      }
-      if ((jsonObj.get("obchodniJmeno") != null && !jsonObj.get("obchodniJmeno").isJsonNull()) && !jsonObj.get("obchodniJmeno").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `obchodniJmeno` to be a primitive type in the JSON string but got `%s`", jsonObj.get("obchodniJmeno").toString()));
-      }
-      if ((jsonObj.get("obchodniJmenoZkracene") != null && !jsonObj.get("obchodniJmenoZkracene").isJsonNull()) && !jsonObj.get("obchodniJmenoZkracene").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `obchodniJmenoZkracene` to be a primitive type in the JSON string but got `%s`", jsonObj.get("obchodniJmenoZkracene").toString()));
-      }
-      if ((jsonObj.get("typAngazma") != null && !jsonObj.get("typAngazma").isJsonNull()) && !jsonObj.get("typAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typAngazma").toString()));
-      }
-      // validate the optional field `adresa`
-      if (jsonObj.get("adresa") != null && !jsonObj.get("adresa").isJsonNull()) {
-        Adresa.validateJsonObject(jsonObj.getAsJsonObject("adresa"));
-      }
-      if ((jsonObj.get("pravniForma") != null && !jsonObj.get("pravniForma").isJsonNull()) && !jsonObj.get("pravniForma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pravniForma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pravniForma").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AngazovanySubjektRs.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AngazovanySubjektRs' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AngazovanySubjektRs> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AngazovanySubjektRs.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AngazovanySubjektRs>() {
-           @Override
-           public void write(JsonWriter out, AngazovanySubjektRs value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AngazovanySubjektRs read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AngazovanySubjektRs given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AngazovanySubjektRs
-  * @throws IOException if the JSON string is invalid with respect to AngazovanySubjektRs
-  */
-  public static AngazovanySubjektRs fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AngazovanySubjektRs.class);
-  }
-
- /**
-  * Convert an instance of AngazovanySubjektRs to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

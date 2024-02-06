@@ -14,56 +14,34 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AngazovanaOsobaRzp;
-import org.openapitools.client.model.Provozovna;
-import org.openapitools.client.model.ZivnostOborCinnosti;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ZivnostAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZivnostAllOf.JSON_PROPERTY_OBORY_CINNOSTI,
+  ZivnostAllOf.JSON_PROPERTY_ODPOVEDNI_ZASTUPCI,
+  ZivnostAllOf.JSON_PROPERTY_PROVOZOVNY
+})
+@JsonTypeName("Zivnost_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZivnostAllOf {
-  public static final String SERIALIZED_NAME_OBORY_CINNOSTI = "oboryCinnosti";
-  @SerializedName(SERIALIZED_NAME_OBORY_CINNOSTI)
+  public static final String JSON_PROPERTY_OBORY_CINNOSTI = "oboryCinnosti";
   private List<ZivnostOborCinnosti> oboryCinnosti = null;
 
-  public static final String SERIALIZED_NAME_ODPOVEDNI_ZASTUPCI = "odpovedniZastupci";
-  @SerializedName(SERIALIZED_NAME_ODPOVEDNI_ZASTUPCI)
+  public static final String JSON_PROPERTY_ODPOVEDNI_ZASTUPCI = "odpovedniZastupci";
   private List<AngazovanaOsobaRzp> odpovedniZastupci = null;
 
-  public static final String SERIALIZED_NAME_PROVOZOVNY = "provozovny";
-  @SerializedName(SERIALIZED_NAME_PROVOZOVNY)
+  public static final String JSON_PROPERTY_PROVOZOVNY = "provozovny";
   private List<Provozovna> provozovny = null;
 
   public ZivnostAllOf() {
@@ -89,12 +67,16 @@ public class ZivnostAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OBORY_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostOborCinnosti> getOboryCinnosti() {
     return oboryCinnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBORY_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOboryCinnosti(List<ZivnostOborCinnosti> oboryCinnosti) {
     this.oboryCinnosti = oboryCinnosti;
   }
@@ -120,12 +102,16 @@ public class ZivnostAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ODPOVEDNI_ZASTUPCI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AngazovanaOsobaRzp> getOdpovedniZastupci() {
     return odpovedniZastupci;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ODPOVEDNI_ZASTUPCI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOdpovedniZastupci(List<AngazovanaOsobaRzp> odpovedniZastupci) {
     this.odpovedniZastupci = odpovedniZastupci;
   }
@@ -151,16 +137,19 @@ public class ZivnostAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Provozovna> getProvozovny() {
     return provozovny;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProvozovny(List<Provozovna> provozovny) {
     this.provozovny = provozovny;
   }
-
 
 
   @Override
@@ -204,134 +193,5 @@ public class ZivnostAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("oboryCinnosti");
-    openapiFields.add("odpovedniZastupci");
-    openapiFields.add("provozovny");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZivnostAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZivnostAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZivnostAllOf is not found in the empty JSON string", ZivnostAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZivnostAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZivnostAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("oboryCinnosti") != null && !jsonObj.get("oboryCinnosti").isJsonNull()) {
-        JsonArray jsonArrayoboryCinnosti = jsonObj.getAsJsonArray("oboryCinnosti");
-        if (jsonArrayoboryCinnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("oboryCinnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `oboryCinnosti` to be an array in the JSON string but got `%s`", jsonObj.get("oboryCinnosti").toString()));
-          }
-
-          // validate the optional field `oboryCinnosti` (array)
-          for (int i = 0; i < jsonArrayoboryCinnosti.size(); i++) {
-            ZivnostOborCinnosti.validateJsonObject(jsonArrayoboryCinnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("odpovedniZastupci") != null && !jsonObj.get("odpovedniZastupci").isJsonNull()) {
-        JsonArray jsonArrayodpovedniZastupci = jsonObj.getAsJsonArray("odpovedniZastupci");
-        if (jsonArrayodpovedniZastupci != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("odpovedniZastupci").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `odpovedniZastupci` to be an array in the JSON string but got `%s`", jsonObj.get("odpovedniZastupci").toString()));
-          }
-
-          // validate the optional field `odpovedniZastupci` (array)
-          for (int i = 0; i < jsonArrayodpovedniZastupci.size(); i++) {
-            AngazovanaOsobaRzp.validateJsonObject(jsonArrayodpovedniZastupci.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("provozovny") != null && !jsonObj.get("provozovny").isJsonNull()) {
-        JsonArray jsonArrayprovozovny = jsonObj.getAsJsonArray("provozovny");
-        if (jsonArrayprovozovny != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("provozovny").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `provozovny` to be an array in the JSON string but got `%s`", jsonObj.get("provozovny").toString()));
-          }
-
-          // validate the optional field `provozovny` (array)
-          for (int i = 0; i < jsonArrayprovozovny.size(); i++) {
-            Provozovna.validateJsonObject(jsonArrayprovozovny.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZivnostAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZivnostAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZivnostAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZivnostAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZivnostAllOf>() {
-           @Override
-           public void write(JsonWriter out, ZivnostAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZivnostAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZivnostAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZivnostAllOf
-  * @throws IOException if the JSON string is invalid with respect to ZivnostAllOf
-  */
-  public static ZivnostAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZivnostAllOf.class);
-  }
-
- /**
-  * Convert an instance of ZivnostAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

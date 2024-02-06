@@ -14,67 +14,46 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.KontaktyRs;
-import org.openapitools.client.model.SkolaZarizeni;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * ZaznamRsZakladAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZaznamRsZakladAllOf.JSON_PROPERTY_REDIZO,
+  ZaznamRsZakladAllOf.JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE,
+  ZaznamRsZakladAllOf.JSON_PROPERTY_KONTAKTY,
+  ZaznamRsZakladAllOf.JSON_PROPERTY_PRIMARNI_ZAZNAM,
+  ZaznamRsZakladAllOf.JSON_PROPERTY_SKOLY_A_ZARIZENI,
+  ZaznamRsZakladAllOf.JSON_PROPERTY_TYP_SUBJEKTU
+})
+@JsonTypeName("ZaznamRsZaklad_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZaznamRsZakladAllOf {
-  public static final String SERIALIZED_NAME_REDIZO = "redizo";
-  @SerializedName(SERIALIZED_NAME_REDIZO)
+  public static final String JSON_PROPERTY_REDIZO = "redizo";
   private String redizo;
 
-  public static final String SERIALIZED_NAME_OBCHODNI_JMENO_ZKRACENE = "obchodniJmenoZkracene";
-  @SerializedName(SERIALIZED_NAME_OBCHODNI_JMENO_ZKRACENE)
+  public static final String JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE = "obchodniJmenoZkracene";
   private String obchodniJmenoZkracene;
 
-  public static final String SERIALIZED_NAME_KONTAKTY = "kontakty";
-  @SerializedName(SERIALIZED_NAME_KONTAKTY)
+  public static final String JSON_PROPERTY_KONTAKTY = "kontakty";
   private KontaktyRs kontakty;
 
-  public static final String SERIALIZED_NAME_PRIMARNI_ZAZNAM = "primarniZaznam";
-  @SerializedName(SERIALIZED_NAME_PRIMARNI_ZAZNAM)
+  public static final String JSON_PROPERTY_PRIMARNI_ZAZNAM = "primarniZaznam";
   private Boolean primarniZaznam;
 
-  public static final String SERIALIZED_NAME_SKOLY_A_ZARIZENI = "skolyAZarizeni";
-  @SerializedName(SERIALIZED_NAME_SKOLY_A_ZARIZENI)
+  public static final String JSON_PROPERTY_SKOLY_A_ZARIZENI = "skolyAZarizeni";
   private List<SkolaZarizeni> skolyAZarizeni = null;
 
-  public static final String SERIALIZED_NAME_TYP_SUBJEKTU = "typSubjektu";
-  @SerializedName(SERIALIZED_NAME_TYP_SUBJEKTU)
+  public static final String JSON_PROPERTY_TYP_SUBJEKTU = "typSubjektu";
   private String typSubjektu;
 
   public ZaznamRsZakladAllOf() {
@@ -92,12 +71,16 @@ public class ZaznamRsZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "REDIZO - resortní identifikátor")
+  @JsonProperty(JSON_PROPERTY_REDIZO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRedizo() {
     return redizo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REDIZO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRedizo(String redizo) {
     this.redizo = redizo;
   }
@@ -115,12 +98,16 @@ public class ZaznamRsZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Zkrácené obchodní jméno")
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObchodniJmenoZkracene() {
     return obchodniJmenoZkracene;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBCHODNI_JMENO_ZKRACENE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setObchodniJmenoZkracene(String obchodniJmenoZkracene) {
     this.obchodniJmenoZkracene = obchodniJmenoZkracene;
   }
@@ -138,12 +125,16 @@ public class ZaznamRsZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_KONTAKTY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public KontaktyRs getKontakty() {
     return kontakty;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KONTAKTY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKontakty(KontaktyRs kontakty) {
     this.kontakty = kontakty;
   }
@@ -161,12 +152,16 @@ public class ZaznamRsZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getPrimarniZaznam() {
     return primarniZaznam;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRIMARNI_ZAZNAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrimarniZaznam(Boolean primarniZaznam) {
     this.primarniZaznam = primarniZaznam;
   }
@@ -192,12 +187,16 @@ public class ZaznamRsZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SKOLY_A_ZARIZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SkolaZarizeni> getSkolyAZarizeni() {
     return skolyAZarizeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SKOLY_A_ZARIZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSkolyAZarizeni(List<SkolaZarizeni> skolyAZarizeni) {
     this.skolyAZarizeni = skolyAZarizeni;
   }
@@ -215,16 +214,19 @@ public class ZaznamRsZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ subjektu")
+  @JsonProperty(JSON_PROPERTY_TYP_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypSubjektu() {
     return typSubjektu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypSubjektu(String typSubjektu) {
     this.typSubjektu = typSubjektu;
   }
-
 
 
   @Override
@@ -274,122 +276,5 @@ public class ZaznamRsZakladAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("redizo");
-    openapiFields.add("obchodniJmenoZkracene");
-    openapiFields.add("kontakty");
-    openapiFields.add("primarniZaznam");
-    openapiFields.add("skolyAZarizeni");
-    openapiFields.add("typSubjektu");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZaznamRsZakladAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZaznamRsZakladAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZaznamRsZakladAllOf is not found in the empty JSON string", ZaznamRsZakladAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZaznamRsZakladAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZaznamRsZakladAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("redizo") != null && !jsonObj.get("redizo").isJsonNull()) && !jsonObj.get("redizo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `redizo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redizo").toString()));
-      }
-      if ((jsonObj.get("obchodniJmenoZkracene") != null && !jsonObj.get("obchodniJmenoZkracene").isJsonNull()) && !jsonObj.get("obchodniJmenoZkracene").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `obchodniJmenoZkracene` to be a primitive type in the JSON string but got `%s`", jsonObj.get("obchodniJmenoZkracene").toString()));
-      }
-      // validate the optional field `kontakty`
-      if (jsonObj.get("kontakty") != null && !jsonObj.get("kontakty").isJsonNull()) {
-        KontaktyRs.validateJsonObject(jsonObj.getAsJsonObject("kontakty"));
-      }
-      if (jsonObj.get("skolyAZarizeni") != null && !jsonObj.get("skolyAZarizeni").isJsonNull()) {
-        JsonArray jsonArrayskolyAZarizeni = jsonObj.getAsJsonArray("skolyAZarizeni");
-        if (jsonArrayskolyAZarizeni != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("skolyAZarizeni").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `skolyAZarizeni` to be an array in the JSON string but got `%s`", jsonObj.get("skolyAZarizeni").toString()));
-          }
-
-          // validate the optional field `skolyAZarizeni` (array)
-          for (int i = 0; i < jsonArrayskolyAZarizeni.size(); i++) {
-            SkolaZarizeni.validateJsonObject(jsonArrayskolyAZarizeni.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("typSubjektu") != null && !jsonObj.get("typSubjektu").isJsonNull()) && !jsonObj.get("typSubjektu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typSubjektu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typSubjektu").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZaznamRsZakladAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZaznamRsZakladAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZaznamRsZakladAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZaznamRsZakladAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZaznamRsZakladAllOf>() {
-           @Override
-           public void write(JsonWriter out, ZaznamRsZakladAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZaznamRsZakladAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZaznamRsZakladAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZaznamRsZakladAllOf
-  * @throws IOException if the JSON string is invalid with respect to ZaznamRsZakladAllOf
-  */
-  public static ZaznamRsZakladAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZaznamRsZakladAllOf.class);
-  }
-
- /**
-  * Convert an instance of ZaznamRsZakladAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

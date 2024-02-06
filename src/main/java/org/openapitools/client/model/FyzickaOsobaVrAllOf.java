@@ -14,69 +14,49 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.Adresa;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * FyzickaOsobaVrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_BYDLISTE,
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_DATUM_NAROZENI,
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_JMENO,
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_PRIJMENI,
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_STATNI_OBCANSTVI,
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_TITUL_PRED_JMENEM,
+  FyzickaOsobaVrAllOf.JSON_PROPERTY_TITUL_ZA_JMENEM
+})
+@JsonTypeName("FyzickaOsobaVr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class FyzickaOsobaVrAllOf {
-  public static final String SERIALIZED_NAME_BYDLISTE = "bydliste";
-  @SerializedName(SERIALIZED_NAME_BYDLISTE)
+  public static final String JSON_PROPERTY_BYDLISTE = "bydliste";
   private Adresa bydliste;
 
-  public static final String SERIALIZED_NAME_DATUM_NAROZENI = "datumNarozeni";
-  @SerializedName(SERIALIZED_NAME_DATUM_NAROZENI)
+  public static final String JSON_PROPERTY_DATUM_NAROZENI = "datumNarozeni";
   private LocalDate datumNarozeni;
 
-  public static final String SERIALIZED_NAME_JMENO = "jmeno";
-  @SerializedName(SERIALIZED_NAME_JMENO)
+  public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;
 
-  public static final String SERIALIZED_NAME_PRIJMENI = "prijmeni";
-  @SerializedName(SERIALIZED_NAME_PRIJMENI)
+  public static final String JSON_PROPERTY_PRIJMENI = "prijmeni";
   private String prijmeni;
 
-  public static final String SERIALIZED_NAME_STATNI_OBCANSTVI = "statniObcanstvi";
-  @SerializedName(SERIALIZED_NAME_STATNI_OBCANSTVI)
+  public static final String JSON_PROPERTY_STATNI_OBCANSTVI = "statniObcanstvi";
   private String statniObcanstvi;
 
-  public static final String SERIALIZED_NAME_TITUL_PRED_JMENEM = "titulPredJmenem";
-  @SerializedName(SERIALIZED_NAME_TITUL_PRED_JMENEM)
+  public static final String JSON_PROPERTY_TITUL_PRED_JMENEM = "titulPredJmenem";
   private String titulPredJmenem;
 
-  public static final String SERIALIZED_NAME_TITUL_ZA_JMENEM = "titulZaJmenem";
-  @SerializedName(SERIALIZED_NAME_TITUL_ZA_JMENEM)
+  public static final String JSON_PROPERTY_TITUL_ZA_JMENEM = "titulZaJmenem";
   private String titulZaJmenem;
 
   public FyzickaOsobaVrAllOf() {
@@ -94,12 +74,16 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BYDLISTE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Adresa getBydliste() {
     return bydliste;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BYDLISTE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBydliste(Adresa bydliste) {
     this.bydliste = bydliste;
   }
@@ -117,12 +101,16 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum narození")
+  @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumNarozeni() {
     return datumNarozeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumNarozeni(LocalDate datumNarozeni) {
     this.datumNarozeni = datumNarozeni;
   }
@@ -140,12 +128,16 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Jméno")
+  @JsonProperty(JSON_PROPERTY_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getJmeno() {
     return jmeno;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_JMENO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setJmeno(String jmeno) {
     this.jmeno = jmeno;
   }
@@ -163,12 +155,16 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Příjmení")
+  @JsonProperty(JSON_PROPERTY_PRIJMENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPrijmeni() {
     return prijmeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRIJMENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrijmeni(String prijmeni) {
     this.prijmeni = prijmeni;
   }
@@ -186,12 +182,16 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Státní občanství osoby - kod (ciselnikKod: Stat)")
+  @JsonProperty(JSON_PROPERTY_STATNI_OBCANSTVI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatniObcanstvi() {
     return statniObcanstvi;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STATNI_OBCANSTVI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStatniObcanstvi(String statniObcanstvi) {
     this.statniObcanstvi = statniObcanstvi;
   }
@@ -209,12 +209,16 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Titul před jménem")
+  @JsonProperty(JSON_PROPERTY_TITUL_PRED_JMENEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTitulPredJmenem() {
     return titulPredJmenem;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TITUL_PRED_JMENEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTitulPredJmenem(String titulPredJmenem) {
     this.titulPredJmenem = titulPredJmenem;
   }
@@ -232,16 +236,19 @@ public class FyzickaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Titul za jménem")
+  @JsonProperty(JSON_PROPERTY_TITUL_ZA_JMENEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTitulZaJmenem() {
     return titulZaJmenem;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TITUL_ZA_JMENEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTitulZaJmenem(String titulZaJmenem) {
     this.titulZaJmenem = titulZaJmenem;
   }
-
 
 
   @Override
@@ -293,115 +300,5 @@ public class FyzickaOsobaVrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bydliste");
-    openapiFields.add("datumNarozeni");
-    openapiFields.add("jmeno");
-    openapiFields.add("prijmeni");
-    openapiFields.add("statniObcanstvi");
-    openapiFields.add("titulPredJmenem");
-    openapiFields.add("titulZaJmenem");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FyzickaOsobaVrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (FyzickaOsobaVrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FyzickaOsobaVrAllOf is not found in the empty JSON string", FyzickaOsobaVrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!FyzickaOsobaVrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `FyzickaOsobaVrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `bydliste`
-      if (jsonObj.get("bydliste") != null && !jsonObj.get("bydliste").isJsonNull()) {
-        Adresa.validateJsonObject(jsonObj.getAsJsonObject("bydliste"));
-      }
-      if ((jsonObj.get("jmeno") != null && !jsonObj.get("jmeno").isJsonNull()) && !jsonObj.get("jmeno").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `jmeno` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jmeno").toString()));
-      }
-      if ((jsonObj.get("prijmeni") != null && !jsonObj.get("prijmeni").isJsonNull()) && !jsonObj.get("prijmeni").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prijmeni` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prijmeni").toString()));
-      }
-      if ((jsonObj.get("statniObcanstvi") != null && !jsonObj.get("statniObcanstvi").isJsonNull()) && !jsonObj.get("statniObcanstvi").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `statniObcanstvi` to be a primitive type in the JSON string but got `%s`", jsonObj.get("statniObcanstvi").toString()));
-      }
-      if ((jsonObj.get("titulPredJmenem") != null && !jsonObj.get("titulPredJmenem").isJsonNull()) && !jsonObj.get("titulPredJmenem").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `titulPredJmenem` to be a primitive type in the JSON string but got `%s`", jsonObj.get("titulPredJmenem").toString()));
-      }
-      if ((jsonObj.get("titulZaJmenem") != null && !jsonObj.get("titulZaJmenem").isJsonNull()) && !jsonObj.get("titulZaJmenem").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `titulZaJmenem` to be a primitive type in the JSON string but got `%s`", jsonObj.get("titulZaJmenem").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!FyzickaOsobaVrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'FyzickaOsobaVrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<FyzickaOsobaVrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(FyzickaOsobaVrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<FyzickaOsobaVrAllOf>() {
-           @Override
-           public void write(JsonWriter out, FyzickaOsobaVrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public FyzickaOsobaVrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of FyzickaOsobaVrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FyzickaOsobaVrAllOf
-  * @throws IOException if the JSON string is invalid with respect to FyzickaOsobaVrAllOf
-  */
-  public static FyzickaOsobaVrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, FyzickaOsobaVrAllOf.class);
-  }
-
- /**
-  * Convert an instance of FyzickaOsobaVrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

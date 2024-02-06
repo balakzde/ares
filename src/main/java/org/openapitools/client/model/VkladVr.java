@@ -14,62 +14,41 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.ObnosVr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Vklady
  */
 @ApiModel(description = "Vklady")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  VkladVr.JSON_PROPERTY_DATUM_ZAPISU,
+  VkladVr.JSON_PROPERTY_DATUM_VYMAZU,
+  VkladVr.JSON_PROPERTY_VKLAD,
+  VkladVr.JSON_PROPERTY_TEXT,
+  VkladVr.JSON_PROPERTY_TYP_VKLADU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class VkladVr {
-  public static final String SERIALIZED_NAME_DATUM_ZAPISU = "datumZapisu";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZAPISU)
+  public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
   private LocalDate datumZapisu;
 
-  public static final String SERIALIZED_NAME_DATUM_VYMAZU = "datumVymazu";
-  @SerializedName(SERIALIZED_NAME_DATUM_VYMAZU)
+  public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
   private LocalDate datumVymazu;
 
-  public static final String SERIALIZED_NAME_VKLAD = "vklad";
-  @SerializedName(SERIALIZED_NAME_VKLAD)
+  public static final String JSON_PROPERTY_VKLAD = "vklad";
   private ObnosVr vklad;
 
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
+  public static final String JSON_PROPERTY_TEXT = "text";
   private String text;
 
-  public static final String SERIALIZED_NAME_TYP_VKLADU = "typVkladu";
-  @SerializedName(SERIALIZED_NAME_TYP_VKLADU)
+  public static final String JSON_PROPERTY_TYP_VKLADU = "typVkladu";
   private String typVkladu;
 
   public VkladVr() {
@@ -87,12 +66,16 @@ public class VkladVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zápisu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZapisu() {
     return datumZapisu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZapisu(LocalDate datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
@@ -110,12 +93,16 @@ public class VkladVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum výmazu údaje")
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVymazu() {
     return datumVymazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVymazu(LocalDate datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
@@ -133,12 +120,16 @@ public class VkladVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_VKLAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ObnosVr getVklad() {
     return vklad;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_VKLAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVklad(ObnosVr vklad) {
     this.vklad = vklad;
   }
@@ -156,12 +147,16 @@ public class VkladVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getText() {
     return text;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setText(String text) {
     this.text = text;
   }
@@ -179,16 +174,19 @@ public class VkladVr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ vkladu - kód (ciselnikKod: TypObnosu)")
+  @JsonProperty(JSON_PROPERTY_TYP_VKLADU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypVkladu() {
     return typVkladu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_VKLADU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypVkladu(String typVkladu) {
     this.typVkladu = typVkladu;
   }
-
 
 
   @Override
@@ -236,104 +234,5 @@ public class VkladVr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumZapisu");
-    openapiFields.add("datumVymazu");
-    openapiFields.add("vklad");
-    openapiFields.add("text");
-    openapiFields.add("typVkladu");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to VkladVr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (VkladVr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VkladVr is not found in the empty JSON string", VkladVr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!VkladVr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `VkladVr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `vklad`
-      if (jsonObj.get("vklad") != null && !jsonObj.get("vklad").isJsonNull()) {
-        ObnosVr.validateJsonObject(jsonObj.getAsJsonObject("vklad"));
-      }
-      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
-      }
-      if ((jsonObj.get("typVkladu") != null && !jsonObj.get("typVkladu").isJsonNull()) && !jsonObj.get("typVkladu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typVkladu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typVkladu").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!VkladVr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'VkladVr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<VkladVr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(VkladVr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<VkladVr>() {
-           @Override
-           public void write(JsonWriter out, VkladVr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public VkladVr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of VkladVr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VkladVr
-  * @throws IOException if the JSON string is invalid with respect to VkladVr
-  */
-  public static VkladVr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, VkladVr.class);
-  }
-
- /**
-  * Convert an instance of VkladVr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

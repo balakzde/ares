@@ -14,59 +14,38 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.PolozkaCiselniku;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Číselník
  */
 @ApiModel(description = "Číselník")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  Ciselnik.JSON_PROPERTY_KOD_CISELNIKU,
+  Ciselnik.JSON_PROPERTY_NAZEV_CISELNIKU,
+  Ciselnik.JSON_PROPERTY_POLOZKY_CISELNIKU,
+  Ciselnik.JSON_PROPERTY_ZDROJ_CISELNIKU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class Ciselnik {
-  public static final String SERIALIZED_NAME_KOD_CISELNIKU = "kodCiselniku";
-  @SerializedName(SERIALIZED_NAME_KOD_CISELNIKU)
+  public static final String JSON_PROPERTY_KOD_CISELNIKU = "kodCiselniku";
   private String kodCiselniku;
 
-  public static final String SERIALIZED_NAME_NAZEV_CISELNIKU = "nazevCiselniku";
-  @SerializedName(SERIALIZED_NAME_NAZEV_CISELNIKU)
+  public static final String JSON_PROPERTY_NAZEV_CISELNIKU = "nazevCiselniku";
   private String nazevCiselniku;
 
-  public static final String SERIALIZED_NAME_POLOZKY_CISELNIKU = "polozkyCiselniku";
-  @SerializedName(SERIALIZED_NAME_POLOZKY_CISELNIKU)
+  public static final String JSON_PROPERTY_POLOZKY_CISELNIKU = "polozkyCiselniku";
   private List<PolozkaCiselniku> polozkyCiselniku = null;
 
-  public static final String SERIALIZED_NAME_ZDROJ_CISELNIKU = "zdrojCiselniku";
-  @SerializedName(SERIALIZED_NAME_ZDROJ_CISELNIKU)
+  public static final String JSON_PROPERTY_ZDROJ_CISELNIKU = "zdrojCiselniku";
   private String zdrojCiselniku;
 
   public Ciselnik() {
@@ -84,12 +63,16 @@ public class Ciselnik {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód číselníku")
+  @JsonProperty(JSON_PROPERTY_KOD_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKodCiselniku() {
     return kodCiselniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodCiselniku(String kodCiselniku) {
     this.kodCiselniku = kodCiselniku;
   }
@@ -107,12 +90,16 @@ public class Ciselnik {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název číselníku")
+  @JsonProperty(JSON_PROPERTY_NAZEV_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevCiselniku() {
     return nazevCiselniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevCiselniku(String nazevCiselniku) {
     this.nazevCiselniku = nazevCiselniku;
   }
@@ -138,12 +125,16 @@ public class Ciselnik {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POLOZKY_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<PolozkaCiselniku> getPolozkyCiselniku() {
     return polozkyCiselniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POLOZKY_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPolozkyCiselniku(List<PolozkaCiselniku> polozkyCiselniku) {
     this.polozkyCiselniku = polozkyCiselniku;
   }
@@ -161,16 +152,19 @@ public class Ciselnik {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Zdroj číselníku (ciselnikKod: StavZdroje) ")
+  @JsonProperty(JSON_PROPERTY_ZDROJ_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getZdrojCiselniku() {
     return zdrojCiselniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZDROJ_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZdrojCiselniku(String zdrojCiselniku) {
     this.zdrojCiselniku = zdrojCiselniku;
   }
-
 
 
   @Override
@@ -216,116 +210,5 @@ public class Ciselnik {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kodCiselniku");
-    openapiFields.add("nazevCiselniku");
-    openapiFields.add("polozkyCiselniku");
-    openapiFields.add("zdrojCiselniku");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Ciselnik
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Ciselnik.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Ciselnik is not found in the empty JSON string", Ciselnik.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Ciselnik.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Ciselnik` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("kodCiselniku") != null && !jsonObj.get("kodCiselniku").isJsonNull()) && !jsonObj.get("kodCiselniku").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kodCiselniku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kodCiselniku").toString()));
-      }
-      if ((jsonObj.get("nazevCiselniku") != null && !jsonObj.get("nazevCiselniku").isJsonNull()) && !jsonObj.get("nazevCiselniku").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevCiselniku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevCiselniku").toString()));
-      }
-      if (jsonObj.get("polozkyCiselniku") != null && !jsonObj.get("polozkyCiselniku").isJsonNull()) {
-        JsonArray jsonArraypolozkyCiselniku = jsonObj.getAsJsonArray("polozkyCiselniku");
-        if (jsonArraypolozkyCiselniku != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("polozkyCiselniku").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `polozkyCiselniku` to be an array in the JSON string but got `%s`", jsonObj.get("polozkyCiselniku").toString()));
-          }
-
-          // validate the optional field `polozkyCiselniku` (array)
-          for (int i = 0; i < jsonArraypolozkyCiselniku.size(); i++) {
-            PolozkaCiselniku.validateJsonObject(jsonArraypolozkyCiselniku.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("zdrojCiselniku") != null && !jsonObj.get("zdrojCiselniku").isJsonNull()) && !jsonObj.get("zdrojCiselniku").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `zdrojCiselniku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zdrojCiselniku").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Ciselnik.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Ciselnik' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Ciselnik> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Ciselnik.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Ciselnik>() {
-           @Override
-           public void write(JsonWriter out, Ciselnik value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Ciselnik read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Ciselnik given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Ciselnik
-  * @throws IOException if the JSON string is invalid with respect to Ciselnik
-  */
-  public static Ciselnik fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Ciselnik.class);
-  }
-
- /**
-  * Convert an instance of Ciselnik to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -10,30 +10,55 @@
  * Do not edit the class manually.
  */
 
-
 package org.openapitools.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
+/**
+ * Class that add parsing/formatting support for Java 8+ {@code OffsetDateTime} class.
+ * It's generated for java clients when {@code AbstractJavaCodegen#dateLibrary} specified as {@code java8}.
+ */
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+public class JavaTimeFormatter {
+
+    private DateTimeFormatter offsetDateTimeFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
 
     /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
+     * Get the date format used to parse/format {@code OffsetDateTime} parameters.
+     * @return DateTimeFormatter
      */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+    public DateTimeFormatter getOffsetDateTimeFormatter() {
+        return offsetDateTimeFormatter;
     }
 
     /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
+     * Set the date format used to parse/format {@code OffsetDateTime} parameters.
+     * @param offsetDateTimeFormatter {@code DateTimeFormatter}
      */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    public void setOffsetDateTimeFormatter(DateTimeFormatter offsetDateTimeFormatter) {
+        this.offsetDateTimeFormatter = offsetDateTimeFormatter;
+    }
+
+    /**
+     * Parse the given string into {@code OffsetDateTime} object.
+     * @param str String
+     * @return {@code OffsetDateTime}
+     */
+    public OffsetDateTime parseOffsetDateTime(String str) {
+        try {
+            return OffsetDateTime.parse(str, offsetDateTimeFormatter);
+        } catch (DateTimeParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    /**
+     * Format the given {@code OffsetDateTime} object into string.
+     * @param offsetDateTime {@code OffsetDateTime}
+     * @return {@code OffsetDateTime} in string format
+     */
+    public String formatOffsetDateTime(OffsetDateTime offsetDateTime) {
+        return offsetDateTimeFormatter.format(offsetDateTime);
     }
 }

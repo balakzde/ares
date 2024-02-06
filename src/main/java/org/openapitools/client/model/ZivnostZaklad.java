@@ -14,87 +14,63 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ZivnostBezOZ;
-import org.openapitools.client.model.ZivnostPodminky;
-import org.openapitools.client.model.ZivnostPreruseni;
-import org.openapitools.client.model.ZivnostProvozovnaPozastaveni;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Živnosti, které ekonomický subjekt provozuje nebo provozoval
  */
 @ApiModel(description = "Živnosti, které ekonomický subjekt provozuje nebo provozoval")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  ZivnostZaklad.JSON_PROPERTY_DATUM_VZNIKU,
+  ZivnostZaklad.JSON_PROPERTY_DATUM_ZANIKU,
+  ZivnostZaklad.JSON_PROPERTY_PLATNOST_DO,
+  ZivnostZaklad.JSON_PROPERTY_PREDMET_PODNIKANI,
+  ZivnostZaklad.JSON_PROPERTY_POZASTAVENI_ZIVNOSTI,
+  ZivnostZaklad.JSON_PROPERTY_PODMINKY_PROVOZOVANI_ZIVNOSTI,
+  ZivnostZaklad.JSON_PROPERTY_PRERUSENI_ZIVNOSTI,
+  ZivnostZaklad.JSON_PROPERTY_ZIVNOST_BEZ_OZ,
+  ZivnostZaklad.JSON_PROPERTY_DATUM_AKTUALIZACE,
+  ZivnostZaklad.JSON_PROPERTY_DRUH_ZIVNOSTI
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class ZivnostZaklad {
-  public static final String SERIALIZED_NAME_DATUM_VZNIKU = "datumVzniku";
-  @SerializedName(SERIALIZED_NAME_DATUM_VZNIKU)
+  public static final String JSON_PROPERTY_DATUM_VZNIKU = "datumVzniku";
   private LocalDate datumVzniku;
 
-  public static final String SERIALIZED_NAME_DATUM_ZANIKU = "datumZaniku";
-  @SerializedName(SERIALIZED_NAME_DATUM_ZANIKU)
+  public static final String JSON_PROPERTY_DATUM_ZANIKU = "datumZaniku";
   private LocalDate datumZaniku;
 
-  public static final String SERIALIZED_NAME_PLATNOST_DO = "platnostDo";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_DO)
+  public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
   private LocalDate platnostDo;
 
-  public static final String SERIALIZED_NAME_PREDMET_PODNIKANI = "predmetPodnikani";
-  @SerializedName(SERIALIZED_NAME_PREDMET_PODNIKANI)
+  public static final String JSON_PROPERTY_PREDMET_PODNIKANI = "predmetPodnikani";
   private String predmetPodnikani;
 
-  public static final String SERIALIZED_NAME_POZASTAVENI_ZIVNOSTI = "pozastaveniZivnosti";
-  @SerializedName(SERIALIZED_NAME_POZASTAVENI_ZIVNOSTI)
+  public static final String JSON_PROPERTY_POZASTAVENI_ZIVNOSTI = "pozastaveniZivnosti";
   private List<ZivnostProvozovnaPozastaveni> pozastaveniZivnosti = null;
 
-  public static final String SERIALIZED_NAME_PODMINKY_PROVOZOVANI_ZIVNOSTI = "podminkyProvozovaniZivnosti";
-  @SerializedName(SERIALIZED_NAME_PODMINKY_PROVOZOVANI_ZIVNOSTI)
+  public static final String JSON_PROPERTY_PODMINKY_PROVOZOVANI_ZIVNOSTI = "podminkyProvozovaniZivnosti";
   private List<ZivnostPodminky> podminkyProvozovaniZivnosti = null;
 
-  public static final String SERIALIZED_NAME_PRERUSENI_ZIVNOSTI = "preruseniZivnosti";
-  @SerializedName(SERIALIZED_NAME_PRERUSENI_ZIVNOSTI)
+  public static final String JSON_PROPERTY_PRERUSENI_ZIVNOSTI = "preruseniZivnosti";
   private List<ZivnostPreruseni> preruseniZivnosti = null;
 
-  public static final String SERIALIZED_NAME_ZIVNOST_BEZ_OZ = "zivnostBezOz";
-  @SerializedName(SERIALIZED_NAME_ZIVNOST_BEZ_OZ)
+  public static final String JSON_PROPERTY_ZIVNOST_BEZ_OZ = "zivnostBezOz";
   private List<ZivnostBezOZ> zivnostBezOz = null;
 
-  public static final String SERIALIZED_NAME_DATUM_AKTUALIZACE = "datumAktualizace";
-  @SerializedName(SERIALIZED_NAME_DATUM_AKTUALIZACE)
+  public static final String JSON_PROPERTY_DATUM_AKTUALIZACE = "datumAktualizace";
   private LocalDate datumAktualizace;
 
-  public static final String SERIALIZED_NAME_DRUH_ZIVNOSTI = "druhZivnosti";
-  @SerializedName(SERIALIZED_NAME_DRUH_ZIVNOSTI)
+  public static final String JSON_PROPERTY_DRUH_ZIVNOSTI = "druhZivnosti";
   private String druhZivnosti;
 
   public ZivnostZaklad() {
@@ -112,12 +88,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum vzniku živnosti ")
+  @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumVzniku() {
     return datumVzniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumVzniku(LocalDate datumVzniku) {
     this.datumVzniku = datumVzniku;
   }
@@ -135,12 +115,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum zániku živnosti ")
+  @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumZaniku() {
     return datumZaniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumZaniku(LocalDate datumZaniku) {
     this.datumZaniku = datumZaniku;
   }
@@ -158,12 +142,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost živnosti do data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostDo() {
     return platnostDo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostDo(LocalDate platnostDo) {
     this.platnostDo = platnostDo;
   }
@@ -181,12 +169,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Předmět podnikáni živnosti")
+  @JsonProperty(JSON_PROPERTY_PREDMET_PODNIKANI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPredmetPodnikani() {
     return predmetPodnikani;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PREDMET_PODNIKANI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPredmetPodnikani(String predmetPodnikani) {
     this.predmetPodnikani = predmetPodnikani;
   }
@@ -212,12 +204,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POZASTAVENI_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostProvozovnaPozastaveni> getPozastaveniZivnosti() {
     return pozastaveniZivnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POZASTAVENI_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPozastaveniZivnosti(List<ZivnostProvozovnaPozastaveni> pozastaveniZivnosti) {
     this.pozastaveniZivnosti = pozastaveniZivnosti;
   }
@@ -243,12 +239,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PODMINKY_PROVOZOVANI_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostPodminky> getPodminkyProvozovaniZivnosti() {
     return podminkyProvozovaniZivnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODMINKY_PROVOZOVANI_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodminkyProvozovaniZivnosti(List<ZivnostPodminky> podminkyProvozovaniZivnosti) {
     this.podminkyProvozovaniZivnosti = podminkyProvozovaniZivnosti;
   }
@@ -274,12 +274,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PRERUSENI_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostPreruseni> getPreruseniZivnosti() {
     return preruseniZivnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRERUSENI_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPreruseniZivnosti(List<ZivnostPreruseni> preruseniZivnosti) {
     this.preruseniZivnosti = preruseniZivnosti;
   }
@@ -305,12 +309,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ZIVNOST_BEZ_OZ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostBezOZ> getZivnostBezOz() {
     return zivnostBezOz;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZIVNOST_BEZ_OZ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZivnostBezOz(List<ZivnostBezOZ> zivnostBezOz) {
     this.zivnostBezOz = zivnostBezOz;
   }
@@ -328,12 +336,16 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum aktualizace záznamu")
+  @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumAktualizace() {
     return datumAktualizace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumAktualizace(LocalDate datumAktualizace) {
     this.datumAktualizace = datumAktualizace;
   }
@@ -351,16 +363,19 @@ public class ZivnostZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Druh živnosti - kód (ciselnikKod: DruhZivnosti) ")
+  @JsonProperty(JSON_PROPERTY_DRUH_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDruhZivnosti() {
     return druhZivnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DRUH_ZIVNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDruhZivnosti(String druhZivnosti) {
     this.druhZivnosti = druhZivnosti;
   }
-
 
 
   @Override
@@ -418,161 +433,5 @@ public class ZivnostZaklad {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("datumVzniku");
-    openapiFields.add("datumZaniku");
-    openapiFields.add("platnostDo");
-    openapiFields.add("predmetPodnikani");
-    openapiFields.add("pozastaveniZivnosti");
-    openapiFields.add("podminkyProvozovaniZivnosti");
-    openapiFields.add("preruseniZivnosti");
-    openapiFields.add("zivnostBezOz");
-    openapiFields.add("datumAktualizace");
-    openapiFields.add("druhZivnosti");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ZivnostZaklad
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ZivnostZaklad.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ZivnostZaklad is not found in the empty JSON string", ZivnostZaklad.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ZivnostZaklad.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ZivnostZaklad` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("predmetPodnikani") != null && !jsonObj.get("predmetPodnikani").isJsonNull()) && !jsonObj.get("predmetPodnikani").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predmetPodnikani` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predmetPodnikani").toString()));
-      }
-      if (jsonObj.get("pozastaveniZivnosti") != null && !jsonObj.get("pozastaveniZivnosti").isJsonNull()) {
-        JsonArray jsonArraypozastaveniZivnosti = jsonObj.getAsJsonArray("pozastaveniZivnosti");
-        if (jsonArraypozastaveniZivnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pozastaveniZivnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pozastaveniZivnosti` to be an array in the JSON string but got `%s`", jsonObj.get("pozastaveniZivnosti").toString()));
-          }
-
-          // validate the optional field `pozastaveniZivnosti` (array)
-          for (int i = 0; i < jsonArraypozastaveniZivnosti.size(); i++) {
-            ZivnostProvozovnaPozastaveni.validateJsonObject(jsonArraypozastaveniZivnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("podminkyProvozovaniZivnosti") != null && !jsonObj.get("podminkyProvozovaniZivnosti").isJsonNull()) {
-        JsonArray jsonArraypodminkyProvozovaniZivnosti = jsonObj.getAsJsonArray("podminkyProvozovaniZivnosti");
-        if (jsonArraypodminkyProvozovaniZivnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("podminkyProvozovaniZivnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `podminkyProvozovaniZivnosti` to be an array in the JSON string but got `%s`", jsonObj.get("podminkyProvozovaniZivnosti").toString()));
-          }
-
-          // validate the optional field `podminkyProvozovaniZivnosti` (array)
-          for (int i = 0; i < jsonArraypodminkyProvozovaniZivnosti.size(); i++) {
-            ZivnostPodminky.validateJsonObject(jsonArraypodminkyProvozovaniZivnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("preruseniZivnosti") != null && !jsonObj.get("preruseniZivnosti").isJsonNull()) {
-        JsonArray jsonArraypreruseniZivnosti = jsonObj.getAsJsonArray("preruseniZivnosti");
-        if (jsonArraypreruseniZivnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("preruseniZivnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `preruseniZivnosti` to be an array in the JSON string but got `%s`", jsonObj.get("preruseniZivnosti").toString()));
-          }
-
-          // validate the optional field `preruseniZivnosti` (array)
-          for (int i = 0; i < jsonArraypreruseniZivnosti.size(); i++) {
-            ZivnostPreruseni.validateJsonObject(jsonArraypreruseniZivnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if (jsonObj.get("zivnostBezOz") != null && !jsonObj.get("zivnostBezOz").isJsonNull()) {
-        JsonArray jsonArrayzivnostBezOz = jsonObj.getAsJsonArray("zivnostBezOz");
-        if (jsonArrayzivnostBezOz != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("zivnostBezOz").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `zivnostBezOz` to be an array in the JSON string but got `%s`", jsonObj.get("zivnostBezOz").toString()));
-          }
-
-          // validate the optional field `zivnostBezOz` (array)
-          for (int i = 0; i < jsonArrayzivnostBezOz.size(); i++) {
-            ZivnostBezOZ.validateJsonObject(jsonArrayzivnostBezOz.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("druhZivnosti") != null && !jsonObj.get("druhZivnosti").isJsonNull()) && !jsonObj.get("druhZivnosti").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `druhZivnosti` to be a primitive type in the JSON string but got `%s`", jsonObj.get("druhZivnosti").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ZivnostZaklad.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ZivnostZaklad' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ZivnostZaklad> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ZivnostZaklad.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ZivnostZaklad>() {
-           @Override
-           public void write(JsonWriter out, ZivnostZaklad value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ZivnostZaklad read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ZivnostZaklad given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ZivnostZaklad
-  * @throws IOException if the JSON string is invalid with respect to ZivnostZaklad
-  */
-  public static ZivnostZaklad fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ZivnostZaklad.class);
-  }
-
- /**
-  * Convert an instance of ZivnostZaklad to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

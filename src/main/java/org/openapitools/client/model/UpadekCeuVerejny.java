@@ -14,78 +14,57 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-import org.openapitools.client.model.AngazovanaOsobaCeu;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Tabulka úpadků
  */
 @ApiModel(description = "Tabulka úpadků")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  UpadekCeuVerejny.JSON_PROPERTY_PODNET,
+  UpadekCeuVerejny.JSON_PROPERTY_SPIS_ZN,
+  UpadekCeuVerejny.JSON_PROPERTY_DATUM,
+  UpadekCeuVerejny.JSON_PROPERTY_DETAIL,
+  UpadekCeuVerejny.JSON_PROPERTY_USNESENI,
+  UpadekCeuVerejny.JSON_PROPERTY_AKCE_UPADEK,
+  UpadekCeuVerejny.JSON_PROPERTY_TYP_UPADEK,
+  UpadekCeuVerejny.JSON_PROPERTY_SOUD_UPADEK,
+  UpadekCeuVerejny.JSON_PROPERTY_SPRAVCE_UPADKU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class UpadekCeuVerejny {
-  public static final String SERIALIZED_NAME_PODNET = "podnet";
-  @SerializedName(SERIALIZED_NAME_PODNET)
+  public static final String JSON_PROPERTY_PODNET = "podnet";
   private String podnet;
 
-  public static final String SERIALIZED_NAME_SPIS_ZN = "spisZn";
-  @SerializedName(SERIALIZED_NAME_SPIS_ZN)
+  public static final String JSON_PROPERTY_SPIS_ZN = "spisZn";
   private String spisZn;
 
-  public static final String SERIALIZED_NAME_DATUM = "datum";
-  @SerializedName(SERIALIZED_NAME_DATUM)
+  public static final String JSON_PROPERTY_DATUM = "datum";
   private LocalDate datum;
 
-  public static final String SERIALIZED_NAME_DETAIL = "detail";
-  @SerializedName(SERIALIZED_NAME_DETAIL)
+  public static final String JSON_PROPERTY_DETAIL = "detail";
   private String detail;
 
-  public static final String SERIALIZED_NAME_USNESENI = "usneseni";
-  @SerializedName(SERIALIZED_NAME_USNESENI)
+  public static final String JSON_PROPERTY_USNESENI = "usneseni";
   private String usneseni;
 
-  public static final String SERIALIZED_NAME_AKCE_UPADEK = "akceUpadek";
-  @SerializedName(SERIALIZED_NAME_AKCE_UPADEK)
+  public static final String JSON_PROPERTY_AKCE_UPADEK = "akceUpadek";
   private String akceUpadek;
 
-  public static final String SERIALIZED_NAME_TYP_UPADEK = "typUpadek";
-  @SerializedName(SERIALIZED_NAME_TYP_UPADEK)
+  public static final String JSON_PROPERTY_TYP_UPADEK = "typUpadek";
   private String typUpadek;
 
-  public static final String SERIALIZED_NAME_SOUD_UPADEK = "soudUpadek";
-  @SerializedName(SERIALIZED_NAME_SOUD_UPADEK)
+  public static final String JSON_PROPERTY_SOUD_UPADEK = "soudUpadek";
   private String soudUpadek;
 
-  public static final String SERIALIZED_NAME_SPRAVCE_UPADKU = "spravceUpadku";
-  @SerializedName(SERIALIZED_NAME_SPRAVCE_UPADKU)
+  public static final String JSON_PROPERTY_SPRAVCE_UPADKU = "spravceUpadku";
   private AngazovanaOsobaCeu spravceUpadku;
 
   public UpadekCeuVerejny() {
@@ -103,12 +82,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Podnět ")
+  @JsonProperty(JSON_PROPERTY_PODNET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPodnet() {
     return podnet;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PODNET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPodnet(String podnet) {
     this.podnet = podnet;
   }
@@ -126,12 +109,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Spisová značka")
+  @JsonProperty(JSON_PROPERTY_SPIS_ZN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSpisZn() {
     return spisZn;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPIS_ZN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpisZn(String spisZn) {
     this.spisZn = spisZn;
   }
@@ -149,12 +136,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum")
+  @JsonProperty(JSON_PROPERTY_DATUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatum() {
     return datum;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatum(LocalDate datum) {
     this.datum = datum;
   }
@@ -172,12 +163,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Odkaz na detail úpadku ")
+  @JsonProperty(JSON_PROPERTY_DETAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDetail() {
     return detail;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DETAIL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDetail(String detail) {
     this.detail = detail;
   }
@@ -195,12 +190,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Odkaz na usnesení")
+  @JsonProperty(JSON_PROPERTY_USNESENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUsneseni() {
     return usneseni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USNESENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUsneseni(String usneseni) {
     this.usneseni = usneseni;
   }
@@ -218,12 +217,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Akce úpadku")
+  @JsonProperty(JSON_PROPERTY_AKCE_UPADEK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAkceUpadek() {
     return akceUpadek;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_AKCE_UPADEK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAkceUpadek(String akceUpadek) {
     this.akceUpadek = akceUpadek;
   }
@@ -241,12 +244,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ úpadku")
+  @JsonProperty(JSON_PROPERTY_TYP_UPADEK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypUpadek() {
     return typUpadek;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_UPADEK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypUpadek(String typUpadek) {
     this.typUpadek = typUpadek;
   }
@@ -264,12 +271,16 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Soud rozhodující o úpadku")
+  @JsonProperty(JSON_PROPERTY_SOUD_UPADEK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSoudUpadek() {
     return soudUpadek;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SOUD_UPADEK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSoudUpadek(String soudUpadek) {
     this.soudUpadek = soudUpadek;
   }
@@ -287,16 +298,19 @@ public class UpadekCeuVerejny {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPRAVCE_UPADKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AngazovanaOsobaCeu getSpravceUpadku() {
     return spravceUpadku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPRAVCE_UPADKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpravceUpadku(AngazovanaOsobaCeu spravceUpadku) {
     this.spravceUpadku = spravceUpadku;
   }
-
 
 
   @Override
@@ -352,123 +366,5 @@ public class UpadekCeuVerejny {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("podnet");
-    openapiFields.add("spisZn");
-    openapiFields.add("datum");
-    openapiFields.add("detail");
-    openapiFields.add("usneseni");
-    openapiFields.add("akceUpadek");
-    openapiFields.add("typUpadek");
-    openapiFields.add("soudUpadek");
-    openapiFields.add("spravceUpadku");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpadekCeuVerejny
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpadekCeuVerejny.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpadekCeuVerejny is not found in the empty JSON string", UpadekCeuVerejny.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpadekCeuVerejny.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpadekCeuVerejny` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("podnet") != null && !jsonObj.get("podnet").isJsonNull()) && !jsonObj.get("podnet").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `podnet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("podnet").toString()));
-      }
-      if ((jsonObj.get("spisZn") != null && !jsonObj.get("spisZn").isJsonNull()) && !jsonObj.get("spisZn").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `spisZn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spisZn").toString()));
-      }
-      if ((jsonObj.get("detail") != null && !jsonObj.get("detail").isJsonNull()) && !jsonObj.get("detail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `detail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail").toString()));
-      }
-      if ((jsonObj.get("usneseni") != null && !jsonObj.get("usneseni").isJsonNull()) && !jsonObj.get("usneseni").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `usneseni` to be a primitive type in the JSON string but got `%s`", jsonObj.get("usneseni").toString()));
-      }
-      if ((jsonObj.get("akceUpadek") != null && !jsonObj.get("akceUpadek").isJsonNull()) && !jsonObj.get("akceUpadek").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `akceUpadek` to be a primitive type in the JSON string but got `%s`", jsonObj.get("akceUpadek").toString()));
-      }
-      if ((jsonObj.get("typUpadek") != null && !jsonObj.get("typUpadek").isJsonNull()) && !jsonObj.get("typUpadek").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typUpadek` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typUpadek").toString()));
-      }
-      if ((jsonObj.get("soudUpadek") != null && !jsonObj.get("soudUpadek").isJsonNull()) && !jsonObj.get("soudUpadek").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `soudUpadek` to be a primitive type in the JSON string but got `%s`", jsonObj.get("soudUpadek").toString()));
-      }
-      // validate the optional field `spravceUpadku`
-      if (jsonObj.get("spravceUpadku") != null && !jsonObj.get("spravceUpadku").isJsonNull()) {
-        AngazovanaOsobaCeu.validateJsonObject(jsonObj.getAsJsonObject("spravceUpadku"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpadekCeuVerejny.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpadekCeuVerejny' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpadekCeuVerejny> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpadekCeuVerejny.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpadekCeuVerejny>() {
-           @Override
-           public void write(JsonWriter out, UpadekCeuVerejny value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpadekCeuVerejny read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpadekCeuVerejny given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpadekCeuVerejny
-  * @throws IOException if the JSON string is invalid with respect to UpadekCeuVerejny
-  */
-  public static UpadekCeuVerejny fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpadekCeuVerejny.class);
-  }
-
- /**
-  * Convert an instance of UpadekCeuVerejny to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

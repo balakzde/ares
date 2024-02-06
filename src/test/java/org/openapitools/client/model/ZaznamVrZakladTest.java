@@ -13,33 +13,9 @@
 
 package org.openapitools.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import org.openapitools.client.model.AdresaVr;
-import org.openapitools.client.model.CinnostiVr;
-import org.openapitools.client.model.DatumVr;
-import org.openapitools.client.model.EmiseAkcieVr;
-import org.openapitools.client.model.IcoVr;
-import org.openapitools.client.model.KategorieZoVr;
-import org.openapitools.client.model.ObchodniJmenoCiziVr;
-import org.openapitools.client.model.ObchodniJmenoVr;
-import org.openapitools.client.model.ObecnyTextVr;
-import org.openapitools.client.model.PravniFormaVr;
-import org.openapitools.client.model.SpisovaZnackaVr;
-import org.openapitools.client.model.VkladVr;
-import org.openapitools.client.model.ZakladniKapitalVr;
-import org.openapitools.client.model.ZpusobRizeniVr;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 
 /**

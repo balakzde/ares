@@ -14,46 +14,24 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.Chyba;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Chyby
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  Chyby.JSON_PROPERTY_CHYBY
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class Chyby {
-  public static final String SERIALIZED_NAME_CHYBY = "chyby";
-  @SerializedName(SERIALIZED_NAME_CHYBY)
+  public static final String JSON_PROPERTY_CHYBY = "chyby";
   private List<Chyba> chyby = null;
 
   public Chyby() {
@@ -79,16 +57,19 @@ public class Chyby {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHYBY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Chyba> getChyby() {
     return chyby;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHYBY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChyby(List<Chyba> chyby) {
     this.chyby = chyby;
   }
-
 
 
   @Override
@@ -128,104 +109,5 @@ public class Chyby {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("chyby");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Chyby
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Chyby.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Chyby is not found in the empty JSON string", Chyby.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Chyby.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Chyby` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("chyby") != null && !jsonObj.get("chyby").isJsonNull()) {
-        JsonArray jsonArraychyby = jsonObj.getAsJsonArray("chyby");
-        if (jsonArraychyby != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("chyby").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `chyby` to be an array in the JSON string but got `%s`", jsonObj.get("chyby").toString()));
-          }
-
-          // validate the optional field `chyby` (array)
-          for (int i = 0; i < jsonArraychyby.size(); i++) {
-            Chyba.validateJsonObject(jsonArraychyby.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Chyby.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Chyby' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Chyby> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Chyby.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Chyby>() {
-           @Override
-           public void write(JsonWriter out, Chyby value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Chyby read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Chyby given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Chyby
-  * @throws IOException if the JSON string is invalid with respect to Chyby
-  */
-  public static Chyby fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Chyby.class);
-  }
-
- /**
-  * Convert an instance of Chyby to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -13,50 +13,52 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyNotifikaceFiltr;
 import org.openapitools.client.model.NotifikacniDavkaZaznam;
 import org.openapitools.client.model.SeznamNotifikacnichDavek;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyNotifikaceApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektyNotifikaceApiTest {
 
     private final EkonomickeSubjektyNotifikaceApi api = new EkonomickeSubjektyNotifikaceApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání  konkrétní notifikační dávky zdroje ARES podle vstupcách parametrů (zdroj, číslo notifikační dávky) 
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratNotifikacniDavkuTest() throws ApiException {
+    public void vratNotifikacniDavkuTest() {
         String datovyZdroj = null;
         Integer cisloDavky = null;
         NotifikacniDavkaZaznam response = api.vratNotifikacniDavku(datovyZdroj, cisloDavky);
+
         // TODO: test validations
     }
-
+    
     /**
+     * 
+     *
      * Vyhledání seznamu notifikačních dávek ekonomických subjektů ARES podle zvoleného filtru 
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejSeznamNotifikacnichDavekTest() throws ApiException {
+    public void vyhledejSeznamNotifikacnichDavekTest() {
         EkonomickeSubjektyNotifikaceFiltr ekonomickeSubjektyNotifikaceFiltr = null;
         SeznamNotifikacnichDavek response = api.vyhledejSeznamNotifikacnichDavek(ekonomickeSubjektyNotifikaceFiltr);
+
         // TODO: test validations
     }
-
+    
 }

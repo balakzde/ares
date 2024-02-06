@@ -14,54 +14,34 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.AdresaCeu;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * EkonomickySubjektCeuZakladAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  EkonomickySubjektCeuZakladAllOf.JSON_PROPERTY_TYP_SUBJEKTU,
+  EkonomickySubjektCeuZakladAllOf.JSON_PROPERTY_ADRESY,
+  EkonomickySubjektCeuZakladAllOf.JSON_PROPERTY_JMENO_PRIJMENI
+})
+@JsonTypeName("EkonomickySubjektCeuZaklad_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class EkonomickySubjektCeuZakladAllOf {
-  public static final String SERIALIZED_NAME_TYP_SUBJEKTU = "typSubjektu";
-  @SerializedName(SERIALIZED_NAME_TYP_SUBJEKTU)
+  public static final String JSON_PROPERTY_TYP_SUBJEKTU = "typSubjektu";
   private String typSubjektu;
 
-  public static final String SERIALIZED_NAME_ADRESY = "adresy";
-  @SerializedName(SERIALIZED_NAME_ADRESY)
+  public static final String JSON_PROPERTY_ADRESY = "adresy";
   private List<AdresaCeu> adresy = null;
 
-  public static final String SERIALIZED_NAME_JMENO_PRIJMENI = "jmenoPrijmeni";
-  @SerializedName(SERIALIZED_NAME_JMENO_PRIJMENI)
+  public static final String JSON_PROPERTY_JMENO_PRIJMENI = "jmenoPrijmeni";
   private String jmenoPrijmeni;
 
   public EkonomickySubjektCeuZakladAllOf() {
@@ -79,12 +59,16 @@ public class EkonomickySubjektCeuZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ subjektu  (ciselnikKod: TypSubjektu, zdroj: Ceu) ")
+  @JsonProperty(JSON_PROPERTY_TYP_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypSubjektu() {
     return typSubjektu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_SUBJEKTU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypSubjektu(String typSubjektu) {
     this.typSubjektu = typSubjektu;
   }
@@ -110,12 +94,16 @@ public class EkonomickySubjektCeuZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AdresaCeu> getAdresy() {
     return adresy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdresy(List<AdresaCeu> adresy) {
     this.adresy = adresy;
   }
@@ -133,16 +121,19 @@ public class EkonomickySubjektCeuZakladAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Jméno, příjmení fyzické osoby")
+  @JsonProperty(JSON_PROPERTY_JMENO_PRIJMENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getJmenoPrijmeni() {
     return jmenoPrijmeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_JMENO_PRIJMENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setJmenoPrijmeni(String jmenoPrijmeni) {
     this.jmenoPrijmeni = jmenoPrijmeni;
   }
-
 
 
   @Override
@@ -186,112 +177,5 @@ public class EkonomickySubjektCeuZakladAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("typSubjektu");
-    openapiFields.add("adresy");
-    openapiFields.add("jmenoPrijmeni");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to EkonomickySubjektCeuZakladAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (EkonomickySubjektCeuZakladAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EkonomickySubjektCeuZakladAllOf is not found in the empty JSON string", EkonomickySubjektCeuZakladAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!EkonomickySubjektCeuZakladAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EkonomickySubjektCeuZakladAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("typSubjektu") != null && !jsonObj.get("typSubjektu").isJsonNull()) && !jsonObj.get("typSubjektu").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typSubjektu` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typSubjektu").toString()));
-      }
-      if (jsonObj.get("adresy") != null && !jsonObj.get("adresy").isJsonNull()) {
-        JsonArray jsonArrayadresy = jsonObj.getAsJsonArray("adresy");
-        if (jsonArrayadresy != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("adresy").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `adresy` to be an array in the JSON string but got `%s`", jsonObj.get("adresy").toString()));
-          }
-
-          // validate the optional field `adresy` (array)
-          for (int i = 0; i < jsonArrayadresy.size(); i++) {
-            AdresaCeu.validateJsonObject(jsonArrayadresy.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("jmenoPrijmeni") != null && !jsonObj.get("jmenoPrijmeni").isJsonNull()) && !jsonObj.get("jmenoPrijmeni").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `jmenoPrijmeni` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jmenoPrijmeni").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!EkonomickySubjektCeuZakladAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'EkonomickySubjektCeuZakladAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<EkonomickySubjektCeuZakladAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(EkonomickySubjektCeuZakladAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<EkonomickySubjektCeuZakladAllOf>() {
-           @Override
-           public void write(JsonWriter out, EkonomickySubjektCeuZakladAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public EkonomickySubjektCeuZakladAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of EkonomickySubjektCeuZakladAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EkonomickySubjektCeuZakladAllOf
-  * @throws IOException if the JSON string is invalid with respect to EkonomickySubjektCeuZakladAllOf
-  */
-  public static EkonomickySubjektCeuZakladAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, EkonomickySubjektCeuZakladAllOf.class);
-  }
-
- /**
-  * Convert an instance of EkonomickySubjektCeuZakladAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

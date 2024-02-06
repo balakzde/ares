@@ -14,62 +14,41 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Filtr pro vyhledávání číselníků
  */
 @ApiModel(description = "Filtr pro vyhledávání číselníků")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  CiselnikyZakladniFiltr.JSON_PROPERTY_START,
+  CiselnikyZakladniFiltr.JSON_PROPERTY_POCET,
+  CiselnikyZakladniFiltr.JSON_PROPERTY_RAZENI,
+  CiselnikyZakladniFiltr.JSON_PROPERTY_ZDROJ_CISELNIKU,
+  CiselnikyZakladniFiltr.JSON_PROPERTY_KOD_CISELNIKU
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class CiselnikyZakladniFiltr {
-  public static final String SERIALIZED_NAME_START = "start";
-  @SerializedName(SERIALIZED_NAME_START)
+  public static final String JSON_PROPERTY_START = "start";
   private Integer start;
 
-  public static final String SERIALIZED_NAME_POCET = "pocet";
-  @SerializedName(SERIALIZED_NAME_POCET)
+  public static final String JSON_PROPERTY_POCET = "pocet";
   private Integer pocet;
 
-  public static final String SERIALIZED_NAME_RAZENI = "razeni";
-  @SerializedName(SERIALIZED_NAME_RAZENI)
+  public static final String JSON_PROPERTY_RAZENI = "razeni";
   private List<String> razeni = null;
 
-  public static final String SERIALIZED_NAME_ZDROJ_CISELNIKU = "zdrojCiselniku";
-  @SerializedName(SERIALIZED_NAME_ZDROJ_CISELNIKU)
+  public static final String JSON_PROPERTY_ZDROJ_CISELNIKU = "zdrojCiselniku";
   private String zdrojCiselniku;
 
-  public static final String SERIALIZED_NAME_KOD_CISELNIKU = "kodCiselniku";
-  @SerializedName(SERIALIZED_NAME_KOD_CISELNIKU)
+  public static final String JSON_PROPERTY_KOD_CISELNIKU = "kodCiselniku";
   private String kodCiselniku;
 
   public CiselnikyZakladniFiltr() {
@@ -88,12 +67,16 @@ public class CiselnikyZakladniFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Offset pro stránkování (poloha prvního vráceného prvku).")
+  @JsonProperty(JSON_PROPERTY_START)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getStart() {
     return start;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStart(Integer start) {
     this.start = start;
   }
@@ -112,12 +95,16 @@ public class CiselnikyZakladniFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Počet prvků k výstupu.")
+  @JsonProperty(JSON_PROPERTY_POCET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocet() {
     return pocet;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocet(Integer pocet) {
     this.pocet = pocet;
   }
@@ -143,12 +130,16 @@ public class CiselnikyZakladniFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_RAZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getRazeni() {
     return razeni;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RAZENI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRazeni(List<String> razeni) {
     this.razeni = razeni;
   }
@@ -166,12 +157,16 @@ public class CiselnikyZakladniFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Zdroj/oblast číselníku - kód (ciselnikKod: TypZdrojeAres, zdroj:com) ")
+  @JsonProperty(JSON_PROPERTY_ZDROJ_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getZdrojCiselniku() {
     return zdrojCiselniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ZDROJ_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setZdrojCiselniku(String zdrojCiselniku) {
     this.zdrojCiselniku = zdrojCiselniku;
   }
@@ -189,16 +184,19 @@ public class CiselnikyZakladniFiltr {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Kód číselníku")
+  @JsonProperty(JSON_PROPERTY_KOD_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getKodCiselniku() {
     return kodCiselniku;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KOD_CISELNIKU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKodCiselniku(String kodCiselniku) {
     this.kodCiselniku = kodCiselniku;
   }
-
 
 
   @Override
@@ -246,104 +244,5 @@ public class CiselnikyZakladniFiltr {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("start");
-    openapiFields.add("pocet");
-    openapiFields.add("razeni");
-    openapiFields.add("zdrojCiselniku");
-    openapiFields.add("kodCiselniku");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CiselnikyZakladniFiltr
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (CiselnikyZakladniFiltr.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CiselnikyZakladniFiltr is not found in the empty JSON string", CiselnikyZakladniFiltr.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!CiselnikyZakladniFiltr.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CiselnikyZakladniFiltr` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if ((jsonObj.get("razeni") != null && !jsonObj.get("razeni").isJsonNull()) && !jsonObj.get("razeni").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `razeni` to be an array in the JSON string but got `%s`", jsonObj.get("razeni").toString()));
-      }
-      if ((jsonObj.get("zdrojCiselniku") != null && !jsonObj.get("zdrojCiselniku").isJsonNull()) && !jsonObj.get("zdrojCiselniku").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `zdrojCiselniku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zdrojCiselniku").toString()));
-      }
-      if ((jsonObj.get("kodCiselniku") != null && !jsonObj.get("kodCiselniku").isJsonNull()) && !jsonObj.get("kodCiselniku").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kodCiselniku` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kodCiselniku").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CiselnikyZakladniFiltr.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CiselnikyZakladniFiltr' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CiselnikyZakladniFiltr> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CiselnikyZakladniFiltr.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CiselnikyZakladniFiltr>() {
-           @Override
-           public void write(JsonWriter out, CiselnikyZakladniFiltr value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CiselnikyZakladniFiltr read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of CiselnikyZakladniFiltr given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CiselnikyZakladniFiltr
-  * @throws IOException if the JSON string is invalid with respect to CiselnikyZakladniFiltr
-  */
-  public static CiselnikyZakladniFiltr fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CiselnikyZakladniFiltr.class);
-  }
-
- /**
-  * Convert an instance of CiselnikyZakladniFiltr to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

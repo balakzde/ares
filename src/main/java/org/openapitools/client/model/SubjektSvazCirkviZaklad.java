@@ -14,50 +14,28 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ClenSvazu;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * SubjektSvazCirkviZaklad
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  SubjektSvazCirkviZaklad.JSON_PROPERTY_CLENOVE_SVAZU,
+  SubjektSvazCirkviZaklad.JSON_PROPERTY_ICO_NASTUPCE
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class SubjektSvazCirkviZaklad {
-  public static final String SERIALIZED_NAME_CLENOVE_SVAZU = "clenoveSvazu";
-  @SerializedName(SERIALIZED_NAME_CLENOVE_SVAZU)
+  public static final String JSON_PROPERTY_CLENOVE_SVAZU = "clenoveSvazu";
   private List<ClenSvazu> clenoveSvazu = null;
 
-  public static final String SERIALIZED_NAME_ICO_NASTUPCE = "icoNastupce";
-  @SerializedName(SERIALIZED_NAME_ICO_NASTUPCE)
+  public static final String JSON_PROPERTY_ICO_NASTUPCE = "icoNastupce";
   private String icoNastupce;
 
   public SubjektSvazCirkviZaklad() {
@@ -83,12 +61,16 @@ public class SubjektSvazCirkviZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CLENOVE_SVAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ClenSvazu> getClenoveSvazu() {
     return clenoveSvazu;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CLENOVE_SVAZU)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setClenoveSvazu(List<ClenSvazu> clenoveSvazu) {
     this.clenoveSvazu = clenoveSvazu;
   }
@@ -106,16 +88,19 @@ public class SubjektSvazCirkviZaklad {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "IČO nástupce zrušené právnické osoby. ")
+  @JsonProperty(JSON_PROPERTY_ICO_NASTUPCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIcoNastupce() {
     return icoNastupce;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ICO_NASTUPCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIcoNastupce(String icoNastupce) {
     this.icoNastupce = icoNastupce;
   }
-
 
 
   @Override
@@ -157,108 +142,5 @@ public class SubjektSvazCirkviZaklad {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("clenoveSvazu");
-    openapiFields.add("icoNastupce");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SubjektSvazCirkviZaklad
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SubjektSvazCirkviZaklad.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SubjektSvazCirkviZaklad is not found in the empty JSON string", SubjektSvazCirkviZaklad.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SubjektSvazCirkviZaklad.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SubjektSvazCirkviZaklad` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("clenoveSvazu") != null && !jsonObj.get("clenoveSvazu").isJsonNull()) {
-        JsonArray jsonArrayclenoveSvazu = jsonObj.getAsJsonArray("clenoveSvazu");
-        if (jsonArrayclenoveSvazu != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("clenoveSvazu").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `clenoveSvazu` to be an array in the JSON string but got `%s`", jsonObj.get("clenoveSvazu").toString()));
-          }
-
-          // validate the optional field `clenoveSvazu` (array)
-          for (int i = 0; i < jsonArrayclenoveSvazu.size(); i++) {
-            ClenSvazu.validateJsonObject(jsonArrayclenoveSvazu.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("icoNastupce") != null && !jsonObj.get("icoNastupce").isJsonNull()) && !jsonObj.get("icoNastupce").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `icoNastupce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icoNastupce").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SubjektSvazCirkviZaklad.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SubjektSvazCirkviZaklad' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SubjektSvazCirkviZaklad> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SubjektSvazCirkviZaklad.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SubjektSvazCirkviZaklad>() {
-           @Override
-           public void write(JsonWriter out, SubjektSvazCirkviZaklad value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SubjektSvazCirkviZaklad read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SubjektSvazCirkviZaklad given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubjektSvazCirkviZaklad
-  * @throws IOException if the JSON string is invalid with respect to SubjektSvazCirkviZaklad
-  */
-  public static SubjektSvazCirkviZaklad fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SubjektSvazCirkviZaklad.class);
-  }
-
- /**
-  * Convert an instance of SubjektSvazCirkviZaklad to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

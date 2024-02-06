@@ -13,49 +13,51 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.Chyba;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickeSubjektySzrSeznam;
 import org.openapitools.client.model.EkonomickySubjektSzr;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektySzrApi
  */
-@Disabled
+@Ignore
 public class EkonomickeSubjektySzrApiTest {
 
     private final EkonomickeSubjektySzrApi api = new EkonomickeSubjektySzrApi();
 
+    
     /**
+     * 
+     *
      * Vyhledání konkrétního ekonomického subjektu ze zdroje SZR - subregistr EZP
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vratEkonomickySubjektSzrTest() throws ApiException {
+    public void vratEkonomickySubjektSzrTest() {
         String ico = null;
         EkonomickySubjektSzr response = api.vratEkonomickySubjektSzr(ico);
+
         // TODO: test validations
     }
-
+    
     /**
+     * 
+     *
      * Vyhledání seznamu ekonomických subjektu ze zdroje SZR - subregistr EZP
      *
-     * @throws ApiException if the Api call fails
+     * @throws ApiException
+     *          if the Api call fails
      */
     @Test
-    public void vyhledejSeznamEkonomickychSubjektuSzrTest() throws ApiException {
+    public void vyhledejSeznamEkonomickychSubjektuSzrTest() {
         EkonomickeSubjektyRegistraceFiltr ekonomickeSubjektyRegistraceFiltr = null;
         EkonomickeSubjektySzrSeznam response = api.vyhledejSeznamEkonomickychSubjektuSzr(ekonomickeSubjektyRegistraceFiltr);
+
         // TODO: test validations
     }
-
+    
 }

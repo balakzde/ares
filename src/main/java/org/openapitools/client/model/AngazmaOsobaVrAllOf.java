@@ -14,67 +14,43 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.openapitools.client.model.AngazmaClenstviVr;
-import org.openapitools.client.model.FyzickaOsobaVr;
-import org.openapitools.client.model.ObecnyTextVr;
-import org.openapitools.client.model.PravnickaOsobaVr;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * AngazmaOsobaVrAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  AngazmaOsobaVrAllOf.JSON_PROPERTY_SKRYTY_UDAJ,
+  AngazmaOsobaVrAllOf.JSON_PROPERTY_TYP_ANGAZMA,
+  AngazmaOsobaVrAllOf.JSON_PROPERTY_CLENSTVI,
+  AngazmaOsobaVrAllOf.JSON_PROPERTY_NAZEV_ANGAZMA,
+  AngazmaOsobaVrAllOf.JSON_PROPERTY_PRAVNICKA_OSOBA,
+  AngazmaOsobaVrAllOf.JSON_PROPERTY_FYZICKA_OSOBA
+})
+@JsonTypeName("AngazmaOsobaVr_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class AngazmaOsobaVrAllOf {
-  public static final String SERIALIZED_NAME_SKRYTY_UDAJ = "skrytyUdaj";
-  @SerializedName(SERIALIZED_NAME_SKRYTY_UDAJ)
+  public static final String JSON_PROPERTY_SKRYTY_UDAJ = "skrytyUdaj";
   private ObecnyTextVr skrytyUdaj;
 
-  public static final String SERIALIZED_NAME_TYP_ANGAZMA = "typAngazma";
-  @SerializedName(SERIALIZED_NAME_TYP_ANGAZMA)
+  public static final String JSON_PROPERTY_TYP_ANGAZMA = "typAngazma";
   private String typAngazma;
 
-  public static final String SERIALIZED_NAME_CLENSTVI = "clenstvi";
-  @SerializedName(SERIALIZED_NAME_CLENSTVI)
+  public static final String JSON_PROPERTY_CLENSTVI = "clenstvi";
   private AngazmaClenstviVr clenstvi;
 
-  public static final String SERIALIZED_NAME_NAZEV_ANGAZMA = "nazevAngazma";
-  @SerializedName(SERIALIZED_NAME_NAZEV_ANGAZMA)
+  public static final String JSON_PROPERTY_NAZEV_ANGAZMA = "nazevAngazma";
   private String nazevAngazma;
 
-  public static final String SERIALIZED_NAME_PRAVNICKA_OSOBA = "pravnickaOsoba";
-  @SerializedName(SERIALIZED_NAME_PRAVNICKA_OSOBA)
+  public static final String JSON_PROPERTY_PRAVNICKA_OSOBA = "pravnickaOsoba";
   private PravnickaOsobaVr pravnickaOsoba;
 
-  public static final String SERIALIZED_NAME_FYZICKA_OSOBA = "fyzickaOsoba";
-  @SerializedName(SERIALIZED_NAME_FYZICKA_OSOBA)
+  public static final String JSON_PROPERTY_FYZICKA_OSOBA = "fyzickaOsoba";
   private FyzickaOsobaVr fyzickaOsoba;
 
   public AngazmaOsobaVrAllOf() {
@@ -92,12 +68,16 @@ public class AngazmaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SKRYTY_UDAJ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ObecnyTextVr getSkrytyUdaj() {
     return skrytyUdaj;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SKRYTY_UDAJ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSkrytyUdaj(ObecnyTextVr skrytyUdaj) {
     this.skrytyUdaj = skrytyUdaj;
   }
@@ -115,12 +95,16 @@ public class AngazmaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ angažmá  - kód (ciselnikKod: TypAngazma, zdroj: vr) ")
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypAngazma() {
     return typAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypAngazma(String typAngazma) {
     this.typAngazma = typAngazma;
   }
@@ -138,12 +122,16 @@ public class AngazmaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CLENSTVI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AngazmaClenstviVr getClenstvi() {
     return clenstvi;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CLENSTVI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setClenstvi(AngazmaClenstviVr clenstvi) {
     this.clenstvi = clenstvi;
   }
@@ -161,12 +149,16 @@ public class AngazmaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název angažmá - nestandardní")
+  @JsonProperty(JSON_PROPERTY_NAZEV_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazevAngazma() {
     return nazevAngazma;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV_ANGAZMA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazevAngazma(String nazevAngazma) {
     this.nazevAngazma = nazevAngazma;
   }
@@ -184,12 +176,16 @@ public class AngazmaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PRAVNICKA_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public PravnickaOsobaVr getPravnickaOsoba() {
     return pravnickaOsoba;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PRAVNICKA_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPravnickaOsoba(PravnickaOsobaVr pravnickaOsoba) {
     this.pravnickaOsoba = pravnickaOsoba;
   }
@@ -207,16 +203,19 @@ public class AngazmaOsobaVrAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FYZICKA_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public FyzickaOsobaVr getFyzickaOsoba() {
     return fyzickaOsoba;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FYZICKA_OSOBA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFyzickaOsoba(FyzickaOsobaVr fyzickaOsoba) {
     this.fyzickaOsoba = fyzickaOsoba;
   }
-
 
 
   @Override
@@ -266,117 +265,5 @@ public class AngazmaOsobaVrAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("skrytyUdaj");
-    openapiFields.add("typAngazma");
-    openapiFields.add("clenstvi");
-    openapiFields.add("nazevAngazma");
-    openapiFields.add("pravnickaOsoba");
-    openapiFields.add("fyzickaOsoba");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AngazmaOsobaVrAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AngazmaOsobaVrAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AngazmaOsobaVrAllOf is not found in the empty JSON string", AngazmaOsobaVrAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AngazmaOsobaVrAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AngazmaOsobaVrAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `skrytyUdaj`
-      if (jsonObj.get("skrytyUdaj") != null && !jsonObj.get("skrytyUdaj").isJsonNull()) {
-        ObecnyTextVr.validateJsonObject(jsonObj.getAsJsonObject("skrytyUdaj"));
-      }
-      if ((jsonObj.get("typAngazma") != null && !jsonObj.get("typAngazma").isJsonNull()) && !jsonObj.get("typAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typAngazma").toString()));
-      }
-      // validate the optional field `clenstvi`
-      if (jsonObj.get("clenstvi") != null && !jsonObj.get("clenstvi").isJsonNull()) {
-        AngazmaClenstviVr.validateJsonObject(jsonObj.getAsJsonObject("clenstvi"));
-      }
-      if ((jsonObj.get("nazevAngazma") != null && !jsonObj.get("nazevAngazma").isJsonNull()) && !jsonObj.get("nazevAngazma").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazevAngazma` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazevAngazma").toString()));
-      }
-      // validate the optional field `pravnickaOsoba`
-      if (jsonObj.get("pravnickaOsoba") != null && !jsonObj.get("pravnickaOsoba").isJsonNull()) {
-        PravnickaOsobaVr.validateJsonObject(jsonObj.getAsJsonObject("pravnickaOsoba"));
-      }
-      // validate the optional field `fyzickaOsoba`
-      if (jsonObj.get("fyzickaOsoba") != null && !jsonObj.get("fyzickaOsoba").isJsonNull()) {
-        FyzickaOsobaVr.validateJsonObject(jsonObj.getAsJsonObject("fyzickaOsoba"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AngazmaOsobaVrAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AngazmaOsobaVrAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AngazmaOsobaVrAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AngazmaOsobaVrAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AngazmaOsobaVrAllOf>() {
-           @Override
-           public void write(JsonWriter out, AngazmaOsobaVrAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AngazmaOsobaVrAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AngazmaOsobaVrAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AngazmaOsobaVrAllOf
-  * @throws IOException if the JSON string is invalid with respect to AngazmaOsobaVrAllOf
-  */
-  public static AngazmaOsobaVrAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AngazmaOsobaVrAllOf.class);
-  }
-
- /**
-  * Convert an instance of AngazmaOsobaVrAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

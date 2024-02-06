@@ -14,55 +14,34 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.StandardizovanaAdresa;
-import org.openapitools.client.model.StandardizovanaAdresaFiltr;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * StandardizovaneAdresySeznamAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  StandardizovaneAdresySeznamAllOf.JSON_PROPERTY_STANDARDIZOVANE_ADRESY,
+  StandardizovaneAdresySeznamAllOf.JSON_PROPERTY_STAV_STANDARDIZACE,
+  StandardizovaneAdresySeznamAllOf.JSON_PROPERTY_REQUEST
+})
+@JsonTypeName("StandardizovaneAdresySeznam_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class StandardizovaneAdresySeznamAllOf {
-  public static final String SERIALIZED_NAME_STANDARDIZOVANE_ADRESY = "standardizovaneAdresy";
-  @SerializedName(SERIALIZED_NAME_STANDARDIZOVANE_ADRESY)
+  public static final String JSON_PROPERTY_STANDARDIZOVANE_ADRESY = "standardizovaneAdresy";
   private List<StandardizovanaAdresa> standardizovaneAdresy = null;
 
-  public static final String SERIALIZED_NAME_STAV_STANDARDIZACE = "stavStandardizace";
-  @SerializedName(SERIALIZED_NAME_STAV_STANDARDIZACE)
+  public static final String JSON_PROPERTY_STAV_STANDARDIZACE = "stavStandardizace";
   private String stavStandardizace;
 
-  public static final String SERIALIZED_NAME_REQUEST = "request";
-  @SerializedName(SERIALIZED_NAME_REQUEST)
+  public static final String JSON_PROPERTY_REQUEST = "request";
   private StandardizovanaAdresaFiltr request;
 
   public StandardizovaneAdresySeznamAllOf() {
@@ -88,12 +67,16 @@ public class StandardizovaneAdresySeznamAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STANDARDIZOVANE_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<StandardizovanaAdresa> getStandardizovaneAdresy() {
     return standardizovaneAdresy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STANDARDIZOVANE_ADRESY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStandardizovaneAdresy(List<StandardizovanaAdresa> standardizovaneAdresy) {
     this.standardizovaneAdresy = standardizovaneAdresy;
   }
@@ -111,12 +94,16 @@ public class StandardizovaneAdresySeznamAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Stav standardizace adresy - kod (Číselník kod:StavStandardizaceAdresy) UPLNA, CASTECNA_OBEC/..., NEUSPESNA")
+  @JsonProperty(JSON_PROPERTY_STAV_STANDARDIZACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStavStandardizace() {
     return stavStandardizace;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STAV_STANDARDIZACE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStavStandardizace(String stavStandardizace) {
     this.stavStandardizace = stavStandardizace;
   }
@@ -134,16 +121,19 @@ public class StandardizovaneAdresySeznamAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQUEST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public StandardizovanaAdresaFiltr getRequest() {
     return request;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQUEST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequest(StandardizovanaAdresaFiltr request) {
     this.request = request;
   }
-
 
 
   @Override
@@ -187,113 +177,5 @@ public class StandardizovaneAdresySeznamAllOf {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("standardizovaneAdresy");
-    openapiFields.add("stavStandardizace");
-    openapiFields.add("request");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StandardizovaneAdresySeznamAllOf
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (StandardizovaneAdresySeznamAllOf.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StandardizovaneAdresySeznamAllOf is not found in the empty JSON string", StandardizovaneAdresySeznamAllOf.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!StandardizovaneAdresySeznamAllOf.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StandardizovaneAdresySeznamAllOf` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("standardizovaneAdresy") != null && !jsonObj.get("standardizovaneAdresy").isJsonNull()) {
-        JsonArray jsonArraystandardizovaneAdresy = jsonObj.getAsJsonArray("standardizovaneAdresy");
-        if (jsonArraystandardizovaneAdresy != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("standardizovaneAdresy").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `standardizovaneAdresy` to be an array in the JSON string but got `%s`", jsonObj.get("standardizovaneAdresy").toString()));
-          }
-
-          // validate the optional field `standardizovaneAdresy` (array)
-          for (int i = 0; i < jsonArraystandardizovaneAdresy.size(); i++) {
-            StandardizovanaAdresa.validateJsonObject(jsonArraystandardizovaneAdresy.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("stavStandardizace") != null && !jsonObj.get("stavStandardizace").isJsonNull()) && !jsonObj.get("stavStandardizace").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stavStandardizace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stavStandardizace").toString()));
-      }
-      // validate the optional field `request`
-      if (jsonObj.get("request") != null && !jsonObj.get("request").isJsonNull()) {
-        StandardizovanaAdresaFiltr.validateJsonObject(jsonObj.getAsJsonObject("request"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StandardizovaneAdresySeznamAllOf.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StandardizovaneAdresySeznamAllOf' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StandardizovaneAdresySeznamAllOf> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StandardizovaneAdresySeznamAllOf.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<StandardizovaneAdresySeznamAllOf>() {
-           @Override
-           public void write(JsonWriter out, StandardizovaneAdresySeznamAllOf value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public StandardizovaneAdresySeznamAllOf read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of StandardizovaneAdresySeznamAllOf given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StandardizovaneAdresySeznamAllOf
-  * @throws IOException if the JSON string is invalid with respect to StandardizovaneAdresySeznamAllOf
-  */
-  public static StandardizovaneAdresySeznamAllOf fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StandardizovaneAdresySeznamAllOf.class);
-  }
-
- /**
-  * Convert an instance of StandardizovaneAdresySeznamAllOf to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

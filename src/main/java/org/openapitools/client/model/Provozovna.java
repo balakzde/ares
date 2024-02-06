@@ -14,77 +14,53 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.Adresa;
-import org.openapitools.client.model.ZivnostOborCinnosti;
-import org.openapitools.client.model.ZivnostProvozovnaPozastaveni;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Provozovna
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  Provozovna.JSON_PROPERTY_SIDLO_PROVOZOVNY,
+  Provozovna.JSON_PROPERTY_UMISTENI_PROVOZOVNY,
+  Provozovna.JSON_PROPERTY_PLATNOST_OD,
+  Provozovna.JSON_PROPERTY_PLATNOST_DO,
+  Provozovna.JSON_PROPERTY_POZASTAVENI_PROVOZOVNY,
+  Provozovna.JSON_PROPERTY_TYP_PROVOZOVNY,
+  Provozovna.JSON_PROPERTY_NAZEV,
+  Provozovna.JSON_PROPERTY_OBORY_CINNOSTI
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class Provozovna {
-  public static final String SERIALIZED_NAME_SIDLO_PROVOZOVNY = "sidloProvozovny";
-  @SerializedName(SERIALIZED_NAME_SIDLO_PROVOZOVNY)
+  public static final String JSON_PROPERTY_SIDLO_PROVOZOVNY = "sidloProvozovny";
   private Adresa sidloProvozovny;
 
-  public static final String SERIALIZED_NAME_UMISTENI_PROVOZOVNY = "umisteniProvozovny";
-  @SerializedName(SERIALIZED_NAME_UMISTENI_PROVOZOVNY)
+  public static final String JSON_PROPERTY_UMISTENI_PROVOZOVNY = "umisteniProvozovny";
   private String umisteniProvozovny;
 
-  public static final String SERIALIZED_NAME_PLATNOST_OD = "platnostOd";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_OD)
+  public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
   private LocalDate platnostOd;
 
-  public static final String SERIALIZED_NAME_PLATNOST_DO = "platnostDo";
-  @SerializedName(SERIALIZED_NAME_PLATNOST_DO)
+  public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
   private LocalDate platnostDo;
 
-  public static final String SERIALIZED_NAME_POZASTAVENI_PROVOZOVNY = "pozastaveniProvozovny";
-  @SerializedName(SERIALIZED_NAME_POZASTAVENI_PROVOZOVNY)
+  public static final String JSON_PROPERTY_POZASTAVENI_PROVOZOVNY = "pozastaveniProvozovny";
   private List<ZivnostProvozovnaPozastaveni> pozastaveniProvozovny = null;
 
-  public static final String SERIALIZED_NAME_TYP_PROVOZOVNY = "typProvozovny";
-  @SerializedName(SERIALIZED_NAME_TYP_PROVOZOVNY)
+  public static final String JSON_PROPERTY_TYP_PROVOZOVNY = "typProvozovny";
   private String typProvozovny;
 
-  public static final String SERIALIZED_NAME_NAZEV = "nazev";
-  @SerializedName(SERIALIZED_NAME_NAZEV)
+  public static final String JSON_PROPERTY_NAZEV = "nazev";
   private String nazev;
 
-  public static final String SERIALIZED_NAME_OBORY_CINNOSTI = "oboryCinnosti";
-  @SerializedName(SERIALIZED_NAME_OBORY_CINNOSTI)
+  public static final String JSON_PROPERTY_OBORY_CINNOSTI = "oboryCinnosti";
   private List<ZivnostOborCinnosti> oboryCinnosti = null;
 
   public Provozovna() {
@@ -102,12 +78,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SIDLO_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Adresa getSidloProvozovny() {
     return sidloProvozovny;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SIDLO_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSidloProvozovny(Adresa sidloProvozovny) {
     this.sidloProvozovny = sidloProvozovny;
   }
@@ -125,12 +105,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Umístění provozovny")
+  @JsonProperty(JSON_PROPERTY_UMISTENI_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUmisteniProvozovny() {
     return umisteniProvozovny;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UMISTENI_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUmisteniProvozovny(String umisteniProvozovny) {
     this.umisteniProvozovny = umisteniProvozovny;
   }
@@ -148,12 +132,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost provozovny od data")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostOd() {
     return platnostOd;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostOd(LocalDate platnostOd) {
     this.platnostOd = platnostOd;
   }
@@ -171,12 +159,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Platnost provozovny do data ")
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getPlatnostDo() {
     return platnostDo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlatnostDo(LocalDate platnostDo) {
     this.platnostDo = platnostDo;
   }
@@ -202,12 +194,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POZASTAVENI_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostProvozovnaPozastaveni> getPozastaveniProvozovny() {
     return pozastaveniProvozovny;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POZASTAVENI_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPozastaveniProvozovny(List<ZivnostProvozovnaPozastaveni> pozastaveniProvozovny) {
     this.pozastaveniProvozovny = pozastaveniProvozovny;
   }
@@ -225,12 +221,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Typ provozovny - kód (ciselnikKod: TypProvozovny) ")
+  @JsonProperty(JSON_PROPERTY_TYP_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypProvozovny() {
     return typProvozovny;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYP_PROVOZOVNY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTypProvozovny(String typProvozovny) {
     this.typProvozovny = typProvozovny;
   }
@@ -248,12 +248,16 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Název provozovny")
+  @JsonProperty(JSON_PROPERTY_NAZEV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNazev() {
     return nazev;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAZEV)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNazev(String nazev) {
     this.nazev = nazev;
   }
@@ -279,16 +283,19 @@ public class Provozovna {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OBORY_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ZivnostOborCinnosti> getOboryCinnosti() {
     return oboryCinnosti;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OBORY_CINNOSTI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOboryCinnosti(List<ZivnostOborCinnosti> oboryCinnosti) {
     this.oboryCinnosti = oboryCinnosti;
   }
-
 
 
   @Override
@@ -342,138 +349,5 @@ public class Provozovna {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("sidloProvozovny");
-    openapiFields.add("umisteniProvozovny");
-    openapiFields.add("platnostOd");
-    openapiFields.add("platnostDo");
-    openapiFields.add("pozastaveniProvozovny");
-    openapiFields.add("typProvozovny");
-    openapiFields.add("nazev");
-    openapiFields.add("oboryCinnosti");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Provozovna
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Provozovna.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Provozovna is not found in the empty JSON string", Provozovna.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Provozovna.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Provozovna` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `sidloProvozovny`
-      if (jsonObj.get("sidloProvozovny") != null && !jsonObj.get("sidloProvozovny").isJsonNull()) {
-        Adresa.validateJsonObject(jsonObj.getAsJsonObject("sidloProvozovny"));
-      }
-      if ((jsonObj.get("umisteniProvozovny") != null && !jsonObj.get("umisteniProvozovny").isJsonNull()) && !jsonObj.get("umisteniProvozovny").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `umisteniProvozovny` to be a primitive type in the JSON string but got `%s`", jsonObj.get("umisteniProvozovny").toString()));
-      }
-      if (jsonObj.get("pozastaveniProvozovny") != null && !jsonObj.get("pozastaveniProvozovny").isJsonNull()) {
-        JsonArray jsonArraypozastaveniProvozovny = jsonObj.getAsJsonArray("pozastaveniProvozovny");
-        if (jsonArraypozastaveniProvozovny != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("pozastaveniProvozovny").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pozastaveniProvozovny` to be an array in the JSON string but got `%s`", jsonObj.get("pozastaveniProvozovny").toString()));
-          }
-
-          // validate the optional field `pozastaveniProvozovny` (array)
-          for (int i = 0; i < jsonArraypozastaveniProvozovny.size(); i++) {
-            ZivnostProvozovnaPozastaveni.validateJsonObject(jsonArraypozastaveniProvozovny.get(i).getAsJsonObject());
-          };
-        }
-      }
-      if ((jsonObj.get("typProvozovny") != null && !jsonObj.get("typProvozovny").isJsonNull()) && !jsonObj.get("typProvozovny").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typProvozovny` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typProvozovny").toString()));
-      }
-      if ((jsonObj.get("nazev") != null && !jsonObj.get("nazev").isJsonNull()) && !jsonObj.get("nazev").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nazev` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nazev").toString()));
-      }
-      if (jsonObj.get("oboryCinnosti") != null && !jsonObj.get("oboryCinnosti").isJsonNull()) {
-        JsonArray jsonArrayoboryCinnosti = jsonObj.getAsJsonArray("oboryCinnosti");
-        if (jsonArrayoboryCinnosti != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("oboryCinnosti").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `oboryCinnosti` to be an array in the JSON string but got `%s`", jsonObj.get("oboryCinnosti").toString()));
-          }
-
-          // validate the optional field `oboryCinnosti` (array)
-          for (int i = 0; i < jsonArrayoboryCinnosti.size(); i++) {
-            ZivnostOborCinnosti.validateJsonObject(jsonArrayoboryCinnosti.get(i).getAsJsonObject());
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Provozovna.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Provozovna' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Provozovna> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Provozovna.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Provozovna>() {
-           @Override
-           public void write(JsonWriter out, Provozovna value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Provozovna read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Provozovna given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Provozovna
-  * @throws IOException if the JSON string is invalid with respect to Provozovna
-  */
-  public static Provozovna fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Provozovna.class);
-  }
-
- /**
-  * Convert an instance of Provozovna to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -14,57 +14,36 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.time.LocalDate;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Notifikační dávka datového zdroje
  */
 @ApiModel(description = "Notifikační dávka datového zdroje")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-27T00:34:55.679880400+01:00[Europe/Prague]")
+@JsonPropertyOrder({
+  NotifikacniDavka.JSON_PROPERTY_CISLO_DAVKY,
+  NotifikacniDavka.JSON_PROPERTY_DATOVY_ZDROJ,
+  NotifikacniDavka.JSON_PROPERTY_DATUM_UVOLNENI_DAVKY,
+  NotifikacniDavka.JSON_PROPERTY_POCET_ZMEN
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
 public class NotifikacniDavka {
-  public static final String SERIALIZED_NAME_CISLO_DAVKY = "cisloDavky";
-  @SerializedName(SERIALIZED_NAME_CISLO_DAVKY)
+  public static final String JSON_PROPERTY_CISLO_DAVKY = "cisloDavky";
   private Integer cisloDavky;
 
-  public static final String SERIALIZED_NAME_DATOVY_ZDROJ = "datovyZdroj";
-  @SerializedName(SERIALIZED_NAME_DATOVY_ZDROJ)
+  public static final String JSON_PROPERTY_DATOVY_ZDROJ = "datovyZdroj";
   private String datovyZdroj;
 
-  public static final String SERIALIZED_NAME_DATUM_UVOLNENI_DAVKY = "datumUvolneniDavky";
-  @SerializedName(SERIALIZED_NAME_DATUM_UVOLNENI_DAVKY)
+  public static final String JSON_PROPERTY_DATUM_UVOLNENI_DAVKY = "datumUvolneniDavky";
   private LocalDate datumUvolneniDavky;
 
-  public static final String SERIALIZED_NAME_POCET_ZMEN = "pocetZmen";
-  @SerializedName(SERIALIZED_NAME_POCET_ZMEN)
+  public static final String JSON_PROPERTY_POCET_ZMEN = "pocetZmen";
   private Integer pocetZmen;
 
   public NotifikacniDavka() {
@@ -82,12 +61,16 @@ public class NotifikacniDavka {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Číslo notifikační dávky")
+  @JsonProperty(JSON_PROPERTY_CISLO_DAVKY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCisloDavky() {
     return cisloDavky;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CISLO_DAVKY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCisloDavky(Integer cisloDavky) {
     this.cisloDavky = cisloDavky;
   }
@@ -105,12 +88,16 @@ public class NotifikacniDavka {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datový zdroj notifikační dávky - kód (ciselnikKod: TypZdrojeAres, zdroj:com) ")
+  @JsonProperty(JSON_PROPERTY_DATOVY_ZDROJ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDatovyZdroj() {
     return datovyZdroj;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATOVY_ZDROJ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatovyZdroj(String datovyZdroj) {
     this.datovyZdroj = datovyZdroj;
   }
@@ -128,12 +115,16 @@ public class NotifikacniDavka {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Datum uvolnění notifikační dávky")
+  @JsonProperty(JSON_PROPERTY_DATUM_UVOLNENI_DAVKY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public LocalDate getDatumUvolneniDavky() {
     return datumUvolneniDavky;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATUM_UVOLNENI_DAVKY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDatumUvolneniDavky(LocalDate datumUvolneniDavky) {
     this.datumUvolneniDavky = datumUvolneniDavky;
   }
@@ -151,16 +142,19 @@ public class NotifikacniDavka {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Počet změn v notifikační dávce")
+  @JsonProperty(JSON_PROPERTY_POCET_ZMEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPocetZmen() {
     return pocetZmen;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POCET_ZMEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPocetZmen(Integer pocetZmen) {
     this.pocetZmen = pocetZmen;
   }
-
 
 
   @Override
@@ -206,96 +200,5 @@ public class NotifikacniDavka {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cisloDavky");
-    openapiFields.add("datovyZdroj");
-    openapiFields.add("datumUvolneniDavky");
-    openapiFields.add("pocetZmen");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NotifikacniDavka
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (NotifikacniDavka.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NotifikacniDavka is not found in the empty JSON string", NotifikacniDavka.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!NotifikacniDavka.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NotifikacniDavka` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if ((jsonObj.get("datovyZdroj") != null && !jsonObj.get("datovyZdroj").isJsonNull()) && !jsonObj.get("datovyZdroj").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `datovyZdroj` to be a primitive type in the JSON string but got `%s`", jsonObj.get("datovyZdroj").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!NotifikacniDavka.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'NotifikacniDavka' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<NotifikacniDavka> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(NotifikacniDavka.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<NotifikacniDavka>() {
-           @Override
-           public void write(JsonWriter out, NotifikacniDavka value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public NotifikacniDavka read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of NotifikacniDavka given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NotifikacniDavka
-  * @throws IOException if the JSON string is invalid with respect to NotifikacniDavka
-  */
-  public static NotifikacniDavka fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, NotifikacniDavka.class);
-  }
-
- /**
-  * Convert an instance of NotifikacniDavka to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 
