@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -33,7 +32,6 @@ public class EkonomickeSubjektyApi {
         this(new ApiClient());
     }
 
-    @Autowired
     public EkonomickeSubjektyApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }

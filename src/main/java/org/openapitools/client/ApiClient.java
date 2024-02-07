@@ -2,7 +2,7 @@ package org.openapitools.client;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -89,7 +89,7 @@ public class ApiClient extends JavaTimeFormatter {
         init();
     }
 
-    @Autowired
+    
     public ApiClient(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
         init();
