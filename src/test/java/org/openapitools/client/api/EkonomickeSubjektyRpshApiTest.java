@@ -13,11 +13,11 @@
 
 package org.openapitools.client.api;
 
+import org.junit.Ignore;
+import org.junit.Test;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickeSubjektyRpshSeznam;
 import org.openapitools.client.model.EkonomickySubjektRpsh;
-import org.junit.Test;
-import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyRpshApi

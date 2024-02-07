@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubjektPravnickaOsobaAllOf.JSON_PROPERTY_ORGANY
 })
 @JsonTypeName("SubjektPravnickaOsoba_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 public class SubjektPravnickaOsobaAllOf {
   public static final String JSON_PROPERTY_ORGANY = "organy";
   private List<AngazovanaOsobaRcns> organy = null;

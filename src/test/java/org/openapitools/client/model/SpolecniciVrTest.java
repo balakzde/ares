@@ -13,8 +13,7 @@
 
 package org.openapitools.client.model;
 
-import org.junit.Assert;
-import org.junit.Ignore;
+import org.joda.time.LocalDate;
 import org.junit.Test;
 
 

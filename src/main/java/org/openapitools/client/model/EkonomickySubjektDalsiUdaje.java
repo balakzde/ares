@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EkonomickySubjektDalsiUdaje.JSON_PROPERTY_SPISOVA_ZNACKA,
   EkonomickySubjektDalsiUdaje.JSON_PROPERTY_DATOVY_ZDROJ
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 public class EkonomickySubjektDalsiUdaje {
   public static final String JSON_PROPERTY_OBCHODNI_JMENO = "obchodniJmeno";
   private List<ObchodniJmenoAres> obchodniJmeno = null;

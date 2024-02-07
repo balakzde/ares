@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ObnosVr.JSON_PROPERTY_TYP_OBNOS,
   ObnosVr.JSON_PROPERTY_HODNOTA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 public class ObnosVr {
   public static final String JSON_PROPERTY_TYP_OBNOS = "typObnos";
   private String typObnos;

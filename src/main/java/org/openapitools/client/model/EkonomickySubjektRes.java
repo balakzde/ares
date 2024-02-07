@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   EkonomickySubjektRes.JSON_PROPERTY_ICO_ID,
   EkonomickySubjektRes.JSON_PROPERTY_ZAZNAMY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 public class EkonomickySubjektRes {
   public static final String JSON_PROPERTY_ICO_ID = "icoId";
   private String icoId;

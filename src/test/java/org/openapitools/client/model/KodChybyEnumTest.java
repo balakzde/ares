@@ -13,9 +13,6 @@
 
 package org.openapitools.client.model;
 
-import io.swagger.annotations.ApiModel;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 

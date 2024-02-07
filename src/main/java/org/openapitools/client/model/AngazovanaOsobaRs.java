@@ -18,7 +18,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AngazovanaOsobaRs.JSON_PROPERTY_DATUM_NAROZENI,
   AngazovanaOsobaRs.JSON_PROPERTY_TYP_ANGAZMA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 public class AngazovanaOsobaRs {
   public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;

@@ -48,15 +48,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TimeZone;
-import java.time.OffsetDateTime;
 
 import org.openapitools.client.auth.Authentication;
 import org.openapitools.client.auth.HttpBasicAuth;
 import org.openapitools.client.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 @Component("org.openapitools.client.ApiClient")
-public class ApiClient extends JavaTimeFormatter {
+public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);
 
@@ -327,8 +326,6 @@ public class ApiClient extends JavaTimeFormatter {
             return "";
         } else if (param instanceof Date) {
             return formatDate( (Date) param);
-        } else if (param instanceof OffsetDateTime) {
-            return formatOffsetDateTime((OffsetDateTime) param);
         } else if (param instanceof Collection) {
             StringBuilder b = new StringBuilder();
             for (Object o : (Collection<?>) param) {
@@ -674,7 +671,7 @@ public class ApiClient extends JavaTimeFormatter {
     private String buildCookieHeader(MultiValueMap<String, String> cookies) {
         final StringBuilder cookieValue = new StringBuilder();
         String delimiter = "";
-        for (final Map.Entry<String, List<String>> entry : cookies.entrySet()) {
+        for (final Entry<String, List<String>> entry : cookies.entrySet()) {
             final String value = entry.getValue().get(entry.getValue().size() - 1);
             cookieValue.append(String.format("%s%s=%s", delimiter, entry.getKey(), value));
             delimiter = "; ";

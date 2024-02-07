@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   UpadekCeuVerejnyAllOf.JSON_PROPERTY_SPRAVCE_UPADKU
 })
 @JsonTypeName("UpadekCeuVerejny_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T00:05:51.802385700+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
 public class UpadekCeuVerejnyAllOf {
   public static final String JSON_PROPERTY_SPRAVCE_UPADKU = "spravceUpadku";
   private AngazovanaOsobaCeu spravceUpadku;

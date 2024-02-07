@@ -13,10 +13,10 @@
 
 package org.openapitools.client.api;
 
+import org.junit.Ignore;
+import org.junit.Test;
 import org.openapitools.client.model.StandardizovanaAdresaFiltr;
 import org.openapitools.client.model.StandardizovaneAdresySeznam;
-import org.junit.Test;
-import org.junit.Ignore;
 
 /**
  * API tests for StandardizovaneAdresyApi
