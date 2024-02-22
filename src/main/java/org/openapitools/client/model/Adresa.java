@@ -56,7 +56,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Adresa.JSON_PROPERTY_STANDARDIZACE_ADRESY,
   Adresa.JSON_PROPERTY_PSC_TXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class Adresa {
   public static final String JSON_PROPERTY_KOD_STATU = "kodStatu";
   private String kodStatu;

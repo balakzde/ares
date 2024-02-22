@@ -13,12 +13,12 @@
 
 package org.openapitools.client.model;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModelProperty;
-
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Ezp
@@ -27,7 +27,7 @@ import java.util.Objects;
   Ezp.JSON_PROPERTY_OSOBA_EZP,
   Ezp.JSON_PROPERTY_SUBJEKT_EZP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class Ezp {
   public static final String JSON_PROPERTY_OSOBA_EZP = "osobaEzp";
   private AngazovanaOsobaSzrZaklad osobaEzp;

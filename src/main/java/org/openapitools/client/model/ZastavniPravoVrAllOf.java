@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -31,16 +31,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ZastavniPravoVrAllOf.JSON_PROPERTY_ZANIK_ZASTAVNIHO_PRAVA
 })
 @JsonTypeName("ZastavniPravoVr_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ZastavniPravoVrAllOf {
   public static final String JSON_PROPERTY_TEXT = "text";
   private String text;
 
   public static final String JSON_PROPERTY_VZNIK_ZASTAVNIHO_PRAVA = "vznikZastavnihoPrava";
-  private LocalDate vznikZastavnihoPrava;
+  private Date vznikZastavnihoPrava;
 
   public static final String JSON_PROPERTY_ZANIK_ZASTAVNIHO_PRAVA = "zanikZastavnihoPrava";
-  private LocalDate zanikZastavnihoPrava;
+  private Date zanikZastavnihoPrava;
 
   public ZastavniPravoVrAllOf() {
   }
@@ -72,7 +72,7 @@ public class ZastavniPravoVrAllOf {
   }
 
 
-  public ZastavniPravoVrAllOf vznikZastavnihoPrava(LocalDate vznikZastavnihoPrava) {
+  public ZastavniPravoVrAllOf vznikZastavnihoPrava(Date vznikZastavnihoPrava) {
     
     this.vznikZastavnihoPrava = vznikZastavnihoPrava;
     return this;
@@ -87,19 +87,19 @@ public class ZastavniPravoVrAllOf {
   @JsonProperty(JSON_PROPERTY_VZNIK_ZASTAVNIHO_PRAVA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getVznikZastavnihoPrava() {
+  public Date getVznikZastavnihoPrava() {
     return vznikZastavnihoPrava;
   }
 
 
   @JsonProperty(JSON_PROPERTY_VZNIK_ZASTAVNIHO_PRAVA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVznikZastavnihoPrava(LocalDate vznikZastavnihoPrava) {
+  public void setVznikZastavnihoPrava(Date vznikZastavnihoPrava) {
     this.vznikZastavnihoPrava = vznikZastavnihoPrava;
   }
 
 
-  public ZastavniPravoVrAllOf zanikZastavnihoPrava(LocalDate zanikZastavnihoPrava) {
+  public ZastavniPravoVrAllOf zanikZastavnihoPrava(Date zanikZastavnihoPrava) {
     
     this.zanikZastavnihoPrava = zanikZastavnihoPrava;
     return this;
@@ -114,14 +114,14 @@ public class ZastavniPravoVrAllOf {
   @JsonProperty(JSON_PROPERTY_ZANIK_ZASTAVNIHO_PRAVA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getZanikZastavnihoPrava() {
+  public Date getZanikZastavnihoPrava() {
     return zanikZastavnihoPrava;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ZANIK_ZASTAVNIHO_PRAVA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setZanikZastavnihoPrava(LocalDate zanikZastavnihoPrava) {
+  public void setZanikZastavnihoPrava(Date zanikZastavnihoPrava) {
     this.zanikZastavnihoPrava = zanikZastavnihoPrava;
   }
 

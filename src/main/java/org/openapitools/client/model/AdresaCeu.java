@@ -55,7 +55,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AdresaCeu.JSON_PROPERTY_PSC_TXT,
   AdresaCeu.JSON_PROPERTY_TYP_ADRESY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class AdresaCeu {
   public static final String JSON_PROPERTY_KOD_STATU = "kodStatu";
   private String kodStatu;

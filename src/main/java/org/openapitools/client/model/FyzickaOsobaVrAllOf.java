@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -35,13 +36,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FyzickaOsobaVrAllOf.JSON_PROPERTY_TITUL_ZA_JMENEM
 })
 @JsonTypeName("FyzickaOsobaVr_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class FyzickaOsobaVrAllOf {
   public static final String JSON_PROPERTY_BYDLISTE = "bydliste";
   private Adresa bydliste;
 
   public static final String JSON_PROPERTY_DATUM_NAROZENI = "datumNarozeni";
-  private LocalDate datumNarozeni;
+  private Date datumNarozeni;
 
   public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;
@@ -88,7 +89,7 @@ public class FyzickaOsobaVrAllOf {
   }
 
 
-  public FyzickaOsobaVrAllOf datumNarozeni(LocalDate datumNarozeni) {
+  public FyzickaOsobaVrAllOf datumNarozeni(Date datumNarozeni) {
     
     this.datumNarozeni = datumNarozeni;
     return this;
@@ -103,14 +104,14 @@ public class FyzickaOsobaVrAllOf {
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumNarozeni() {
+  public Date getDatumNarozeni() {
     return datumNarozeni;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumNarozeni(LocalDate datumNarozeni) {
+  public void setDatumNarozeni(Date datumNarozeni) {
     this.datumNarozeni = datumNarozeni;
   }
 

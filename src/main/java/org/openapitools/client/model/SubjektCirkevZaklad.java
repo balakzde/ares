@@ -19,8 +19,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -34,10 +35,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubjektCirkevZaklad.JSON_PROPERTY_PRAVO_ZVLASTNI,
   SubjektCirkevZaklad.JSON_PROPERTY_CISLO_ZRUSENI_REGISTRACE_PRAV
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class SubjektCirkevZaklad {
   public static final String JSON_PROPERTY_DATUM_REGISTRACE_PRAV = "datumRegistracePrav";
-  private LocalDate datumRegistracePrav;
+  private Date datumRegistracePrav;
 
   public static final String JSON_PROPERTY_CISLO_REGISTRACE_PRAV = "cisloRegistracePrav";
   private String cisloRegistracePrav;
@@ -46,7 +47,7 @@ public class SubjektCirkevZaklad {
   private String icoNastupce;
 
   public static final String JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV = "datumZruseniRegistracePrav";
-  private LocalDate datumZruseniRegistracePrav;
+  private Date datumZruseniRegistracePrav;
 
   public static final String JSON_PROPERTY_PRAVO_ZVLASTNI = "pravoZvlastni";
   private List<PravoZvlastni> pravoZvlastni = null;
@@ -57,7 +58,7 @@ public class SubjektCirkevZaklad {
   public SubjektCirkevZaklad() {
   }
 
-  public SubjektCirkevZaklad datumRegistracePrav(LocalDate datumRegistracePrav) {
+  public SubjektCirkevZaklad datumRegistracePrav(Date datumRegistracePrav) {
     
     this.datumRegistracePrav = datumRegistracePrav;
     return this;
@@ -72,14 +73,14 @@ public class SubjektCirkevZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_REGISTRACE_PRAV)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumRegistracePrav() {
+  public Date getDatumRegistracePrav() {
     return datumRegistracePrav;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_REGISTRACE_PRAV)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumRegistracePrav(LocalDate datumRegistracePrav) {
+  public void setDatumRegistracePrav(Date datumRegistracePrav) {
     this.datumRegistracePrav = datumRegistracePrav;
   }
 
@@ -138,7 +139,7 @@ public class SubjektCirkevZaklad {
   }
 
 
-  public SubjektCirkevZaklad datumZruseniRegistracePrav(LocalDate datumZruseniRegistracePrav) {
+  public SubjektCirkevZaklad datumZruseniRegistracePrav(Date datumZruseniRegistracePrav) {
     
     this.datumZruseniRegistracePrav = datumZruseniRegistracePrav;
     return this;
@@ -153,14 +154,14 @@ public class SubjektCirkevZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZruseniRegistracePrav() {
+  public Date getDatumZruseniRegistracePrav() {
     return datumZruseniRegistracePrav;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE_PRAV)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZruseniRegistracePrav(LocalDate datumZruseniRegistracePrav) {
+  public void setDatumZruseniRegistracePrav(Date datumZruseniRegistracePrav) {
     this.datumZruseniRegistracePrav = datumZruseniRegistracePrav;
   }
 

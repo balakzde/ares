@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -39,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AngazovanaOsobaRpsh.JSON_PROPERTY_KOD,
   AngazovanaOsobaRpsh.JSON_PROPERTY_TYP_ANGAZMA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class AngazovanaOsobaRpsh {
   public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;
@@ -54,16 +55,16 @@ public class AngazovanaOsobaRpsh {
   private String titulZaJmenem;
 
   public static final String JSON_PROPERTY_DATUM_NAROZENI = "datumNarozeni";
-  private LocalDate datumNarozeni;
+  private Date datumNarozeni;
 
   public static final String JSON_PROPERTY_FUNKCE = "funkce";
   private String funkce;
 
   public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
-  private LocalDate platnostOd;
+  private Date platnostOd;
 
   public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
-  private LocalDate platnostDo;
+  private Date platnostDo;
 
   public static final String JSON_PROPERTY_ADRESA = "adresa";
   private Adresa adresa;
@@ -185,7 +186,7 @@ public class AngazovanaOsobaRpsh {
   }
 
 
-  public AngazovanaOsobaRpsh datumNarozeni(LocalDate datumNarozeni) {
+  public AngazovanaOsobaRpsh datumNarozeni(Date datumNarozeni) {
     
     this.datumNarozeni = datumNarozeni;
     return this;
@@ -200,14 +201,14 @@ public class AngazovanaOsobaRpsh {
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumNarozeni() {
+  public Date getDatumNarozeni() {
     return datumNarozeni;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumNarozeni(LocalDate datumNarozeni) {
+  public void setDatumNarozeni(Date datumNarozeni) {
     this.datumNarozeni = datumNarozeni;
   }
 
@@ -239,7 +240,7 @@ public class AngazovanaOsobaRpsh {
   }
 
 
-  public AngazovanaOsobaRpsh platnostOd(LocalDate platnostOd) {
+  public AngazovanaOsobaRpsh platnostOd(Date platnostOd) {
     
     this.platnostOd = platnostOd;
     return this;
@@ -254,19 +255,19 @@ public class AngazovanaOsobaRpsh {
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostOd() {
+  public Date getPlatnostOd() {
     return platnostOd;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostOd(LocalDate platnostOd) {
+  public void setPlatnostOd(Date platnostOd) {
     this.platnostOd = platnostOd;
   }
 
 
-  public AngazovanaOsobaRpsh platnostDo(LocalDate platnostDo) {
+  public AngazovanaOsobaRpsh platnostDo(Date platnostDo) {
     
     this.platnostDo = platnostDo;
     return this;
@@ -281,14 +282,14 @@ public class AngazovanaOsobaRpsh {
   @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostDo() {
+  public Date getPlatnostDo() {
     return platnostDo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostDo(LocalDate platnostDo) {
+  public void setPlatnostDo(Date platnostDo) {
     this.platnostDo = platnostDo;
   }
 

@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AdresaFiltr.JSON_PROPERTY_CISLO_ORIENTACNI_PISMENO,
   AdresaFiltr.JSON_PROPERTY_TEXTOVA_ADRESA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class AdresaFiltr {
   public static final String JSON_PROPERTY_KOD_CASTI_OBCE = "kodCastiObce";
   private Integer kodCastiObce;

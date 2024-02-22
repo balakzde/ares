@@ -18,7 +18,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -57,7 +57,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AngazovanySubjektAdresa.JSON_PROPERTY_PLATNOST_OD,
   AngazovanySubjektAdresa.JSON_PROPERTY_PLATNOST_DO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class AngazovanySubjektAdresa {
   public static final String JSON_PROPERTY_KOD_STATU = "kodStatu";
   private String kodStatu;
@@ -147,10 +147,10 @@ public class AngazovanySubjektAdresa {
   private String pscTxt;
 
   public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
-  private LocalDate platnostOd;
+  private Date platnostOd;
 
   public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
-  private LocalDate platnostDo;
+  private Date platnostDo;
 
   public AngazovanySubjektAdresa() {
   }
@@ -958,7 +958,7 @@ public class AngazovanySubjektAdresa {
   }
 
 
-  public AngazovanySubjektAdresa platnostOd(LocalDate platnostOd) {
+  public AngazovanySubjektAdresa platnostOd(Date platnostOd) {
     
     this.platnostOd = platnostOd;
     return this;
@@ -973,19 +973,19 @@ public class AngazovanySubjektAdresa {
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostOd() {
+  public Date getPlatnostOd() {
     return platnostOd;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostOd(LocalDate platnostOd) {
+  public void setPlatnostOd(Date platnostOd) {
     this.platnostOd = platnostOd;
   }
 
 
-  public AngazovanySubjektAdresa platnostDo(LocalDate platnostDo) {
+  public AngazovanySubjektAdresa platnostDo(Date platnostDo) {
     
     this.platnostDo = platnostDo;
     return this;
@@ -1000,14 +1000,14 @@ public class AngazovanySubjektAdresa {
   @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostDo() {
+  public Date getPlatnostDo() {
     return platnostDo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostDo(LocalDate platnostDo) {
+  public void setPlatnostDo(Date platnostDo) {
     this.platnostDo = platnostDo;
   }
 

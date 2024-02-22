@@ -20,8 +20,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -38,19 +39,19 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   PravnickaOsobaVr.JSON_PROPERTY_ZASTOUPENI,
   PravnickaOsobaVr.JSON_PROPERTY_PRAVNI_FORMA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class PravnickaOsobaVr {
   public static final String JSON_PROPERTY_TEXT_OSOBA = "textOsoba";
   private String textOsoba;
 
   public static final String JSON_PROPERTY_TEXT_OSOBA_OD = "textOsobaOd";
-  private LocalDate textOsobaOd;
+  private Date textOsobaOd;
 
   public static final String JSON_PROPERTY_ADRESA = "adresa";
   private Adresa adresa;
 
   public static final String JSON_PROPERTY_TEXT_OSOBA_DO = "textOsobaDo";
-  private LocalDate textOsobaDo;
+  private Date textOsobaDo;
 
   public static final String JSON_PROPERTY_ICO = "ico";
   private String ico;
@@ -94,7 +95,7 @@ public class PravnickaOsobaVr {
   }
 
 
-  public PravnickaOsobaVr textOsobaOd(LocalDate textOsobaOd) {
+  public PravnickaOsobaVr textOsobaOd(Date textOsobaOd) {
     
     this.textOsobaOd = textOsobaOd;
     return this;
@@ -109,14 +110,14 @@ public class PravnickaOsobaVr {
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getTextOsobaOd() {
+  public Date getTextOsobaOd() {
     return textOsobaOd;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTextOsobaOd(LocalDate textOsobaOd) {
+  public void setTextOsobaOd(Date textOsobaOd) {
     this.textOsobaOd = textOsobaOd;
   }
 
@@ -148,7 +149,7 @@ public class PravnickaOsobaVr {
   }
 
 
-  public PravnickaOsobaVr textOsobaDo(LocalDate textOsobaDo) {
+  public PravnickaOsobaVr textOsobaDo(Date textOsobaDo) {
     
     this.textOsobaDo = textOsobaDo;
     return this;
@@ -163,14 +164,14 @@ public class PravnickaOsobaVr {
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getTextOsobaDo() {
+  public Date getTextOsobaDo() {
     return textOsobaDo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTextOsobaDo(LocalDate textOsobaDo) {
+  public void setTextOsobaDo(Date textOsobaDo) {
     this.textOsobaDo = textOsobaDo;
   }
 

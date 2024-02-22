@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -32,13 +32,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ObchodniJmenoCiziVr.JSON_PROPERTY_HODNOTA,
   ObchodniJmenoCiziVr.JSON_PROPERTY_JAZYK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ObchodniJmenoCiziVr {
   public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
-  private LocalDate datumZapisu;
+  private Date datumZapisu;
 
   public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
-  private LocalDate datumVymazu;
+  private Date datumVymazu;
 
   public static final String JSON_PROPERTY_HODNOTA = "hodnota";
   private String hodnota;
@@ -49,7 +49,7 @@ public class ObchodniJmenoCiziVr {
   public ObchodniJmenoCiziVr() {
   }
 
-  public ObchodniJmenoCiziVr datumZapisu(LocalDate datumZapisu) {
+  public ObchodniJmenoCiziVr datumZapisu(Date datumZapisu) {
     
     this.datumZapisu = datumZapisu;
     return this;
@@ -64,19 +64,19 @@ public class ObchodniJmenoCiziVr {
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZapisu() {
+  public Date getDatumZapisu() {
     return datumZapisu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZapisu(LocalDate datumZapisu) {
+  public void setDatumZapisu(Date datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
 
 
-  public ObchodniJmenoCiziVr datumVymazu(LocalDate datumVymazu) {
+  public ObchodniJmenoCiziVr datumVymazu(Date datumVymazu) {
     
     this.datumVymazu = datumVymazu;
     return this;
@@ -91,14 +91,14 @@ public class ObchodniJmenoCiziVr {
   @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumVymazu() {
+  public Date getDatumVymazu() {
     return datumVymazu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumVymazu(LocalDate datumVymazu) {
+  public void setDatumVymazu(Date datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
 

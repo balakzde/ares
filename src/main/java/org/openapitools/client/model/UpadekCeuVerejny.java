@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   UpadekCeuVerejny.JSON_PROPERTY_SOUD_UPADEK,
   UpadekCeuVerejny.JSON_PROPERTY_SPRAVCE_UPADKU
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class UpadekCeuVerejny {
   public static final String JSON_PROPERTY_PODNET = "podnet";
   private String podnet;
@@ -46,7 +47,7 @@ public class UpadekCeuVerejny {
   private String spisZn;
 
   public static final String JSON_PROPERTY_DATUM = "datum";
-  private LocalDate datum;
+  private Date datum;
 
   public static final String JSON_PROPERTY_DETAIL = "detail";
   private String detail;
@@ -123,7 +124,7 @@ public class UpadekCeuVerejny {
   }
 
 
-  public UpadekCeuVerejny datum(LocalDate datum) {
+  public UpadekCeuVerejny datum(Date datum) {
     
     this.datum = datum;
     return this;
@@ -138,14 +139,14 @@ public class UpadekCeuVerejny {
   @JsonProperty(JSON_PROPERTY_DATUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatum() {
+  public Date getDatum() {
     return datum;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatum(LocalDate datum) {
+  public void setDatum(Date datum) {
     this.datum = datum;
   }
 

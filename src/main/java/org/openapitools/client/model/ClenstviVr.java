@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -30,18 +30,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ClenstviVr.JSON_PROPERTY_VZNIK_CLENSTVI,
   ClenstviVr.JSON_PROPERTY_ZANIK_CLENSTVI
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ClenstviVr {
   public static final String JSON_PROPERTY_VZNIK_CLENSTVI = "vznikClenstvi";
-  private LocalDate vznikClenstvi;
+  private Date vznikClenstvi;
 
   public static final String JSON_PROPERTY_ZANIK_CLENSTVI = "zanikClenstvi";
-  private LocalDate zanikClenstvi;
+  private Date zanikClenstvi;
 
   public ClenstviVr() {
   }
 
-  public ClenstviVr vznikClenstvi(LocalDate vznikClenstvi) {
+  public ClenstviVr vznikClenstvi(Date vznikClenstvi) {
     
     this.vznikClenstvi = vznikClenstvi;
     return this;
@@ -56,19 +56,19 @@ public class ClenstviVr {
   @JsonProperty(JSON_PROPERTY_VZNIK_CLENSTVI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getVznikClenstvi() {
+  public Date getVznikClenstvi() {
     return vznikClenstvi;
   }
 
 
   @JsonProperty(JSON_PROPERTY_VZNIK_CLENSTVI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVznikClenstvi(LocalDate vznikClenstvi) {
+  public void setVznikClenstvi(Date vznikClenstvi) {
     this.vznikClenstvi = vznikClenstvi;
   }
 
 
-  public ClenstviVr zanikClenstvi(LocalDate zanikClenstvi) {
+  public ClenstviVr zanikClenstvi(Date zanikClenstvi) {
     
     this.zanikClenstvi = zanikClenstvi;
     return this;
@@ -83,14 +83,14 @@ public class ClenstviVr {
   @JsonProperty(JSON_PROPERTY_ZANIK_CLENSTVI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getZanikClenstvi() {
+  public Date getZanikClenstvi() {
     return zanikClenstvi;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ZANIK_CLENSTVI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setZanikClenstvi(LocalDate zanikClenstvi) {
+  public void setZanikClenstvi(Date zanikClenstvi) {
     this.zanikClenstvi = zanikClenstvi;
   }
 

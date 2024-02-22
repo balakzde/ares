@@ -26,7 +26,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriTemplateHandler;
 import org.springframework.web.util.UriComponentsBuilder;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,7 +52,7 @@ import org.openapitools.client.auth.Authentication;
 import org.openapitools.client.auth.HttpBasicAuth;
 import org.openapitools.client.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 @Component("org.openapitools.client.ApiClient")
 public class ApiClient {
     public enum CollectionFormat {
@@ -88,7 +87,6 @@ public class ApiClient {
         init();
     }
 
-    
     public ApiClient(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
         init();

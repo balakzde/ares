@@ -20,8 +20,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -51,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ZaznamRcns.JSON_PROPERTY_KONKURZNI_SPRAVCI,
   ZaznamRcns.JSON_PROPERTY_OPATROVNICI
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ZaznamRcns {
   public static final String JSON_PROPERTY_ICO = "ico";
   private String ico;
@@ -69,13 +70,13 @@ public class ZaznamRcns {
   private String financniUrad;
 
   public static final String JSON_PROPERTY_DATUM_VZNIKU = "datumVzniku";
-  private LocalDate datumVzniku;
+  private Date datumVzniku;
 
   public static final String JSON_PROPERTY_DATUM_ZANIKU = "datumZaniku";
-  private LocalDate datumZaniku;
+  private Date datumZaniku;
 
   public static final String JSON_PROPERTY_DATUM_AKTUALIZACE = "datumAktualizace";
-  private LocalDate datumAktualizace;
+  private Date datumAktualizace;
 
   public static final String JSON_PROPERTY_DIC = "dic";
   private String dic;
@@ -102,7 +103,7 @@ public class ZaznamRcns {
   private String zdrojId;
 
   public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
-  private LocalDate platnostOd;
+  private Date platnostOd;
 
   public static final String JSON_PROPERTY_STATUTARNI_ORGAN = "statutarniOrgan";
   private StatutatniOrganRcns statutarniOrgan;
@@ -254,7 +255,7 @@ public class ZaznamRcns {
   }
 
 
-  public ZaznamRcns datumVzniku(LocalDate datumVzniku) {
+  public ZaznamRcns datumVzniku(Date datumVzniku) {
     
     this.datumVzniku = datumVzniku;
     return this;
@@ -269,19 +270,19 @@ public class ZaznamRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumVzniku() {
+  public Date getDatumVzniku() {
     return datumVzniku;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumVzniku(LocalDate datumVzniku) {
+  public void setDatumVzniku(Date datumVzniku) {
     this.datumVzniku = datumVzniku;
   }
 
 
-  public ZaznamRcns datumZaniku(LocalDate datumZaniku) {
+  public ZaznamRcns datumZaniku(Date datumZaniku) {
     
     this.datumZaniku = datumZaniku;
     return this;
@@ -296,19 +297,19 @@ public class ZaznamRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZaniku() {
+  public Date getDatumZaniku() {
     return datumZaniku;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZaniku(LocalDate datumZaniku) {
+  public void setDatumZaniku(Date datumZaniku) {
     this.datumZaniku = datumZaniku;
   }
 
 
-  public ZaznamRcns datumAktualizace(LocalDate datumAktualizace) {
+  public ZaznamRcns datumAktualizace(Date datumAktualizace) {
     
     this.datumAktualizace = datumAktualizace;
     return this;
@@ -323,14 +324,14 @@ public class ZaznamRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumAktualizace() {
+  public Date getDatumAktualizace() {
     return datumAktualizace;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumAktualizace(LocalDate datumAktualizace) {
+  public void setDatumAktualizace(Date datumAktualizace) {
     this.datumAktualizace = datumAktualizace;
   }
 
@@ -567,7 +568,7 @@ public class ZaznamRcns {
   }
 
 
-  public ZaznamRcns platnostOd(LocalDate platnostOd) {
+  public ZaznamRcns platnostOd(Date platnostOd) {
     
     this.platnostOd = platnostOd;
     return this;
@@ -582,14 +583,14 @@ public class ZaznamRcns {
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostOd() {
+  public Date getPlatnostOd() {
     return platnostOd;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostOd(LocalDate platnostOd) {
+  public void setPlatnostOd(Date platnostOd) {
     this.platnostOd = platnostOd;
   }
 

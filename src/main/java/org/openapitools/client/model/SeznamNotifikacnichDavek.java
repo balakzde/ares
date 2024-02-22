@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
   SeznamNotifikacnichDavek.JSON_PROPERTY_NOTIFIKACNI_DAVKY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class SeznamNotifikacnichDavek {
   public static final String JSON_PROPERTY_NOTIFIKACNI_DAVKY = "notifikacniDavky";
   private List<NotifikacniDavka> notifikacniDavky = null;

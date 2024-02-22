@@ -20,8 +20,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -41,13 +42,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ZaznamRzpZakladAllOf.JSON_PROPERTY_KOD_STATU
 })
 @JsonTypeName("ZaznamRzpZaklad_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ZaznamRzpZakladAllOf {
   public static final String JSON_PROPERTY_INSOLVENCNI_RIZENI = "insolvencniRizeni";
   private InsolvencniRizeni insolvencniRizeni;
 
   public static final String JSON_PROPERTY_DATUM_DORUCENI_VYPISU = "datumDoruceniVypisu";
-  private LocalDate datumDoruceniVypisu;
+  private Date datumDoruceniVypisu;
 
   public static final String JSON_PROPERTY_ADRESY_SUBJEKTU = "adresySubjektu";
   private List<EkonomickySubjektRzpAdresa> adresySubjektu = null;
@@ -65,7 +66,7 @@ public class ZaznamRzpZakladAllOf {
   private ZivnostiRzpStav zivnostiStav;
 
   public static final String JSON_PROPERTY_DATUM_ZAPISU_VR = "datumZapisuVr";
-  private LocalDate datumZapisuVr;
+  private Date datumZapisuVr;
 
   public static final String JSON_PROPERTY_PROVOZOVNY_STAV = "provozovnyStav";
   private ProvozovnyRzpStav provozovnyStav;
@@ -106,7 +107,7 @@ public class ZaznamRzpZakladAllOf {
   }
 
 
-  public ZaznamRzpZakladAllOf datumDoruceniVypisu(LocalDate datumDoruceniVypisu) {
+  public ZaznamRzpZakladAllOf datumDoruceniVypisu(Date datumDoruceniVypisu) {
     
     this.datumDoruceniVypisu = datumDoruceniVypisu;
     return this;
@@ -121,14 +122,14 @@ public class ZaznamRzpZakladAllOf {
   @JsonProperty(JSON_PROPERTY_DATUM_DORUCENI_VYPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumDoruceniVypisu() {
+  public Date getDatumDoruceniVypisu() {
     return datumDoruceniVypisu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_DORUCENI_VYPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumDoruceniVypisu(LocalDate datumDoruceniVypisu) {
+  public void setDatumDoruceniVypisu(Date datumDoruceniVypisu) {
     this.datumDoruceniVypisu = datumDoruceniVypisu;
   }
 
@@ -276,7 +277,7 @@ public class ZaznamRzpZakladAllOf {
   }
 
 
-  public ZaznamRzpZakladAllOf datumZapisuVr(LocalDate datumZapisuVr) {
+  public ZaznamRzpZakladAllOf datumZapisuVr(Date datumZapisuVr) {
     
     this.datumZapisuVr = datumZapisuVr;
     return this;
@@ -291,14 +292,14 @@ public class ZaznamRzpZakladAllOf {
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU_VR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZapisuVr() {
+  public Date getDatumZapisuVr() {
     return datumZapisuVr;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU_VR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZapisuVr(LocalDate datumZapisuVr) {
+  public void setDatumZapisuVr(Date datumZapisuVr) {
     this.datumZapisuVr = datumZapisuVr;
   }
 

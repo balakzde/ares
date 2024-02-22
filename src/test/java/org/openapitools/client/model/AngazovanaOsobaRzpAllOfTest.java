@@ -13,7 +13,6 @@
 
 package org.openapitools.client.model;
 
-import org.joda.time.LocalDate;
 import org.junit.Test;
 
 

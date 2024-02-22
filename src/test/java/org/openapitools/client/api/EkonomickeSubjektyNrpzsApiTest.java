@@ -13,11 +13,11 @@
 
 package org.openapitools.client.api;
 
+import org.junit.Ignore;
+import org.junit.Test;
 import org.openapitools.client.model.EkonomickeSubjektyNrpzsSeznam;
 import org.openapitools.client.model.EkonomickeSubjektyRegistraceFiltr;
 import org.openapitools.client.model.EkonomickySubjektNrpzs;
-import org.junit.Test;
-import org.junit.Ignore;
 
 /**
  * API tests for EkonomickeSubjektyNrpzsApi

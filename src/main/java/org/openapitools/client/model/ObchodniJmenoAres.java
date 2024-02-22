@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -32,13 +32,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ObchodniJmenoAres.JSON_PROPERTY_OBCHODNI_JMENO,
   ObchodniJmenoAres.JSON_PROPERTY_PRIMARNI_ZAZNAM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ObchodniJmenoAres {
   public static final String JSON_PROPERTY_PLATNOST_OD = "platnostOd";
-  private LocalDate platnostOd;
+  private Date platnostOd;
 
   public static final String JSON_PROPERTY_PLATNOST_DO = "platnostDo";
-  private LocalDate platnostDo;
+  private Date platnostDo;
 
   public static final String JSON_PROPERTY_OBCHODNI_JMENO = "obchodniJmeno";
   private String obchodniJmeno;
@@ -49,7 +49,7 @@ public class ObchodniJmenoAres {
   public ObchodniJmenoAres() {
   }
 
-  public ObchodniJmenoAres platnostOd(LocalDate platnostOd) {
+  public ObchodniJmenoAres platnostOd(Date platnostOd) {
     
     this.platnostOd = platnostOd;
     return this;
@@ -64,19 +64,19 @@ public class ObchodniJmenoAres {
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostOd() {
+  public Date getPlatnostOd() {
     return platnostOd;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostOd(LocalDate platnostOd) {
+  public void setPlatnostOd(Date platnostOd) {
     this.platnostOd = platnostOd;
   }
 
 
-  public ObchodniJmenoAres platnostDo(LocalDate platnostDo) {
+  public ObchodniJmenoAres platnostDo(Date platnostDo) {
     
     this.platnostDo = platnostDo;
     return this;
@@ -91,14 +91,14 @@ public class ObchodniJmenoAres {
   @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getPlatnostDo() {
+  public Date getPlatnostDo() {
     return platnostDo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PLATNOST_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlatnostDo(LocalDate platnostDo) {
+  public void setPlatnostDo(Date platnostDo) {
     this.platnostDo = platnostDo;
   }
 

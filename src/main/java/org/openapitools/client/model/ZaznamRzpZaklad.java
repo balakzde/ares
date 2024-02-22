@@ -20,8 +20,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -50,7 +51,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   ZaznamRzpZaklad.JSON_PROPERTY_PRIMARNI_ZAZNAM,
   ZaznamRzpZaklad.JSON_PROPERTY_KOD_STATU
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class ZaznamRzpZaklad {
   public static final String JSON_PROPERTY_ICO = "ico";
   private String ico;
@@ -68,13 +69,13 @@ public class ZaznamRzpZaklad {
   private String financniUrad;
 
   public static final String JSON_PROPERTY_DATUM_VZNIKU = "datumVzniku";
-  private LocalDate datumVzniku;
+  private Date datumVzniku;
 
   public static final String JSON_PROPERTY_DATUM_ZANIKU = "datumZaniku";
-  private LocalDate datumZaniku;
+  private Date datumZaniku;
 
   public static final String JSON_PROPERTY_DATUM_AKTUALIZACE = "datumAktualizace";
-  private LocalDate datumAktualizace;
+  private Date datumAktualizace;
 
   public static final String JSON_PROPERTY_DIC = "dic";
   private String dic;
@@ -83,7 +84,7 @@ public class ZaznamRzpZaklad {
   private InsolvencniRizeni insolvencniRizeni;
 
   public static final String JSON_PROPERTY_DATUM_DORUCENI_VYPISU = "datumDoruceniVypisu";
-  private LocalDate datumDoruceniVypisu;
+  private Date datumDoruceniVypisu;
 
   public static final String JSON_PROPERTY_ADRESY_SUBJEKTU = "adresySubjektu";
   private List<EkonomickySubjektRzpAdresa> adresySubjektu = null;
@@ -101,7 +102,7 @@ public class ZaznamRzpZaklad {
   private ZivnostiRzpStav zivnostiStav;
 
   public static final String JSON_PROPERTY_DATUM_ZAPISU_VR = "datumZapisuVr";
-  private LocalDate datumZapisuVr;
+  private Date datumZapisuVr;
 
   public static final String JSON_PROPERTY_PROVOZOVNY_STAV = "provozovnyStav";
   private ProvozovnyRzpStav provozovnyStav;
@@ -250,7 +251,7 @@ public class ZaznamRzpZaklad {
   }
 
 
-  public ZaznamRzpZaklad datumVzniku(LocalDate datumVzniku) {
+  public ZaznamRzpZaklad datumVzniku(Date datumVzniku) {
     
     this.datumVzniku = datumVzniku;
     return this;
@@ -265,19 +266,19 @@ public class ZaznamRzpZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumVzniku() {
+  public Date getDatumVzniku() {
     return datumVzniku;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumVzniku(LocalDate datumVzniku) {
+  public void setDatumVzniku(Date datumVzniku) {
     this.datumVzniku = datumVzniku;
   }
 
 
-  public ZaznamRzpZaklad datumZaniku(LocalDate datumZaniku) {
+  public ZaznamRzpZaklad datumZaniku(Date datumZaniku) {
     
     this.datumZaniku = datumZaniku;
     return this;
@@ -292,19 +293,19 @@ public class ZaznamRzpZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZaniku() {
+  public Date getDatumZaniku() {
     return datumZaniku;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZaniku(LocalDate datumZaniku) {
+  public void setDatumZaniku(Date datumZaniku) {
     this.datumZaniku = datumZaniku;
   }
 
 
-  public ZaznamRzpZaklad datumAktualizace(LocalDate datumAktualizace) {
+  public ZaznamRzpZaklad datumAktualizace(Date datumAktualizace) {
     
     this.datumAktualizace = datumAktualizace;
     return this;
@@ -319,14 +320,14 @@ public class ZaznamRzpZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumAktualizace() {
+  public Date getDatumAktualizace() {
     return datumAktualizace;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_AKTUALIZACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumAktualizace(LocalDate datumAktualizace) {
+  public void setDatumAktualizace(Date datumAktualizace) {
     this.datumAktualizace = datumAktualizace;
   }
 
@@ -385,7 +386,7 @@ public class ZaznamRzpZaklad {
   }
 
 
-  public ZaznamRzpZaklad datumDoruceniVypisu(LocalDate datumDoruceniVypisu) {
+  public ZaznamRzpZaklad datumDoruceniVypisu(Date datumDoruceniVypisu) {
     
     this.datumDoruceniVypisu = datumDoruceniVypisu;
     return this;
@@ -400,14 +401,14 @@ public class ZaznamRzpZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_DORUCENI_VYPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumDoruceniVypisu() {
+  public Date getDatumDoruceniVypisu() {
     return datumDoruceniVypisu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_DORUCENI_VYPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumDoruceniVypisu(LocalDate datumDoruceniVypisu) {
+  public void setDatumDoruceniVypisu(Date datumDoruceniVypisu) {
     this.datumDoruceniVypisu = datumDoruceniVypisu;
   }
 
@@ -555,7 +556,7 @@ public class ZaznamRzpZaklad {
   }
 
 
-  public ZaznamRzpZaklad datumZapisuVr(LocalDate datumZapisuVr) {
+  public ZaznamRzpZaklad datumZapisuVr(Date datumZapisuVr) {
     
     this.datumZapisuVr = datumZapisuVr;
     return this;
@@ -570,14 +571,14 @@ public class ZaznamRzpZaklad {
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU_VR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZapisuVr() {
+  public Date getDatumZapisuVr() {
     return datumZapisuVr;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU_VR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZapisuVr(LocalDate datumZapisuVr) {
+  public void setDatumZapisuVr(Date datumZapisuVr) {
     this.datumZapisuVr = datumZapisuVr;
   }
 

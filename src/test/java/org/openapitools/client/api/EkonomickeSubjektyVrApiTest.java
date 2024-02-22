@@ -42,6 +42,7 @@ public class EkonomickeSubjektyVrApiTest {
         EkonomickySubjektVr response = api.vratEkonomickySubjektVr(ico);
 
         System.out.println(response.getZaznamy().get(0).getFinancniUrad());
+        System.out.println(response.getZaznamy().get(0).getPravniForma().get(0).toString());
     }
     
     /**

@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -24,7 +24,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 @Component("org.openapitools.client.api.EkonomickeSubjektySzrApi")
 public class EkonomickeSubjektySzrApi {
     private ApiClient apiClient;
@@ -33,7 +33,7 @@ public class EkonomickeSubjektySzrApi {
         this(new ApiClient());
     }
 
-    
+    @Autowired
     public EkonomickeSubjektySzrApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }

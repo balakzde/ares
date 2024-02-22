@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -39,25 +40,25 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   FyzickaOsobaVr.JSON_PROPERTY_TITUL_PRED_JMENEM,
   FyzickaOsobaVr.JSON_PROPERTY_TITUL_ZA_JMENEM
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class FyzickaOsobaVr {
   public static final String JSON_PROPERTY_TEXT_OSOBA = "textOsoba";
   private String textOsoba;
 
   public static final String JSON_PROPERTY_TEXT_OSOBA_OD = "textOsobaOd";
-  private LocalDate textOsobaOd;
+  private Date textOsobaOd;
 
   public static final String JSON_PROPERTY_ADRESA = "adresa";
   private Adresa adresa;
 
   public static final String JSON_PROPERTY_TEXT_OSOBA_DO = "textOsobaDo";
-  private LocalDate textOsobaDo;
+  private Date textOsobaDo;
 
   public static final String JSON_PROPERTY_BYDLISTE = "bydliste";
   private Adresa bydliste;
 
   public static final String JSON_PROPERTY_DATUM_NAROZENI = "datumNarozeni";
-  private LocalDate datumNarozeni;
+  private Date datumNarozeni;
 
   public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;
@@ -104,7 +105,7 @@ public class FyzickaOsobaVr {
   }
 
 
-  public FyzickaOsobaVr textOsobaOd(LocalDate textOsobaOd) {
+  public FyzickaOsobaVr textOsobaOd(Date textOsobaOd) {
     
     this.textOsobaOd = textOsobaOd;
     return this;
@@ -119,14 +120,14 @@ public class FyzickaOsobaVr {
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getTextOsobaOd() {
+  public Date getTextOsobaOd() {
     return textOsobaOd;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_OD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTextOsobaOd(LocalDate textOsobaOd) {
+  public void setTextOsobaOd(Date textOsobaOd) {
     this.textOsobaOd = textOsobaOd;
   }
 
@@ -158,7 +159,7 @@ public class FyzickaOsobaVr {
   }
 
 
-  public FyzickaOsobaVr textOsobaDo(LocalDate textOsobaDo) {
+  public FyzickaOsobaVr textOsobaDo(Date textOsobaDo) {
     
     this.textOsobaDo = textOsobaDo;
     return this;
@@ -173,14 +174,14 @@ public class FyzickaOsobaVr {
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getTextOsobaDo() {
+  public Date getTextOsobaDo() {
     return textOsobaDo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TEXT_OSOBA_DO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTextOsobaDo(LocalDate textOsobaDo) {
+  public void setTextOsobaDo(Date textOsobaDo) {
     this.textOsobaDo = textOsobaDo;
   }
 
@@ -212,7 +213,7 @@ public class FyzickaOsobaVr {
   }
 
 
-  public FyzickaOsobaVr datumNarozeni(LocalDate datumNarozeni) {
+  public FyzickaOsobaVr datumNarozeni(Date datumNarozeni) {
     
     this.datumNarozeni = datumNarozeni;
     return this;
@@ -227,14 +228,14 @@ public class FyzickaOsobaVr {
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumNarozeni() {
+  public Date getDatumNarozeni() {
     return datumNarozeni;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumNarozeni(LocalDate datumNarozeni) {
+  public void setDatumNarozeni(Date datumNarozeni) {
     this.datumNarozeni = datumNarozeni;
   }
 

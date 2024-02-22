@@ -18,7 +18,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   RegistraceRcns.JSON_PROPERTY_DATUM_OPATROVNIK,
   RegistraceRcns.JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class RegistraceRcns {
   public static final String JSON_PROPERTY_CISLO_REGISTRACE = "cisloRegistrace";
   private String cisloRegistrace;
@@ -41,16 +41,16 @@ public class RegistraceRcns {
   private String cisloZruseniRegistrace;
 
   public static final String JSON_PROPERTY_DATUM_LIKVIDACE = "datumLikvidace";
-  private LocalDate datumLikvidace;
+  private Date datumLikvidace;
 
   public static final String JSON_PROPERTY_DATUM_KONKURZU = "datumKonkurzu";
-  private LocalDate datumKonkurzu;
+  private Date datumKonkurzu;
 
   public static final String JSON_PROPERTY_DATUM_OPATROVNIK = "datumOpatrovnik";
-  private LocalDate datumOpatrovnik;
+  private Date datumOpatrovnik;
 
   public static final String JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE = "datumZruseniRegistrace";
-  private LocalDate datumZruseniRegistrace;
+  private Date datumZruseniRegistrace;
 
   public RegistraceRcns() {
   }
@@ -109,7 +109,7 @@ public class RegistraceRcns {
   }
 
 
-  public RegistraceRcns datumLikvidace(LocalDate datumLikvidace) {
+  public RegistraceRcns datumLikvidace(Date datumLikvidace) {
     
     this.datumLikvidace = datumLikvidace;
     return this;
@@ -124,19 +124,19 @@ public class RegistraceRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_LIKVIDACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumLikvidace() {
+  public Date getDatumLikvidace() {
     return datumLikvidace;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_LIKVIDACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumLikvidace(LocalDate datumLikvidace) {
+  public void setDatumLikvidace(Date datumLikvidace) {
     this.datumLikvidace = datumLikvidace;
   }
 
 
-  public RegistraceRcns datumKonkurzu(LocalDate datumKonkurzu) {
+  public RegistraceRcns datumKonkurzu(Date datumKonkurzu) {
     
     this.datumKonkurzu = datumKonkurzu;
     return this;
@@ -151,19 +151,19 @@ public class RegistraceRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_KONKURZU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumKonkurzu() {
+  public Date getDatumKonkurzu() {
     return datumKonkurzu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_KONKURZU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumKonkurzu(LocalDate datumKonkurzu) {
+  public void setDatumKonkurzu(Date datumKonkurzu) {
     this.datumKonkurzu = datumKonkurzu;
   }
 
 
-  public RegistraceRcns datumOpatrovnik(LocalDate datumOpatrovnik) {
+  public RegistraceRcns datumOpatrovnik(Date datumOpatrovnik) {
     
     this.datumOpatrovnik = datumOpatrovnik;
     return this;
@@ -178,19 +178,19 @@ public class RegistraceRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_OPATROVNIK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumOpatrovnik() {
+  public Date getDatumOpatrovnik() {
     return datumOpatrovnik;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_OPATROVNIK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumOpatrovnik(LocalDate datumOpatrovnik) {
+  public void setDatumOpatrovnik(Date datumOpatrovnik) {
     this.datumOpatrovnik = datumOpatrovnik;
   }
 
 
-  public RegistraceRcns datumZruseniRegistrace(LocalDate datumZruseniRegistrace) {
+  public RegistraceRcns datumZruseniRegistrace(Date datumZruseniRegistrace) {
     
     this.datumZruseniRegistrace = datumZruseniRegistrace;
     return this;
@@ -205,14 +205,14 @@ public class RegistraceRcns {
   @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZruseniRegistrace() {
+  public Date getDatumZruseniRegistrace() {
     return datumZruseniRegistrace;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZRUSENI_REGISTRACE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZruseniRegistrace(LocalDate datumZruseniRegistrace) {
+  public void setDatumZruseniRegistrace(Date datumZruseniRegistrace) {
     this.datumZruseniRegistrace = datumZruseniRegistrace;
   }
 

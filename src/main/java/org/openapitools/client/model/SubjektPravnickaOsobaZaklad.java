@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SubjektPravnickaOsobaZaklad.JSON_PROPERTY_ICO_NASTUPCE,
   SubjektPravnickaOsobaZaklad.JSON_PROPERTY_ZPUSOB_ZRUSENI_REGISTRACE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class SubjektPravnickaOsobaZaklad {
   public static final String JSON_PROPERTY_ICO_ZRIZOVATEL = "icoZrizovatel";
   private String icoZrizovatel;

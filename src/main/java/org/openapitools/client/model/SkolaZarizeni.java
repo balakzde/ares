@@ -18,7 +18,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -34,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   SkolaZarizeni.JSON_PROPERTY_DATUM_VZNIKU,
   SkolaZarizeni.JSON_PROPERTY_DATUM_ZANIKU
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class SkolaZarizeni {
   public static final String JSON_PROPERTY_KONTAKTY = "kontakty";
   private KontaktyRs kontakty;
@@ -55,10 +56,10 @@ public class SkolaZarizeni {
   private Adresa adresa;
 
   public static final String JSON_PROPERTY_DATUM_VZNIKU = "datumVzniku";
-  private LocalDate datumVzniku;
+  private Date datumVzniku;
 
   public static final String JSON_PROPERTY_DATUM_ZANIKU = "datumZaniku";
-  private LocalDate datumZaniku;
+  private Date datumZaniku;
 
   public SkolaZarizeni() {
   }
@@ -225,7 +226,7 @@ public class SkolaZarizeni {
   }
 
 
-  public SkolaZarizeni datumVzniku(LocalDate datumVzniku) {
+  public SkolaZarizeni datumVzniku(Date datumVzniku) {
     
     this.datumVzniku = datumVzniku;
     return this;
@@ -240,19 +241,19 @@ public class SkolaZarizeni {
   @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumVzniku() {
+  public Date getDatumVzniku() {
     return datumVzniku;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_VZNIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumVzniku(LocalDate datumVzniku) {
+  public void setDatumVzniku(Date datumVzniku) {
     this.datumVzniku = datumVzniku;
   }
 
 
-  public SkolaZarizeni datumZaniku(LocalDate datumZaniku) {
+  public SkolaZarizeni datumZaniku(Date datumZaniku) {
     
     this.datumZaniku = datumZaniku;
     return this;
@@ -267,14 +268,14 @@ public class SkolaZarizeni {
   @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZaniku() {
+  public Date getDatumZaniku() {
     return datumZaniku;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZANIKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZaniku(LocalDate datumZaniku) {
+  public void setDatumZaniku(Date datumZaniku) {
     this.datumZaniku = datumZaniku;
   }
 

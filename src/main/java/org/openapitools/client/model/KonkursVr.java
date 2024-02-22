@@ -13,16 +13,16 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import org.joda.time.LocalDate;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.util.Objects;
 
 /**
  * Konkurzní řízení
@@ -39,13 +39,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   KonkursVr.JSON_PROPERTY_TEXT,
   KonkursVr.JSON_PROPERTY_ZRUSENI_KONKURSU
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class KonkursVr {
   public static final String JSON_PROPERTY_DATUM_ZAPISU = "datumZapisu";
-  private LocalDate datumZapisu;
+  private Date datumZapisu;
 
   public static final String JSON_PROPERTY_DATUM_VYMAZU = "datumVymazu";
-  private LocalDate datumVymazu;
+  private Date datumVymazu;
 
   public static final String JSON_PROPERTY_SPRAVCE = "spravce";
   private List<AngazmaOsobaVr> spravce = null;
@@ -54,10 +54,10 @@ public class KonkursVr {
   private String typKonkursu;
 
   public static final String JSON_PROPERTY_DATUM_ROZHODNUTI_OS = "datumRozhodnutiOs";
-  private LocalDate datumRozhodnutiOs;
+  private Date datumRozhodnutiOs;
 
   public static final String JSON_PROPERTY_DATUM_VYVESENI = "datumVyveseni";
-  private LocalDate datumVyveseni;
+  private Date datumVyveseni;
 
   public static final String JSON_PROPERTY_SPIS_ZN_OS = "spisZnOs";
   private String spisZnOs;
@@ -71,7 +71,7 @@ public class KonkursVr {
   public KonkursVr() {
   }
 
-  public KonkursVr datumZapisu(LocalDate datumZapisu) {
+  public KonkursVr datumZapisu(Date datumZapisu) {
     
     this.datumZapisu = datumZapisu;
     return this;
@@ -86,19 +86,19 @@ public class KonkursVr {
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumZapisu() {
+  public Date getDatumZapisu() {
     return datumZapisu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ZAPISU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumZapisu(LocalDate datumZapisu) {
+  public void setDatumZapisu(Date datumZapisu) {
     this.datumZapisu = datumZapisu;
   }
 
 
-  public KonkursVr datumVymazu(LocalDate datumVymazu) {
+  public KonkursVr datumVymazu(Date datumVymazu) {
     
     this.datumVymazu = datumVymazu;
     return this;
@@ -113,14 +113,14 @@ public class KonkursVr {
   @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumVymazu() {
+  public Date getDatumVymazu() {
     return datumVymazu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_VYMAZU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumVymazu(LocalDate datumVymazu) {
+  public void setDatumVymazu(Date datumVymazu) {
     this.datumVymazu = datumVymazu;
   }
 
@@ -187,7 +187,7 @@ public class KonkursVr {
   }
 
 
-  public KonkursVr datumRozhodnutiOs(LocalDate datumRozhodnutiOs) {
+  public KonkursVr datumRozhodnutiOs(Date datumRozhodnutiOs) {
     
     this.datumRozhodnutiOs = datumRozhodnutiOs;
     return this;
@@ -202,19 +202,19 @@ public class KonkursVr {
   @JsonProperty(JSON_PROPERTY_DATUM_ROZHODNUTI_OS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumRozhodnutiOs() {
+  public Date getDatumRozhodnutiOs() {
     return datumRozhodnutiOs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_ROZHODNUTI_OS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumRozhodnutiOs(LocalDate datumRozhodnutiOs) {
+  public void setDatumRozhodnutiOs(Date datumRozhodnutiOs) {
     this.datumRozhodnutiOs = datumRozhodnutiOs;
   }
 
 
-  public KonkursVr datumVyveseni(LocalDate datumVyveseni) {
+  public KonkursVr datumVyveseni(Date datumVyveseni) {
     
     this.datumVyveseni = datumVyveseni;
     return this;
@@ -229,14 +229,14 @@ public class KonkursVr {
   @JsonProperty(JSON_PROPERTY_DATUM_VYVESENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumVyveseni() {
+  public Date getDatumVyveseni() {
     return datumVyveseni;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_VYVESENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumVyveseni(LocalDate datumVyveseni) {
+  public void setDatumVyveseni(Date datumVyveseni) {
     this.datumVyveseni = datumVyveseni;
   }
 

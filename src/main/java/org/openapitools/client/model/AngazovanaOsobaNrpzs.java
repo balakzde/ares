@@ -18,7 +18,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   AngazovanaOsobaNrpzs.JSON_PROPERTY_DATUM_NAROZENI,
   AngazovanaOsobaNrpzs.JSON_PROPERTY_TYP_ANGAZMA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-07T01:58:05.040718900+01:00[Europe/Prague]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-22T20:45:46.389457200+01:00[Europe/Prague]")
 public class AngazovanaOsobaNrpzs {
   public static final String JSON_PROPERTY_JMENO = "jmeno";
   private String jmeno;
@@ -47,7 +47,7 @@ public class AngazovanaOsobaNrpzs {
   private String titulZaJmenem;
 
   public static final String JSON_PROPERTY_DATUM_NAROZENI = "datumNarozeni";
-  private LocalDate datumNarozeni;
+  private Date datumNarozeni;
 
   public static final String JSON_PROPERTY_TYP_ANGAZMA = "typAngazma";
   private String typAngazma;
@@ -163,7 +163,7 @@ public class AngazovanaOsobaNrpzs {
   }
 
 
-  public AngazovanaOsobaNrpzs datumNarozeni(LocalDate datumNarozeni) {
+  public AngazovanaOsobaNrpzs datumNarozeni(Date datumNarozeni) {
     
     this.datumNarozeni = datumNarozeni;
     return this;
@@ -178,14 +178,14 @@ public class AngazovanaOsobaNrpzs {
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public LocalDate getDatumNarozeni() {
+  public Date getDatumNarozeni() {
     return datumNarozeni;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATUM_NAROZENI)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDatumNarozeni(LocalDate datumNarozeni) {
+  public void setDatumNarozeni(Date datumNarozeni) {
     this.datumNarozeni = datumNarozeni;
   }
 
