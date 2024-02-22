@@ -8,7 +8,7 @@ import org.openapitools.client.model.CiselnikyZakladniFiltr;
 import java.util.Collections;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -28,7 +28,7 @@ public class CiselnikyNazevnikyApi {
         this(new ApiClient());
     }
 
-    @Autowired
+    
     public CiselnikyNazevnikyApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
