@@ -1,0 +1,21 @@
+
+
+# KodChybyEnum
+
+## Enum
+
+
+* `OBECNA_CHYBA` (value: `"OBECNA_CHYBA"`)
+
+* `CHYBA_VSTUPU` (value: `"CHYBA_VSTUPU"`)
+
+* `NENALEZENO` (value: `"NENALEZENO"`)
+
+* `NENI_IMPLEMENTOVANO` (value: `"NENI_IMPLEMENTOVANO"`)
+
+* `NEPRIHLASENY_UZIVATEL` (value: `"NEPRIHLASENY_UZIVATEL"`)
+
+* `NENI_OPRAVNENI` (value: `"NENI_OPRAVNENI"`)
+
+
+

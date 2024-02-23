@@ -1,0 +1,14 @@
+
+
+# EkonomickySubjektRes
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**icoId** | **String** | ičo/id ekonomického subjektu  |  [optional] |
+|**zaznamy** | [**List&lt;ZaznamRes&gt;**](ZaznamRes.md) |  |  [optional] |
+
+
+
